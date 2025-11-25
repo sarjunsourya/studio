@@ -1,0 +1,37 @@
+import Image from 'next/image';
+import Link from 'next/link';
+import type { MenuItem } from '@/lib/data';
+import { Button } from './ui/button';
+import { Badge } from './ui/badge';
+
+export function MenuCard({ item }: { item: MenuItem }) {
+  return (
+    <div className="glass-card flex flex-col overflow-hidden transition-transform duration-300 hover:-translate-y-2">
+      <div className="relative h-48 w-full">
+        <Image
+          src={item.image.imageUrl}
+          alt={item.name}
+          fill
+          className="object-cover"
+          data-ai-hint={item.image.imageHint}
+        />
+        <Badge 
+            variant={item.category === 'Non-Vegetarian' ? 'destructive' : 'secondary'} 
+            className="absolute top-2 right-2"
+        >
+            {item.category}
+        </Badge>
+      </div>
+      <div className="flex flex-1 flex-col p-5">
+        <h3 className="font-headline text-xl font-semibold text-foreground">{item.name}</h3>
+        <p className="mt-2 flex-grow text-sm text-muted-foreground">{item.description}</p>
+        <div className="mt-4 flex items-center justify-between">
+          <span className="text-lg font-bold text-primary">{item.price}</span>
+          <Button asChild size="sm" className="bg-accent text-accent-foreground hover:bg-accent/90">
+            <Link href={`/contact?dish=${encodeURIComponent(item.name)}`}>Order Inquiry</Link>
+          </Button>
+        </div>
+      </div>
+    </div>
+  );
+}

@@ -1,3 +1,142 @@
 {
-  "placeholderImages": []
+  "placeholderImages": [
+    {
+      "id": "hero",
+      "description": "A top-down view of various delicious Indian dishes spread out on a table.",
+      "imageUrl": "https://images.unsplash.com/photo-1569153421157-7f8fc8a4badc?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHxmb29kJTIwZmxhdGxheXxlbnwwfHx8fDE3NjM5ODkzOTV8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "food flatlay"
+    },
+    {
+      "id": "featured-1",
+      "description": "A close-up of a bowl of aromatic Indian curry.",
+      "imageUrl": "https://images.unsplash.com/photo-1682496177510-1cf1a963f38d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHxpbmRpYW4lMjBkaXNofGVufDB8fHx8MTc2NDA4NTMxNHww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "indian dish"
+    },
+    {
+      "id": "featured-2",
+      "description": "A platter of assorted Indian appetizers.",
+      "imageUrl": "https://images.unsplash.com/photo-1581600140682-d4e68c8cde32?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw3fHxpbmRpYW4lMjBmb29kfGVufDB8fHx8MTc2NDA4MDY5NHww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "indian food"
+    },
+    {
+      "id": "featured-3",
+      "description": "A comforting homemade meal in a rustic setting.",
+      "imageUrl": "https://images.unsplash.com/photo-1517978160212-7dddf0b65934?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw4fHxob21lbWFkZSUyMG1lYWx8ZW58MHx8fHwxNzY0MDg1MzE0fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "homemade meal"
+    },
+    {
+      "id": "menu-1",
+      "description": "Samosa",
+      "imageUrl": "https://images.unsplash.com/photo-1601050690597-df0568f70950?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxzYW1vc2F8ZW58MHx8fHwxNzYzOTkyODAwfDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "samosa"
+    },
+    {
+      "id": "menu-2",
+      "description": "Paneer Butter Masala",
+      "imageUrl": "https://images.unsplash.com/photo-1640542509430-f529fdfce835?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw4fHxwYW5lZXIlMjBjdXJyeXxlbnwwfHx8fDE3NjQwODQwNjF8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "paneer curry"
+    },
+    {
+      "id": "menu-3",
+      "description": "Chicken Biryani",
+      "imageUrl": "https://images.unsplash.com/photo-1599043513900-ed6fe01d3833?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw5fHxjaGlja2VuJTIwYmlyeWFuaXxlbnwwfHx8fDE3NjM5OTQwOTR8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "chicken biryani"
+    },
+    {
+      "id": "menu-4",
+      "description": "Dal Makhani",
+      "imageUrl": "https://images.unsplash.com/photo-1678991013288-7a9035d5cac1?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHxkYWwlMjBtYWtoYW5pfGVufDB8fHx8MTc2Mzk1OTYyNHww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "dal makhani"
+    },
+    {
+      "id": "menu-5",
+      "description": "Aloo Gobi",
+      "imageUrl": "https://images.unsplash.com/photo-1652545296893-ff9227b3512e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxhbG9vJTIwZ29iaXxlbnwwfHx8fDE3NjQwODUzMTR8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "aloo gobi"
+    },
+    {
+      "id": "menu-6",
+      "description": "Tandoori Chicken",
+      "imageUrl": "https://images.unsplash.com/photo-1687020835890-b0b8c6a04613?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHx0YW5kb29yaSUyMGNoaWNrZW58ZW58MHx8fHwxNzY0MDQ5ODE4fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "tandoori chicken"
+    },
+    {
+      "id": "menu-7",
+      "description": "Gulab Jamun",
+      "imageUrl": "https://images.unsplash.com/photo-1635564981692-857482d9325f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHxpbmRpYW4lMjBkZXNzZXJ0fGVufDB8fHx8MTc2NDA4NTMxNHww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "indian dessert"
+    },
+    {
+      "id": "menu-8",
+      "description": "Naan Bread",
+      "imageUrl": "https://images.unsplash.com/photo-1725483990172-e5203cc96ef5?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw5fHxuYWFuJTIwYnJlYWR8ZW58MHx8fHwxNzYzOTcxOTY4fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "naan bread"
+    },
+    {
+      "id": "gallery-1",
+      "imageUrl": "https://images.unsplash.com/photo-1556911220-bff31c812dba?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxraXRjaGVuJTIwcHJlcGFyYXRpb258ZW58MHx8fHwxNzY0MDg1MzE0fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "kitchen preparation"
+    },
+    {
+      "id": "gallery-2",
+      "imageUrl": "https://images.unsplash.com/photo-1581600140682-d4e68c8cde32?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxzcGljZXN8ZW58MHx8fHwxNzY0MDQ4ODkzfDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "spices"
+    },
+    {
+      "id": "gallery-3",
+      "imageUrl": "https://images.unsplash.com/photo-1507048331197-7d4ac70811cf?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw2fHxjb29raW5nfGVufDB8fHx8MTc2NDA4NTMxNHww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "cooking"
+    },
+    {
+      "id": "gallery-4",
+      "imageUrl": "https://images.unsplash.com/photo-1657566648148-061dc760eca6?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw2fHxwbGF0aW5nJTIwZm9vZHxlbnwwfHx8fDE3NjQwODUzMTR8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "plating food"
+    },
+    {
+      "id": "gallery-5",
+      "imageUrl": "https://images.unsplash.com/photo-1665088127661-83aeff6104c4?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHxmcmVzaCUyMGluZ3JlZGllbnRzfGVufDB8fHx8MTc2Mzk3ODA5N3ww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "fresh ingredients"
+    },
+    {
+      "id": "gallery-6",
+      "imageUrl": "https://images.unsplash.com/photo-1572715376701-98568319fd0b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHxjaGVmJTIwY29va2luZ3xlbnwwfHx8fDE3NjQwNDg0NDR8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "chef cooking"
+    },
+    {
+      "id": "gallery-7",
+      "imageUrl": "https://images.unsplash.com/photo-1543773495-2cd9248a5bda?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw4fHxpbmRpYW4lMjBzd2VldHN8ZW58MHx8fHwxNzY0MDAxODcxfDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "indian sweets"
+    },
+    {
+      "id": "gallery-8",
+      "imageUrl": "https://images.unsplash.com/photo-1622023066490-dcee34454a76?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxiZWhpbmQlMjBzY2VuZXMlMjBraXRjaGVufGVufDB8fHx8MTc2NDA4NTMxNHww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "behind scenes kitchen"
+    },
+    {
+      "id": "gallery-9",
+      "imageUrl": "https://images.unsplash.com/photo-1546549032-9571cd6b27df?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxMHx8Zm9vZCUyMHBob3RvZ3JhcGh5fGVufDB8fHx8MTc2NDA0NzY1NXww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "food photography"
+    },
+    {
+      "id": "gallery-10",
+      "imageUrl": "https://images.unsplash.com/photo-1578496780896-7081cc23c111?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHxmYW1pbHklMjBtZWFsfGVufDB8fHx8MTc2NDAzMDQ1OHww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "family meal"
+    },
+    {
+      "id": "gallery-11",
+      "imageUrl": "https://images.unsplash.com/photo-1554997433-8e233c02c751?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxMHx8Y3VsaW5hcnl8ZW58MHx8fHwxNzY0MDg1MzE0fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "culinary"
+    },
+    {
+      "id": "gallery-12",
+      "imageUrl": "https://images.unsplash.com/photo-1471193945509-9ad0617afabf?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw3fHxmcmVzaCUyMHZlZ2V0YWJsZXN8ZW58MHx8fHwxNzY0MDUyNjE5fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "fresh vegetables"
+    },
+    {
+      "id": "map",
+      "description": "A map showing the location of The Divine Kitchen in Delft.",
+      "imageUrl": "https://images.unsplash.com/photo-1723238216692-154ae0ecfa03?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw5fHxkZWxmdCUyMG1hcHxlbnwwfHx8fDE3NjQwODUzMTR8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "delft map"
+    }
+  ]
 }
