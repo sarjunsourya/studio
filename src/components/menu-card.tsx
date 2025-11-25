@@ -16,7 +16,7 @@ export function MenuCard({ item }: { item: MenuItem }) {
           data-ai-hint={item.image.imageHint}
         />
         <Badge 
-            variant={item.category === 'Non-Vegetarian' ? 'destructive' : 'secondary'} 
+            variant={item.category === 'Vegan' ? 'default' : 'secondary'} 
             className="absolute top-2 right-2"
         >
             {item.category}

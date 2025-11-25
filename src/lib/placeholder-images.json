@@ -13,12 +13,6 @@
       "imageHint": "indian dish"
     },
     {
-      "id": "featured-2",
-      "description": "A platter of assorted Indian appetizers.",
-      "imageUrl": "https://images.unsplash.com/photo-1581600140682-d4e68c8cde32?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw3fHxpbmRpYW4lMjBmb29kfGVufDB8fHx8MTc2NDA4MDY5NHww&ixlib=rb-4.1.0&q=80&w=1080",
-      "imageHint": "indian food"
-    },
-    {
       "id": "featured-3",
       "description": "A comforting homemade meal in a rustic setting.",
       "imageUrl": "https://images.unsplash.com/photo-1517978160212-7dddf0b65934?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw4fHxob21lbWFkZSUyMG1lYWx8ZW58MHx8fHwxNzY0MDg1MzE0fDA&ixlib=rb-4.1.0&q=80&w=1080",
@@ -37,12 +31,6 @@
       "imageHint": "paneer curry"
     },
     {
-      "id": "menu-3",
-      "description": "Chicken Biryani",
-      "imageUrl": "https://images.unsplash.com/photo-1599043513900-ed6fe01d3833?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw5fHxjaGlja2VuJTIwYmlyeWFuaXxlbnwwfHx8fDE3NjM5OTQwOTR8MA&ixlib=rb-4.1.0&q=80&w=1080",
-      "imageHint": "chicken biryani"
-    },
-    {
       "id": "menu-4",
       "description": "Dal Makhani",
       "imageUrl": "https://images.unsplash.com/photo-1678991013288-7a9035d5cac1?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHxkYWwlMjBtYWtoYW5pfGVufDB8fHx8MTc2Mzk1OTYyNHww&ixlib=rb-4.1.0&q=80&w=1080",
@@ -53,12 +41,6 @@
       "description": "Aloo Gobi",
       "imageUrl": "https://images.unsplash.com/photo-1652545296893-ff9227b3512e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxhbG9vJTIwZ29iaXxlbnwwfHx8fDE3NjQwODUzMTR8MA&ixlib=rb-4.1.0&q=80&w=1080",
       "imageHint": "aloo gobi"
-    },
-    {
-      "id": "menu-6",
-      "description": "Tandoori Chicken",
-      "imageUrl": "https://images.unsplash.com/photo-1687020835890-b0b8c6a04613?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHx0YW5kb29yaSUyMGNoaWNrZW58ZW58MHx8fHwxNzY0MDQ5ODE4fDA&ixlib=rb-4.1.0&q=80&w=1080",
-      "imageHint": "tandoori chicken"
     },
     {
       "id": "menu-7",
@@ -79,7 +61,7 @@
     },
     {
       "id": "gallery-2",
-      "imageUrl": "https://images.unsplash.com/photo-1581600140682-d4e68c8cde32?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxzcGljZXN8ZW58MHx8fHwxNzY0MDQ4ODkzfDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageUrl": "https://images.unsplash.com/photo-1581600140682-d4e68c8cde32?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxzcGljZXN8ZW58MHx8fHwxNzY0MDQ4ODkzfDA&ixlib.rb-4.1.0&q=80&w=1080",
       "imageHint": "spices"
     },
     {
@@ -89,22 +71,22 @@
     },
     {
       "id": "gallery-4",
-      "imageUrl": "https://images.unsplash.com/photo-1657566648148-061dc760eca6?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw2fHxwbGF0aW5nJTIwZm9vZHxlbnwwfHx8fDE3NjQwODUzMTR8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageUrl": "https://images.unsplash.com/photo-1657566648148-061dc760eca6?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw2fHxwbGF0aW5nJTIwZm9vZHxlbnwwfHx8fDE3NjQwODUzMTR8MA&ixlib.rb-4.1.0&q=80&w=1080",
       "imageHint": "plating food"
     },
     {
       "id": "gallery-5",
-      "imageUrl": "https://images.unsplash.com/photo-1665088127661-83aeff6104c4?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHxmcmVzaCUyMGluZ3JlZGllbnRzfGVufDB8fHx8MTc2Mzk3ODA5N3ww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageUrl": "https://images.unsplash.com/photo-1665088127661-83aeff6104c4?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHxmcmVzaCUyMGluZ3JlZGllbnRzfGVufDB8fHx8MTc2Mzk3ODA5N3ww&ixlib.rb-4.1.0&q=80&w=1080",
       "imageHint": "fresh ingredients"
     },
     {
       "id": "gallery-6",
-      "imageUrl": "https://images.unsplash.com/photo-1572715376701-98568319fd0b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHxjaGVmJTIwY29va2luZ3xlbnwwfHx8fDE3NjQwNDg0NDR8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageUrl": "https://images.unsplash.com/photo-1572715376701-98568319fd0b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHxoZWYlMjBjb29raW5nfGVufDB8fHx8MTc2NDA0ODQ0NHww&ixlib.rb-4.1.0&q=80&w=1080",
       "imageHint": "chef cooking"
     },
     {
       "id": "gallery-7",
-      "imageUrl": "https://images.unsplash.com/photo-1543773495-2cd9248a5bda?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw4fHxpbmRpYW4lMjBzd2VldHN8ZW58MHx8fHwxNzY0MDAxODcxfDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageUrl": "https://images.unsplash.com/photo-1543773495-2cd9248a5bda?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw4fHxpbmRpYW4lMjBzd2VldHN8ZW58MHx8fHwxNzY0MDAxODcxfDA&ixlib.rb-4.1.0&q=80&w=1080",
       "imageHint": "indian sweets"
     },
     {

@@ -61,15 +61,15 @@ export const featuredDishes = [
     },
     {
       id: 2,
-      name: 'Chicken Biryani',
-      description: 'Aromatic basmati rice cooked with chicken and a blend of exotic spices.',
-      image: getImage('featured-2'),
-    },
-    {
-      id: 3,
       name: 'Samosa Chaat',
       description: 'Crispy samosas crushed and topped with yogurt, chutneys, and spices.',
       image: getImage('featured-3'),
+    },
+    {
+      id: 3,
+      name: 'Dal Makhani',
+      description: 'Creamy black lentils slow-cooked with butter and spices.',
+      image: getImage('menu-4'),
     },
 ]
 
@@ -78,7 +78,7 @@ export type MenuItem = {
     name: string;
     description: string;
     price: string;
-    category: 'Vegetarian' | 'Non-Vegetarian' | 'Vegan';
+    category: 'Vegetarian' | 'Vegan';
     image: ImagePlaceholder;
   };
 
@@ -100,14 +100,6 @@ export const weeklyMenu: MenuItem[] = [
       image: getImage('menu-2'),
     },
     {
-      id: 3,
-      name: 'Chicken Biryani',
-      description: 'Layered rice and chicken dish, slow-cooked to perfection.',
-      price: '€14.50',
-      category: 'Non-Vegetarian',
-      image: getImage('menu-3'),
-    },
-    {
       id: 4,
       name: 'Dal Makhani',
       description: 'Creamy black lentils slow-cooked with butter and spices.',
@@ -122,14 +114,6 @@ export const weeklyMenu: MenuItem[] = [
       price: '€9.50',
       category: 'Vegan',
       image: getImage('menu-5'),
-    },
-    {
-      id: 6,
-      name: 'Tandoori Chicken',
-      description: 'Chicken marinated in yogurt and spices, cooked in a tandoor.',
-      price: '€13.00',
-      category: 'Non-Vegetarian',
-      image: getImage('menu-6'),
     },
     {
       id: 7,

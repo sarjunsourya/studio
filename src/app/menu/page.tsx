@@ -5,15 +5,16 @@ import { weeklyMenu, type MenuItem } from '@/lib/data';
 import { MenuCard } from '@/components/menu-card';
 import { Button } from '@/components/ui/button';
 
-type Filter = 'All' | 'Vegetarian' | 'Non-Vegetarian' | 'Vegan';
+type Filter = 'All' | 'Vegetarian' | 'Vegan';
 
 export default function MenuPage() {
   const [activeFilter, setActiveFilter] = useState<Filter>('All');
 
-  const filters: Filter[] = ['All', 'Vegetarian', 'Non-Vegetarian', 'Vegan'];
+  const filters: Filter[] = ['All', 'Vegetarian', 'Vegan'];
 
   const filteredMenu = weeklyMenu.filter(item => {
     if (activeFilter === 'All') return true;
+    if (activeFilter === 'Vegetarian') return item.category === 'Vegetarian' || item.category === 'Vegan';
     return item.category === activeFilter;
   });
 
