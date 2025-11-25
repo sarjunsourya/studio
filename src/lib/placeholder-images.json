@@ -15,13 +15,13 @@
     {
       "id": "featured-3",
       "description": "A comforting homemade meal in a rustic setting.",
-      "imageUrl": "https://images.unsplash.com/photo-1517978160212-7dddf0b65934?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw4fHxob21lbWFkZSUyMG1lYWx8ZW58MHx8fHwxNzY0MDg1MzE0fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageUrl": "https://images.unsplash.com/photo-1517978160212-7dddf0b65934?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw4fHxob21lbWFkZSUyMG1lYWx8ZW58MHx8fHwxNzY0MDg1MzE0fDA&ixlib.rb-4.1.0&q=80&w=1080",
       "imageHint": "homemade meal"
     },
     {
       "id": "featured-4",
       "description": "Plain Dosa",
-      "imageUrl": "https://picsum.photos/seed/dosa/600/400",
+      "imageUrl": "https://images.unsplash.com/photo-1668665632637-60313a52140c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxwZWluJTIwZG9zYXxlbnwwfHx8fDE3MjcyMTEwNDZ8MA&ixlib=rb-4.0.3&q=80&w=1080",
       "imageHint": "plain dosa"
     },
     {
@@ -33,31 +33,31 @@
     {
       "id": "featured-6",
       "description": "Dahi Bhalla",
-      "imageUrl": "https://images.unsplash.com/photo-1697307157652-2b83f11cf9d0?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHxkYWhpJTIwYmhhbGxhfGVufDB8fHx8MTc2NDA5MjEzMnww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageUrl": "https://images.unsplash.com/photo-1697307157652-2b83f11cf9d0?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHxkYWhpJTIwYmhhbGxhfGVufDB8fHx8MTc2NDA5MjEzMnww&ixlib.rb-4.1.0&q=80&w=1080",
       "imageHint": "dahi bhalla"
     },
     {
       "id": "featured-7",
       "description": "Plain Idli",
-      "imageUrl": "https://picsum.photos/seed/idli/600/400",
+      "imageUrl": "https://images.unsplash.com/photo-1668665632368-812a95393223?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxpZGxpJTIwd2l0aCUyMHNhbWJhcnxlbnwwfHx8fDE3MjcyMTEwODh8MA&ixlib=rb-4.0.3&q=80&w=1080",
       "imageHint": "plain idli"
     },
     {
       "id": "featured-8",
       "description": "Masala Puri",
-      "imageUrl": "https://picsum.photos/seed/masala-puri/600/400",
+      "imageUrl": "https://images.unsplash.com/photo-1565557623262-b51c2513a641?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxtYXNhbGElMjBwdXJpfGVufDB8fHx8MTcyNzIxMTEyMHww&ixlib=rb-4.0.3&q=80&w=1080",
       "imageHint": "masala puri"
     },
     {
       "id": "menu-1",
       "description": "Samosa",
-      "imageUrl": "https://images.unsplash.com/photo-1601050690597-df0568f70950?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxzYW1vc2F8ZW58MHx8fHwxNzYzOTkyODAwfDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageUrl": "https://images.unsplash.com/photo-1601050690597-df0568f70950?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxzYW1vc2F8ZW58MHx8fHwxNzYzOTkyODAwfDA&ixlib.rb-4.1.0&q=80&w=1080",
       "imageHint": "samosa"
     },
     {
       "id": "menu-2",
       "description": "Paneer Butter Masala",
-      "imageUrl": "https://images.unsplash.com/photo-1640542509430-f529fdfce835?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw4fHxwYW5lZXIlMjBjdXJyeXxlbnwwfHx8fDE3NjQwODQwNjF8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageUrl": "https://images.unsplash.com/photo-1640542509430-f529fdfce835?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw4fHxwYW5lZXIlMjBjdXJyeXxlbnwwfHx8fDE3NjQwODQwNjF8MA&ixlib.rb-4.1.0&q=80&w=1080",
       "imageHint": "paneer curry"
     },
     {
