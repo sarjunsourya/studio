@@ -71,6 +71,24 @@ export const featuredDishes = [
       description: 'Creamy black lentils slow-cooked with butter and spices.',
       image: getImage('menu-4'),
     },
+    {
+      id: 4,
+      name: 'Plain Dosa',
+      description: 'A thin, crispy crepe made from fermented rice and lentil batter.',
+      image: getImage('featured-4'),
+    },
+    {
+      id: 5,
+      name: 'Pav Bhaji',
+      description: 'A spicy vegetable mash served with soft, buttered bread rolls.',
+      image: getImage('featured-5'),
+    },
+     {
+      id: 6,
+      name: 'Dahi Bhalla',
+      description: 'Soft lentil dumplings soaked in creamy yogurt and topped with sweet and tangy chutneys.',
+      image: getImage('featured-6'),
+    },
 ]
 
 export type MenuItem = {
