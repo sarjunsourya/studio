@@ -64,14 +64,14 @@ export default function ContactPage() {
               </div>
             )}
             <div className="text-center md:text-left bg-card p-6 rounded-2xl shadow-md">
-                <h3 className="font-headline text-xl font-semibold flex items-center gap-2">
+                <h3 className="font-headline text-xl font-semibold flex items-center justify-center md:justify-start gap-2">
                     <MapPin className="h-5 w-5 text-primary"/>
                     Our Location
                 </h3>
-                <p className="text-muted-foreground mt-2">
+                <address className="mt-2 text-muted-foreground not-italic">
                     Raad van Europalaan 62,<br />
                     2625PC Delft, Netherlands
-                </p>
+                </address>
                 <p className="text-sm text-muted-foreground/80 mt-2">
                     (Pick-up only location)
                 </p>
