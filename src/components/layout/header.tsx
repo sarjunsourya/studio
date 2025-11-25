@@ -21,7 +21,7 @@ export function Header() {
 
   return (
     <header className="sticky top-0 z-50 w-full border-b border-border/40 bg-background/80 backdrop-blur-lg">
-      <div className="container flex h-20 max-w-7xl items-center">
+      <div className="container flex h-24 items-center justify-between">
         <div className="mr-8 flex">
           <Logo />
         </div>
@@ -64,8 +64,8 @@ export function Header() {
                 <span className="sr-only">Toggle Menu</span>
               </Button>
             </SheetTrigger>
-            <SheetContent side="left" className="w-[300px]">
-              <div className="p-6">
+            <SheetContent side="left" className="w-[300px] p-0">
+              <div className="p-4 flex justify-center">
                 <Logo />
               </div>
               <div className="grid gap-4 py-6 px-6">

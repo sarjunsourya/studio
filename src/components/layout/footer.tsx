@@ -6,12 +6,9 @@ export function Footer() {
   return (
     <footer className="w-full border-t bg-secondary">
       <div className="container mx-auto max-w-7xl px-4 py-12">
-        <div className="grid grid-cols-1 gap-12 md:grid-cols-12">
-          <div className="space-y-4 md:col-span-4">
+        <div className="grid grid-cols-1 gap-12 md:grid-cols-12 items-center">
+          <div className="flex justify-center md:col-span-4">
             <Logo />
-            <p className="text-sm text-muted-foreground">
-              Authentic homemade meals, crafted fresh with love from the heart of Delft.
-            </p>
           </div>
           <div className="md:col-span-2">
             <h3 className="font-headline text-lg font-semibold">Sitemap</h3>
@@ -62,6 +59,7 @@ export function Footer() {
         </div>
         <div className="mt-12 border-t pt-8 text-center text-sm text-muted-foreground">
           <p>&copy; {new Date().getFullYear()} The Divine Kitchen. All Rights Reserved.</p>
+          <p className="mt-2">Home-Cooked Goodness by Roopa Gokul</p>
         </div>
       </div>
     </footer>
