@@ -14,7 +14,7 @@ export function Header() {
   const pathname = usePathname();
 
   return (
-    <header className="sticky top-0 z-50 w-full border-b border-border/40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
+    <header className="sticky top-0 z-50 w-full border-b border-border/40 bg-background/80 backdrop-blur-lg">
       <div className="container flex h-16 max-w-7xl items-center">
         <div className="mr-4 flex">
           <Logo />
@@ -36,6 +36,9 @@ export function Header() {
           ))}
         </nav>
         <div className="flex flex-1 items-center justify-end space-x-4">
+          <Button asChild variant="outline" className="hidden sm:flex">
+             <Link href="/contact">Contact Us</Link>
+          </Button>
           <Sheet>
             <SheetTrigger asChild>
               <Button variant="ghost" size="icon" className="md:hidden">
@@ -60,6 +63,9 @@ export function Header() {
                     {link.label}
                   </Link>
                 ))}
+                 <Button asChild variant="outline" className="mt-4">
+                    <Link href="/contact">Contact Us</Link>
+                 </Button>
               </div>
             </SheetContent>
           </Sheet>

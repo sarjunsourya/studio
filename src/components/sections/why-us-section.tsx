@@ -15,14 +15,14 @@ export function WhyUsSection() {
         </div>
         <div className="grid grid-cols-1 gap-8 md:grid-cols-3 lg:grid-cols-5">
           {whyUsPoints.map((point) => (
-            <Card key={point.title} className="text-center border-0 shadow-none bg-transparent">
-              <CardHeader className="flex items-center justify-center">
+            <Card key={point.title} className="text-center border bg-secondary/50 shadow-lg hover:shadow-primary/20 transition-shadow duration-300 rounded-xl">
+              <CardHeader className="flex items-center justify-center pt-6">
                 <div className="flex h-16 w-16 items-center justify-center rounded-full bg-primary/10 text-primary">
                   <point.icon className="h-8 w-8" />
                 </div>
               </CardHeader>
-              <CardContent>
-                <CardTitle className="text-xl font-headline font-semibold mb-2">
+              <CardContent className="p-6">
+                <CardTitle className="text-xl font-headline font-semibold mb-2 text-foreground">
                   {point.title}
                 </CardTitle>
                 <p className="text-sm text-muted-foreground">

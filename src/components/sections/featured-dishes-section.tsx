@@ -7,7 +7,7 @@ import { ArrowRight } from 'lucide-react';
 
 export function FeaturedDishesSection() {
   return (
-    <section className="w-full py-16 md:py-24 bg-secondary/50">
+    <section className="w-full py-16 md:py-24 bg-secondary/30">
       <div className="container mx-auto max-w-7xl px-4">
         <div className="text-center mb-12">
           <h2 className="font-headline text-3xl md:text-4xl font-bold text-primary">
@@ -19,7 +19,7 @@ export function FeaturedDishesSection() {
         </div>
         <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
           {featuredDishes.map((dish) => (
-            <Card key={dish.id} className="overflow-hidden shadow-lg hover:shadow-2xl transition-shadow duration-300 group">
+            <Card key={dish.id} className="overflow-hidden bg-card/50 border-border/50 shadow-lg hover:shadow-primary/20 hover:-translate-y-2 transition-all duration-300 group">
               <CardHeader className="p-0">
                 <div className="relative h-56 w-full">
                   <Image
@@ -32,8 +32,8 @@ export function FeaturedDishesSection() {
                 </div>
               </CardHeader>
               <CardContent className="p-6">
-                <CardTitle className="font-headline text-xl">{dish.name}</CardTitle>
-                <CardDescription className="mt-2">{dish.description}</CardDescription>
+                <CardTitle className="font-headline text-xl text-foreground">{dish.name}</CardTitle>
+                <CardDescription className="mt-2 text-muted-foreground">{dish.description}</CardDescription>
               </CardContent>
             </Card>
           ))}
