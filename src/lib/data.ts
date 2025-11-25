@@ -13,28 +13,28 @@ export const navLinks: { href: string; label: string; icon: LucideIcon }[] = [
 export const whyUsPoints = [
   {
     icon: Home,
-    title: 'Homemade',
-    description: 'Crafted in a real home kitchen with time-tested recipes.',
+    title: 'From My Home',
+    description: 'Built from passion, heritage, and a love for authentic flavors passed down through generations.',
   },
   {
     icon: Leaf,
     title: 'Fresh Ingredients',
-    description: 'Only the finest and freshest ingredients for authentic taste.',
+    description: 'Only the finest and freshest ingredients are chosen to create genuine, heartfelt meals.',
   },
   {
     icon: Sparkles,
-    title: 'Hygienic Preparation',
-    description: 'Prepared with the utmost care in a clean, hygienic environment.',
+    title: 'Hygienic Kitchen',
+    description: 'Prepared with the utmost care in a clean, professional home kitchen environment.',
   },
   {
     icon: Flame,
     title: 'Authentic Flavors',
-    description: 'Experience the true taste of traditional Indian cuisine.',
+    description: 'Experience the true taste of tradition with recipes refined over 18 years of practice.',
   },
   {
     icon: MapPin,
-    title: 'Delft-Based',
-    description: 'Proudly serving the Delft community with home-cooked meals.',
+    title: 'Proudly in Delft',
+    description: 'Bringing authentic, heartfelt Indian flavors from my home to our new community in Delft.',
   },
 ];
 

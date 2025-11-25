@@ -50,7 +50,7 @@ export function Footer() {
                 </a>
               </li>
                <li className="flex items-center gap-3">
-                <a href="https://wa.me/31000000000" target="_blank" rel="noopener noreferrer" className="text-muted-foreground transition-colors hover:text-foreground">
+                <a href="https://wa.me/31621308998" target="_blank" rel="noopener noreferrer" className="text-muted-foreground transition-colors hover:text-foreground">
                   WhatsApp
                 </a>
               </li>

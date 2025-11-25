@@ -41,7 +41,7 @@ export default function ContactPage() {
                             </a>
                         </Button>
                         <Button asChild variant="outline" size="icon">
-                            <a href="https://wa.me/31000000000" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">
+                            <a href="https://wa.me/31621308998" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">
                             <MessageCircle className="h-5 w-5 text-accent" />
                             </a>
                         </Button>

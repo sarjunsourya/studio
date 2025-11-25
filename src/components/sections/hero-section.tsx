@@ -21,10 +21,10 @@ export function HeroSection() {
       <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent" />
       <div className="relative z-10 flex flex-col items-center space-y-8 p-4 max-w-4xl mx-auto">
         <h1 className="font-headline text-5xl md:text-7xl text-primary-foreground font-bold drop-shadow-2xl">
-          Home-Cooked Goodness by Roopa Gokul
+          The Divine Kitchen
         </h1>
         <p className="mt-4 text-lg md:text-xl font-medium tracking-wide text-neutral-200 max-w-2xl">
-          Authentic homemade meals, crafted fresh with love and the finest ingredients in the heart of Delft.
+          Real food, true flavours, and the comfort of home in every bite.
         </p>
         <div className="flex flex-col sm:flex-row gap-4">
             <Button asChild size="lg" className="bg-primary hover:bg-primary/90 text-primary-foreground font-bold text-lg py-7 px-10 rounded-full shadow-lg transition-transform duration-300 hover:scale-105">
