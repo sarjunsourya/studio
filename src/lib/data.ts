@@ -1,13 +1,13 @@
-import { ChefHat, Flame, Home, Leaf, MapPin, Sparkles } from 'lucide-react';
+import { ChefHat, Flame, Home, Leaf, MapPin, Sparkles, Utensils, GalleryHorizontalEnd, Phone, HandPlatter, LucideIcon } from 'lucide-react';
 import type { ImagePlaceholder } from './placeholder-images';
 import { PlaceHolderImages } from './placeholder-images';
 
-export const navLinks = [
-  { href: '/', label: 'Home' },
-  { href: '/menu', label: 'Menu' },
-  { href: '/gallery', label: 'Gallery' },
-  { href: '/catering', label: 'Catering' },
-  { href: '/contact', label: 'Contact' },
+export const navLinks: { href: string; label: string; icon: LucideIcon }[] = [
+  { href: '/', label: 'Home', icon: Home },
+  { href: '/menu', label: 'Menu', icon: Utensils },
+  { href: '/gallery', label: 'Gallery', icon: GalleryHorizontalEnd },
+  { href: '/catering', label: 'Catering', icon: HandPlatter },
+  { href: '/contact', label: 'Contact', icon: Phone },
 ];
 
 export const whyUsPoints = [

@@ -9,6 +9,12 @@ import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { Logo } from "@/components/logo";
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipProvider,
+  TooltipTrigger,
+} from "@/components/ui/tooltip";
 
 export function Header() {
   const pathname = usePathname();
@@ -19,21 +25,33 @@ export function Header() {
         <div className="mr-8 flex">
           <Logo />
         </div>
-        <nav className="hidden items-center gap-6 text-sm font-semibold md:flex">
-          {navLinks.map((link) => (
-            <Link
-              key={link.href}
-              href={link.href}
-              className={cn(
-                "transition-colors hover:text-foreground",
-                pathname === link.href
-                  ? "text-foreground"
-                  : "text-foreground/60"
-              )}
-            >
-              {link.label}
-            </Link>
-          ))}
+        <nav className="hidden items-center gap-2 text-sm font-semibold md:flex">
+          <TooltipProvider>
+            {navLinks.map((link) => (
+              <Tooltip key={link.href}>
+                <TooltipTrigger asChild>
+                  <Button
+                    asChild
+                    variant="ghost"
+                    size="icon"
+                    className={cn(
+                      "transition-colors hover:text-primary",
+                      pathname === link.href
+                        ? "text-primary bg-primary/10"
+                        : "text-foreground/60"
+                    )}
+                  >
+                    <Link href={link.href}>
+                      <link.icon className="h-5 w-5" />
+                    </Link>
+                  </Button>
+                </TooltipTrigger>
+                <TooltipContent>
+                  <p>{link.label}</p>
+                </TooltipContent>
+              </Tooltip>
+            ))}
+          </TooltipProvider>
         </nav>
         <div className="flex flex-1 items-center justify-end space-x-4">
           <Button asChild className="hidden sm:flex rounded-full font-bold">
@@ -56,12 +74,13 @@ export function Header() {
                     key={link.href}
                     href={link.href}
                     className={cn(
-                      "flex w-full items-center py-2 text-lg font-semibold transition-colors hover:text-primary",
+                      "flex w-full items-center py-2 text-lg font-semibold transition-colors hover:text-primary gap-4",
                       pathname === link.href
                         ? "text-primary"
                         : "text-foreground/80"
                     )}
                   >
+                    <link.icon className="h-5 w-5" />
                     {link.label}
                   </Link>
                 ))}

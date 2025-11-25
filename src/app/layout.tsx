@@ -1,5 +1,5 @@
 import type { Metadata } from 'next';
-import { Inter, Lexend_Deca } from 'next/font/google';
+import { Alegreya, Belleza } from 'next/font/google';
 import './globals.css';
 import { cn } from '@/lib/utils';
 import { Header } from '@/components/layout/header';
@@ -11,14 +11,14 @@ export const metadata: Metadata = {
   description: 'Home-Cooked Goodness by Roopa Gokul in Delft',
 };
 
-const fontBody = Inter({
+const fontBody = Alegreya({
   subsets: ['latin'],
   variable: '--font-body',
 });
 
-const fontHeadline = Lexend_Deca({
+const fontHeadline = Belleza({
   subsets: ['latin'],
-  weight: ['600', '700'],
+  weight: ['400'],
   variable: '--font-headline',
 });
 
