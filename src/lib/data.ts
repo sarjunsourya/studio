@@ -54,24 +54,6 @@ const getImage = (id: string): ImagePlaceholder => {
 
 export const featuredDishes = [
     {
-      id: 1,
-      name: 'Paneer Butter Masala',
-      description: 'A creamy and rich curry made with succulent paneer in a tomato-based gravy.',
-      image: getImage('featured-1'),
-    },
-    {
-      id: 2,
-      name: 'Samosa Chaat',
-      description: 'Crispy samosas crushed and topped with yogurt, chutneys, and spices.',
-      image: getImage('featured-3'),
-    },
-    {
-      id: 3,
-      name: 'Dal Makhani',
-      description: 'Creamy black lentils slow-cooked with butter and spices.',
-      image: getImage('menu-4'),
-    },
-    {
       id: 4,
       name: 'Plain Dosa',
       description: 'A thin, crispy crepe made from fermented rice and lentil batter.',
@@ -89,6 +71,18 @@ export const featuredDishes = [
       description: 'Soft lentil dumplings soaked in creamy yogurt and topped with sweet and tangy chutneys.',
       image: getImage('featured-6'),
     },
+    {
+      id: 7,
+      name: 'Plain Idli',
+      description: 'Soft, fluffy steamed rice cakes, a staple of South Indian cuisine.',
+      image: getImage('featured-7'),
+    },
+    {
+        id: 8,
+        name: 'Masala Puri',
+        description: 'A popular Indian street food chaat made with crispy puri, ragda, and spices.',
+        image: getImage('featured-8'),
+    }
 ]
 
 export type MenuItem = {
