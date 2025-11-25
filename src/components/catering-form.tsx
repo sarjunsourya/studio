@@ -1,6 +1,7 @@
 "use client"
 
-import { useFormState, useFormStatus } from "react-dom";
+import { useActionState } from "react";
+import { useFormStatus } from "react-dom";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
@@ -34,7 +35,7 @@ function SubmitButton() {
   }
 
 export function CateringForm() {
-    const [state, formAction] = useFormState(submitCateringInquiry, { message: "", errors: {} });
+    const [state, formAction] = useActionState(submitCateringInquiry, { message: "", errors: {} });
     const { toast } = useToast();
 
     const form = useForm<z.infer<typeof cateringInquirySchema>>({
