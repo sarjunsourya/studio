@@ -145,4 +145,58 @@ export const weeklyMenu: MenuItem[] = [
     },
   ];
   
+export type InstagramPost = {
+  id: string;
+  image: ImagePlaceholder;
+  caption: string;
+  likes: number;
+  comments: number;
+};
+
+export const instagramPosts: InstagramPost[] = [
+  {
+    id: "post1",
+    image: getImage('gallery-1'),
+    caption: "Behind the scenes! Prepping for a week of delicious meals. 🌿",
+    likes: 124,
+    comments: 12
+  },
+  {
+    id: "post2",
+    image: getImage('gallery-2'),
+    caption: "The heart of our kitchen: a symphony of authentic spices.",
+    likes: 210,
+    comments: 25
+  },
+  {
+    id: "post3",
+    image: getImage('featured-5'),
+    caption: "Our famous Pav Bhaji, a true taste of home. Order yours today!",
+    likes: 180,
+    comments: 32
+  },
+  {
+    id: "post4",
+    image: getImage('featured-7'),
+    caption: "Soft, fluffy Idli fresh from the steamer. The perfect comfort food.",
+    likes: 155,
+    comments: 18
+  },
+  {
+    id: "post5",
+    image: getImage('featured-4'),
+    caption: "Crispy, golden Dosa, made with love. A South Indian classic!",
+    likes: 230,
+    comments: 41
+  },
+    {
+    id: "post6",
+    image: getImage('gallery-7'),
+    caption: "Sweet endings are the best! Our Gulab Jamun is pure bliss.",
+    likes: 198,
+    comments: 28
+  },
+];
+
+
 export const galleryImages: ImagePlaceholder[] = [];

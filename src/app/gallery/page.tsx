@@ -1,5 +1,5 @@
-import Image from 'next/image';
-import { galleryImages } from '@/lib/data';
+import { InstagramPostCard } from '@/components/instagram-post-card';
+import { instagramPosts } from '@/lib/data';
 
 export default function GalleryPage() {
   return (
@@ -7,26 +7,17 @@ export default function GalleryPage() {
         <div className="container mx-auto max-w-7xl px-4 py-12">
             <div className="text-center mb-12">
                 <h1 className="font-headline text-4xl md:text-5xl font-bold text-primary">
-                    Our Gallery
+                    Our Instagram Gallery
                 </h1>
                 <p className="mt-4 text-lg text-muted-foreground">
-                    A feast for your eyes. Discover the passion behind our plates.
+                    A feast for your eyes. Follow us <a href="https://instagram.com/thedivinekitchen5/" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline font-semibold">@thedivinekitchen5</a>
                 </p>
             </div>
 
-            {galleryImages.length > 0 ? (
-                <div className="columns-1 sm:columns-2 md:columns-3 lg:columns-4 gap-4 space-y-4">
-                    {galleryImages.map((image) => (
-                        <div key={image.id} className="overflow-hidden rounded-lg shadow-lg break-inside-avoid group">
-                            <Image
-                                src={image.imageUrl}
-                                alt={image.description || 'Gallery image'}
-                                width={500}
-                                height={700}
-                                className="w-full h-auto object-cover transition-transform duration-300 group-hover:scale-105"
-                                data-ai-hint={image.imageHint}
-                            />
-                        </div>
+            {instagramPosts.length > 0 ? (
+                <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 md:gap-6">
+                    {instagramPosts.map((post) => (
+                        <InstagramPostCard key={post.id} post={post} />
                     ))}
                 </div>
             ) : (
