@@ -15,19 +15,19 @@ export function Header() {
 
   return (
     <header className="sticky top-0 z-50 w-full border-b border-border/40 bg-background/80 backdrop-blur-lg">
-      <div className="container flex h-16 max-w-7xl items-center">
-        <div className="mr-4 flex">
+      <div className="container flex h-20 max-w-7xl items-center">
+        <div className="mr-8 flex">
           <Logo />
         </div>
-        <nav className="hidden items-center space-x-6 text-sm font-medium md:flex">
+        <nav className="hidden items-center gap-6 text-sm font-semibold md:flex">
           {navLinks.map((link) => (
             <Link
               key={link.href}
               href={link.href}
               className={cn(
-                "transition-colors hover:text-primary",
+                "transition-colors hover:text-foreground",
                 pathname === link.href
-                  ? "text-primary"
+                  ? "text-foreground"
                   : "text-foreground/60"
               )}
             >
@@ -36,34 +36,36 @@ export function Header() {
           ))}
         </nav>
         <div className="flex flex-1 items-center justify-end space-x-4">
-          <Button asChild variant="outline" className="hidden sm:flex">
+          <Button asChild className="hidden sm:flex rounded-full font-bold">
              <Link href="/contact">Contact Us</Link>
           </Button>
           <Sheet>
             <SheetTrigger asChild>
               <Button variant="ghost" size="icon" className="md:hidden">
-                <Menu className="h-5 w-5" />
+                <Menu className="h-6 w-6" />
                 <span className="sr-only">Toggle Menu</span>
               </Button>
             </SheetTrigger>
-            <SheetContent side="left">
-              <Logo />
-              <div className="grid gap-4 py-6">
+            <SheetContent side="left" className="w-[300px]">
+              <div className="p-6">
+                <Logo />
+              </div>
+              <div className="grid gap-4 py-6 px-6">
                 {navLinks.map((link) => (
                   <Link
                     key={link.href}
                     href={link.href}
                     className={cn(
-                      "flex w-full items-center py-2 text-lg font-semibold",
+                      "flex w-full items-center py-2 text-lg font-semibold transition-colors hover:text-primary",
                       pathname === link.href
                         ? "text-primary"
-                        : "text-foreground/70"
+                        : "text-foreground/80"
                     )}
                   >
                     {link.label}
                   </Link>
                 ))}
-                 <Button asChild variant="outline" className="mt-4">
+                 <Button asChild size="lg" className="mt-6 rounded-full font-bold">
                     <Link href="/contact">Contact Us</Link>
                  </Button>
               </div>

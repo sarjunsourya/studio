@@ -1,5 +1,5 @@
 import type { Metadata } from 'next';
-import { Poppins, Inter } from 'next/font/google';
+import { Inter, Lexend_Deca } from 'next/font/google';
 import './globals.css';
 import { cn } from '@/lib/utils';
 import { Header } from '@/components/layout/header';
@@ -16,7 +16,7 @@ const fontBody = Inter({
   variable: '--font-body',
 });
 
-const fontHeadline = Poppins({
+const fontHeadline = Lexend_Deca({
   subsets: ['latin'],
   weight: ['600', '700'],
   variable: '--font-headline',
@@ -36,7 +36,6 @@ export default function RootLayout({
           fontHeadline.variable
         )}
       >
-        <div className="absolute top-0 left-0 -z-50 h-full w-full bg-[radial-gradient(circle_500px_at_50%_200px,#3e6df020,transparent)]"></div>
         <Header />
         <main className="flex-grow">{children}</main>
         <Footer />
