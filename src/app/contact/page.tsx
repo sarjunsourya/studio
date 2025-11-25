@@ -1,14 +1,11 @@
-import Image from "next/image";
+
 import Link from "next/link";
 import { Instagram, Mail, MessageCircle, MapPin } from "lucide-react";
 
 import { ContactForm } from "@/components/contact-form";
 import { Button } from "@/components/ui/button";
-import { PlaceHolderImages } from "@/lib/placeholder-images";
 
 export default function ContactPage() {
-  const mapImage = PlaceHolderImages.find((img) => img.id === 'map');
-
   return (
     <div className="min-h-screen bg-secondary/30 py-16 md:py-24">
       <div className="container mx-auto max-w-6xl px-4">
@@ -51,18 +48,18 @@ export default function ContactPage() {
           </div>
 
           <div className="space-y-6 md:mt-4">
-            {mapImage && (
-              <div className="overflow-hidden rounded-2xl shadow-lg">
-                <Image
-                  src={mapImage.imageUrl}
-                  alt="Map of Delft"
-                  width={800}
-                  height={600}
-                  className="w-full h-auto object-cover"
-                  data-ai-hint={mapImage.imageHint}
-                />
-              </div>
-            )}
+            <div className="overflow-hidden rounded-2xl shadow-lg">
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2456.934051011983!2d4.35082167722978!3d51.99615707192778!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47c5b5f36e4f3a9d%3A0x8f2b7b2b0e9b3b0!2sRaad%20van%20Europalaan%2062%2C%202625%20PC%20Delft%2C%20Netherlands!5e0!3m2!1sen!2sus!4v1727453381183!5m2!1sen!2sus"
+                    width="100%"
+                    height="450"
+                    style={{ border: 0 }}
+                    allowFullScreen={true}
+                    loading="lazy"
+                    referrerPolicy="no-referrer-when-downgrade"
+                    title="The Divine Kitchen Location"
+                ></iframe>
+            </div>
             <div className="text-center md:text-left bg-card p-6 rounded-2xl shadow-md">
                 <h3 className="font-headline text-xl font-semibold flex items-center justify-center md:justify-start gap-2">
                     <MapPin className="h-5 w-5 text-primary"/>
