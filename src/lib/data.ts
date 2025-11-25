@@ -145,4 +145,4 @@ export const weeklyMenu: MenuItem[] = [
     },
   ];
   
-export const galleryImages = PlaceHolderImages.filter(img => img.id.startsWith('gallery-'));
+export const galleryImages: ImagePlaceholder[] = [];
