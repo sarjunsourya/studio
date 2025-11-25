@@ -7,7 +7,7 @@ import { Menu } from "lucide-react";
 import { navLinks } from "@/lib/data";
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
-import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
+import { Sheet, SheetContent, SheetTitle, SheetTrigger } from "@/components/ui/sheet";
 import { Logo } from "@/components/logo";
 
 export function Header() {
@@ -52,6 +52,7 @@ export function Header() {
               </Button>
             </SheetTrigger>
             <SheetContent side="left" className="w-[300px] p-0">
+                <SheetTitle className="sr-only">Mobile Navigation Menu</SheetTitle>
               <div className="p-4 flex justify-center">
                 <Logo />
               </div>
