@@ -4,8 +4,12 @@ import { z } from "zod";
 
 const cateringInquirySchema = z.object({
   name: z.string().min(2, { message: "Name must be at least 2 characters." }),
+  email: z.string().email({ message: "Please enter a valid email address." }),
+  phone: z.string().min(10, { message: "Please enter a valid phone number." }),
   eventDate: z.date({ required_error: "Please select a date for the event." }),
   guestCount: z.coerce.number().min(1, { message: "Number of guests must be at least 1." }),
+  address: z.string().min(10, { message: "Please provide your event address." }),
+  foodType: z.enum(['Vegetarian', 'Vegan', 'Both'], { required_error: "Please select a food type."}),
   menuPreferences: z.string().min(10, { message: "Please provide some menu preferences (min. 10 characters)." }),
   message: z.string().optional(),
 });
@@ -19,8 +23,12 @@ const contactFormSchema = z.object({
 export async function submitCateringInquiry(prevState: any, formData: FormData) {
   const validatedFields = cateringInquirySchema.safeParse({
     name: formData.get("name"),
+    email: formData.get("email"),
+    phone: formData.get("phone"),
     eventDate: new Date(formData.get("eventDate") as string),
     guestCount: formData.get("guestCount"),
+    address: formData.get("address"),
+    foodType: formData.get("foodType"),
     menuPreferences: formData.get("menuPreferences"),
     message: formData.get("message"),
   });
