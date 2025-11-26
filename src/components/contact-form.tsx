@@ -1,3 +1,4 @@
+
 "use client";
 
 import { useActionState } from "react";
@@ -67,7 +68,7 @@ export function ContactForm() {
   }, [state, toast, form]);
 
   useEffect(() => {
-    form.reset({ message: defaultMessage });
+    form.setValue('message', defaultMessage);
   }, [defaultMessage, form]);
 
   return (

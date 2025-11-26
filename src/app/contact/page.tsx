@@ -1,9 +1,14 @@
 
 import Link from "next/link";
+import { Suspense } from "react";
 import { Instagram, Mail, MessageCircle, MapPin } from "lucide-react";
 
 import { ContactForm } from "@/components/contact-form";
 import { Button } from "@/components/ui/button";
+
+function ContactFormLoading() {
+  return <div>Loading form...</div>;
+}
 
 export default function ContactPage() {
   return (
@@ -23,7 +28,9 @@ export default function ContactPage() {
             <h2 className="font-headline text-2xl font-semibold mb-6 text-foreground">
               Send us a Message
             </h2>
-            <ContactForm />
+            <Suspense fallback={<ContactFormLoading />}>
+              <ContactForm />
+            </Suspense>
             <div className="mt-8 pt-6 border-t">
                  <h3 className="text-lg font-semibold text-foreground mb-4">Or reach us directly:</h3>
                  <div className="space-y-4">
@@ -67,7 +74,7 @@ export default function ContactPage() {
                 </h3>
                 <address className="mt-2 text-muted-foreground not-italic">
                     Raad van Europalaan 62,<br />
-                    2625PC Delft, Netherlands
+                    2625 PC Delft, Netherlands
                 </address>
                 <p className="text-sm text-muted-foreground/80 mt-2">
                     (Pick-up only location)
