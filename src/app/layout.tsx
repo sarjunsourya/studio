@@ -43,7 +43,7 @@ export default function RootLayout({
         <Footer />
         <div className="w-full bg-secondary/50 py-3">
             <div className="container mx-auto flex items-center justify-center text-sm text-muted-foreground">
-                <span>This website is made with love by</span>
+                <span>This website is made with 💙 by</span>
                 <Image 
                     src="https://i.imgur.com/FtqBAlG.png" 
                     alt="Arjun Sourya Srirangam's logo"
