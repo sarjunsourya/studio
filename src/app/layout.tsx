@@ -5,6 +5,7 @@ import { cn } from '@/lib/utils';
 import { Header } from '@/components/layout/header';
 import { Footer } from '@/components/layout/footer';
 import { Toaster } from '@/components/ui/toaster';
+import Image from 'next/image';
 
 export const metadata: Metadata = {
   title: 'The Divine Kitchen',
@@ -31,7 +32,7 @@ export default function RootLayout({
     <html lang="en" className="scroll-smooth">
       <body
         className={cn(
-          'min-h-screen bg-background font-body antialiased',
+          'min-h-screen bg-background font-body antialiased flex flex-col',
           fontBody.variable,
           fontHeadline.variable
         )}
@@ -39,6 +40,19 @@ export default function RootLayout({
         <Header />
         <main className="flex-grow">{children}</main>
         <Footer />
+        <div className="w-full bg-secondary/50 py-3">
+            <div className="container mx-auto flex items-center justify-center text-sm text-muted-foreground">
+                <span>This website is made with love by</span>
+                <Image 
+                    src="https://i.ibb.co/6wmzprk/arjun-logo.png" 
+                    alt="Arjun Sourya Srirangam's logo"
+                    width={20}
+                    height={20}
+                    className="mx-2"
+                />
+                <span className="font-semibold">Arjun Sourya Srirangam.</span>
+            </div>
+        </div>
         <Toaster />
       </body>
     </html>
