@@ -6,6 +6,7 @@ import { Header } from '@/components/layout/header';
 import { Footer } from '@/components/layout/footer';
 import { Toaster } from '@/components/ui/toaster';
 import Image from 'next/image';
+import Link from 'next/link';
 
 export const metadata: Metadata = {
   title: 'The Divine Kitchen',
@@ -44,13 +45,15 @@ export default function RootLayout({
             <div className="container mx-auto flex items-center justify-center text-sm text-muted-foreground">
                 <span>This website is made with love by</span>
                 <Image 
-                    src="https://i.ibb.co/6wmzprk/arjun-logo.png" 
+                    src="https://i.imgur.com/FtqBAlG.png" 
                     alt="Arjun Sourya Srirangam's logo"
                     width={20}
                     height={20}
                     className="mx-2"
                 />
-                <span className="font-semibold">Arjun Sourya Srirangam.</span>
+                <Link href="https://www.sarjunsourya.com/" target="_blank" rel="noopener noreferrer" className="font-semibold text-foreground hover:text-primary transition-colors">
+                  Arjun Sourya Srirangam.
+                </Link>
             </div>
         </div>
         <Toaster />
