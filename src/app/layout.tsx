@@ -1,3 +1,4 @@
+
 import type { Metadata } from 'next';
 import { Alegreya, Belleza } from 'next/font/google';
 import './globals.css';
@@ -42,18 +43,20 @@ export default function RootLayout({
         <main className="flex-grow">{children}</main>
         <Footer />
         <div className="w-full bg-secondary/50 py-3">
-            <div className="container mx-auto flex items-center justify-center text-sm text-muted-foreground">
+            <div className="container mx-auto flex flex-col items-center justify-center text-sm text-muted-foreground space-y-1">
                 <span>This website is made with 💙 by</span>
-                <Image 
-                    src="https://i.imgur.com/FtqBAlG.png" 
-                    alt="Arjun Sourya Srirangam's logo"
-                    width={20}
-                    height={20}
-                    className="mx-2"
-                />
-                <Link href="https://www.sarjunsourya.com/" target="_blank" rel="noopener noreferrer" className="font-semibold text-foreground hover:text-primary transition-colors">
-                  Arjun Sourya Srirangam.
-                </Link>
+                <div className="flex items-center">
+                    <Image 
+                        src="https://i.imgur.com/FtqBAlG.png" 
+                        alt="Arjun Sourya Srirangam's logo"
+                        width={20}
+                        height={20}
+                        className="mr-2"
+                    />
+                    <Link href="https://www.sarjunsourya.com/" target="_blank" rel="noopener noreferrer" className="font-semibold text-foreground hover:text-primary transition-colors">
+                      Arjun Sourya Srirangam.
+                    </Link>
+                </div>
             </div>
         </div>
         <Toaster />
