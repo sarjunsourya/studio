@@ -42,7 +42,7 @@ export default function RootLayout({
         <Header />
         <main className="flex-grow">{children}</main>
         <Footer />
-        <div className="w-full bg-secondary/50 py-3">
+        <div className="w-full bg-secondary py-3 border-t">
             <div className="container mx-auto flex flex-col items-center justify-center text-sm text-muted-foreground space-y-1">
                 <span>This website is made with 💙 by</span>
                 <div className="flex items-center">
