@@ -97,20 +97,6 @@
       "imageUrl": "https://images.unsplash.com/photo-1725483990172-e5203cc96ef5?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw5fHxuYWFuJTIwYnJlYWR8ZW58MHx8fHwxNzYzOTcxOTY4fDA&ixlib.rb-4.1.0&q=80&w=1080",
       "imageHint": "naan bread",
       "category": "Savory"
-    },
-    {
-      "id": "thali-1",
-      "description": "Thali 1",
-      "imageUrl": "https://lh3.googleusercontent.com/d/1TbjdODbcQbUmhXzPWMo2vtLz6VnIx5tZ",
-      "imageHint": "indian thali",
-      "category": "Thali/Assortment"
-    },
-    {
-      "id": "thali-2",
-      "description": "North Indian Assortiment",
-      "imageUrl": "https://lh3.googleusercontent.com/d/1f6ImCB8sIBsf-DmzJxM-oMb3Sc-YyyqB/",
-      "imageHint": "indian thali",
-      "category": "Thali/Assortment"
     }
   ]
 }
