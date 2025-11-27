@@ -108,14 +108,14 @@
     {
       "id": "gallery-thali-2",
       "description": "North Indian Assortment",
-      "imageUrl": "https://i.imgur.com/S9WZvze.jpeg",
+      "imageUrl": "https://i.imgur.com/3FBHPft.jpeg",
       "imageHint": "indian food",
       "category": "Thali/Assortment"
     },
     {
       "id": "gallery-thali-3",
       "description": "South Indian Breakfast",
-      "imageUrl": "https://i.imgur.com/cVPQX7U.jpeg",
+      "imageUrl": "https://i.imgur.com/q7tpIwA.jpeg",
       "imageHint": "indian breakfast",
       "category": "Thali/Assortment"
     },
@@ -125,13 +125,6 @@
       "imageUrl": "https://i.imgur.com/Zc3In6c.jpeg",
       "imageHint": "indian lunch",
       "category": "Thali/Assortment"
-    },
-    {
-      "id": "gallery-sweet-1",
-      "description": "Strawberry Cake",
-      "imageUrl": "https://i.imgur.com/q7tpIwA.jpeg",
-      "imageHint": "strawberry cake",
-      "category": "Sweet"
     },
     {
       "id": "gallery-sweet-2",
