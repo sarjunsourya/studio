@@ -26,7 +26,7 @@ export function ImageGallery() {
               .map((image) => (
                 <Card key={image.id} className="overflow-hidden group relative">
                     <CardContent className="p-0">
-                        <div className="aspect-w-1 aspect-h-1 w-full overflow-hidden">
+                        <div className="aspect-square w-full overflow-hidden">
                             <Image
                                 src={image.imageUrl}
                                 alt={image.description}
@@ -48,5 +48,3 @@ export function ImageGallery() {
     </Tabs>
   );
 }
-
-    
