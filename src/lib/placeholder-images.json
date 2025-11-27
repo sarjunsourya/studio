@@ -127,79 +127,86 @@
       "category": "Thali/Assortment"
     },
     {
+      "id": "gallery-sweet-1",
+      "description": "Strawberry Cake",
+      "imageUrl": "https://i.imgur.com/Z9t77cJ.jpeg",
+      "imageHint": "strawberry cake",
+      "category": "Sweet"
+    },
+    {
       "id": "gallery-sweet-2",
       "description": "Gummy Birthday Cake",
-      "imageUrl": "https://i.imgur.com/YJqIGdL.jpeg",
+      "imageUrl": "https://i.imgur.com/axaFXNX.jpeg",
       "imageHint": "birthday cake",
       "category": "Sweet"
     },
     {
       "id": "gallery-sweet-3",
       "description": "Rasmalai",
-      "imageUrl": "https://i.imgur.com/K9KwTkK.jpeg",
+      "imageUrl": "https://i.imgur.com/DA53Oj4.jpeg",
       "imageHint": "rasmalai dessert",
       "category": "Sweet"
     },
     {
       "id": "gallery-sweet-4",
       "description": "Payasam",
-      "imageUrl": "https://i.imgur.com/vXeUHAn.jpeg",
+      "imageUrl": "https://i.imgur.com/eKNOQbp.jpeg",
       "imageHint": "payasam dessert",
       "category": "Sweet"
     },
     {
       "id": "gallery-sweet-5",
       "description": "Nut Laddus",
-      "imageUrl": "https://i.imgur.com/pcrTjUA.jpeg",
+      "imageUrl": "https://i.imgur.com/8AOpnyQ.jpeg",
       "imageHint": "indian sweets",
       "category": "Sweet"
     },
     {
       "id": "gallery-sweet-6",
       "description": "Chocolate Cake",
-      "imageUrl": "https://i.imgur.com/qDZ8GBR.jpeg",
+      "imageUrl": "https://i.imgur.com/pcrTjUA.jpeg",
       "imageHint": "chocolate cake",
       "category": "Sweet"
     },
     {
       "id": "gallery-sweet-7",
       "description": "Sunflower Cake",
-      "imageUrl": "https://i.imgur.com/FvCgx4x.jpeg",
+      "imageUrl": "https://i.imgur.com/NBOXPJL.jpeg",
       "imageHint": "decorated cake",
       "category": "Sweet"
     },
     {
       "id": "gallery-sweet-8",
       "description": "Cookies",
-      "imageUrl": "https://i.imgur.com/K2iBCYS.jpeg",
+      "imageUrl": "https://i.imgur.com/qDZ8GBR.jpeg",
       "imageHint": "cookies",
       "category": "Sweet"
     },
     {
       "id": "gallery-sweet-9",
       "description": "Barfi",
-      "imageUrl": "https://i.imgur.com/6oQO5vk.jpeg",
+      "imageUrl": "https://i.imgur.com/vXeUHAn.jpeg",
       "imageHint": "indian sweets",
       "category": "Sweet"
     },
     {
       "id": "gallery-sweet-10",
       "description": "Apple Pie",
-      "imageUrl": "https://i.imgur.com/axaFXNX.jpeg",
+      "imageUrl": "https://i.imgur.com/K9KwTkK.jpeg",
       "imageHint": "apple pie",
       "category": "Sweet"
     },
     {
       "id": "gallery-sweet-11",
       "description": "Rasmalai Cake",
-      "imageUrl": "https://i.imgur.com/DA53Oj4.jpeg",
+      "imageUrl": "https://i.imgur.com/U6X7J9b.jpeg",
       "imageHint": "rasmalai cake",
       "category": "Sweet"
     },
     {
       "id": "gallery-sweet-12",
       "description": "Pumpkin Cake",
-      "imageUrl": "https://i.imgur.com/Z9t77cJ.jpeg",
+      "imageUrl": "https://i.imgur.com/CTYhLrL.jpeg",
       "imageHint": "pumpkin cake",
       "category": "Sweet"
     },
