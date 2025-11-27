@@ -85,70 +85,158 @@
       "imageHint": "naan bread"
     },
     {
-      "id": "gallery-1",
-      "imageUrl": "https://images.unsplash.com/photo-1556911220-bff31c812dba?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxraXRjaGVuJTIwcHJlcGFyYXRpb258ZW58MHx8fHwxNzY0MDg1MzE0fDA&ixlib.rb-4.1.0&q=80&w=1080",
-      "imageHint": "kitchen preparation"
+      "id": "thali-1",
+      "description": "Thali 1",
+      "imageUrl": "https://lh3.googleusercontent.com/d/1TbjdODbcQbUmhXzPWMo2vtLz6VnIx5tZ",
+      "imageHint": "thali meal",
+      "category": "Thali/Assortment"
     },
     {
-      "id": "gallery-2",
-      "imageUrl": "https://images.unsplash.com/photo-1581600140682-d4e68c8cde32?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxzcGljZXN8ZW58MHx8fHwxNzY0MDQ4ODkzfDA&ixlib.rb-4.1.0&q=80&w=1080",
-      "imageHint": "spices"
+      "id": "thali-2",
+      "description": "North Indian Assortiment",
+      "imageUrl": "https://lh3.googleusercontent.com/d/1f6ImCB8sIBsf-DmzJxM-oMb3Sc-YyyqB/",
+      "imageHint": "indian assortment",
+      "category": "Thali/Assortment"
     },
     {
-      "id": "gallery-3",
-      "imageUrl": "https://images.unsplash.com/photo-1507048331197-7d4ac70811cf?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw2fHxjb29raW5nfGVufDB8fHx8MTc2NDA4NTMxNHww&ixlib.rb-4.1.0&q=80&w=1080",
-      "imageHint": "cooking"
+      "id": "thali-3",
+      "description": "South Indian Breakfast",
+      "imageUrl": "https://lh3.googleusercontent.com/d/1wBz3U60qxP_-6O3ltYpSgt3hlTxjLyT-/",
+      "imageHint": "indian breakfast",
+      "category": "Thali/Assortment"
     },
     {
-      "id": "gallery-4",
-      "imageUrl": "https://images.unsplash.com/photo-1657566648148-061dc760eca6?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw2fHxwbGF0aW5nJTIwZm9vZHxlbnwwfHx8fDE3NjQwODUzMTR8MA&ixlib.rb-4.1.0&q=80&w=1080",
-      "imageHint": "plating food"
+      "id": "thali-4",
+      "description": "Lunch Assortiment",
+      "imageUrl": "https://lh3.googleusercontent.com/d/1JErqpI4WHJjuaQGYgrE9chtGMK8txGgQ/",
+      "imageHint": "lunch assortment",
+      "category": "Thali/Assortment"
     },
     {
-      "id": "gallery-5",
-      "imageUrl": "https://images.unsplash.com/photo-1665088127661-83aeff6104c4?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHxmcmVzaCUyMGluZ3JlZGllbnRzfGVufDB8fHx8MTc2Mzk3ODA5N3ww&ixlib.rb-4.1.0&q=80&w=1080",
-      "imageHint": "fresh ingredients"
+      "id": "sweet-1",
+      "description": "Strawberry Cake",
+      "imageUrl": "https://lh3.googleusercontent.com/d/1mTK9HOqVzNft2-94idQmaooNMoDeolUC/",
+      "imageHint": "strawberry cake",
+      "category": "Sweet"
     },
     {
-      "id": "gallery-6",
-      "imageUrl": "https://images.unsplash.com/photo-1572715376701-98568319fd0b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHxoZWYlMjBjb29raW5nfGVufDB8fHx8MTc2NDA0ODQ0NHww&ixlib.rb-4.1.0&q=80&w=1080",
-      "imageHint": "chef cooking"
+      "id": "sweet-2",
+      "description": "Gummy Birthday Cake",
+      "imageUrl": "https://lh3.googleusercontent.com/d/1m9QwpvacelarxSLAvVoAmXbpnV9gAZ9Y/",
+      "imageHint": "birthday cake",
+      "category": "Sweet"
     },
     {
-      "id": "gallery-7",
-      "imageUrl": "https://images.unsplash.com/photo-1543773495-2cd9248a5bda?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw4fHxpbmRpYW4lMjBzd2VldHN8ZW58MHx8fHwxNzY0MDAxODcxfDA&ixlib.rb-4.1.0&q=80&w=1080",
-      "imageHint": "indian sweets"
+      "id": "sweet-3",
+      "description": "Rasmalai",
+      "imageUrl": "https://lh3.googleusercontent.com/d/1CJSIKT5hkMe6MH3WSJXNERn_vb_NJWbk/",
+      "imageHint": "rasmalai",
+      "category": "Sweet"
     },
     {
-      "id": "gallery-8",
-      "imageUrl": "https://images.unsplash.com/photo-1622023066490-dcee34454a76?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxiZWhpbmQlMjBzY2VuZXMlMjBraXRjaGVufGVufDB8fHx8MTc2NDA4NTMxNHww&ixlib.rb-4.1.0&q=80&w=1080",
-      "imageHint": "behind scenes kitchen"
+      "id": "sweet-4",
+      "description": "Paysam 1",
+      "imageUrl": "https://lh3.googleusercontent.com/d/1yzLtzi7_j8Ni2pZyrHEVa8xnYf3ww789/",
+      "imageHint": "paysam",
+      "category": "Sweet"
     },
     {
-      "id": "gallery-9",
-      "imageUrl": "https://images.unsplash.com/photo-1546549032-9571cd6b27df?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxMHx8Zm9vZCUyMHBob3RvZ3JhcGh5fGVufDB8fHx8MTc2NDA0NzY1NXww&ixlib.rb-4.1.0&q=80&w=1080",
-      "imageHint": "food photography"
+      "id": "sweet-5",
+      "description": "Nut Laddu's",
+      "imageUrl": "https://lh3.googleusercontent.com/d/1nMceBFrapkF3MQixRDl_JpMfzvEzuyjT/",
+      "imageHint": "nut laddu",
+      "category": "Sweet"
     },
     {
-      "id": "gallery-10",
-      "imageUrl": "https://images.unsplash.com/photo-1578496780896-7081cc23c111?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHxmYW1pbHklMjBtZWFsfGVufDB8fHx8MTc2NDAzMDQ1OHww&ixlib.rb-4.1.0&q=80&w=1080",
-      "imageHint": "family meal"
+      "id": "sweet-6",
+      "description": "Choco Cake",
+      "imageUrl": "https://lh3.googleusercontent.com/d/1RFzffvjkMRmO8oOm8lFLuH2_-G-EKIRy/",
+      "imageHint": "chocolate cake",
+      "category": "Sweet"
     },
     {
-      "id": "gallery-11",
-      "imageUrl": "https://images.unsplash.com/photo-1554997433-8e233c02c751?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxMHx8Y3VsaW5hcnl8ZW58MHx8fHwxNzY0MDg1MzE0fDA&ixlib.rb-4.1.0&q=80&w=1080",
-      "imageHint": "culinary"
+      "id": "sweet-7",
+      "description": "Sunflower Cake",
+      "imageUrl": "https://lh3.googleusercontent.com/d/1ucykuhBt-aijjTZ0eFEf_jH13DdrtNYC/",
+      "imageHint": "sunflower cake",
+      "category": "Sweet"
     },
     {
-      "id": "gallery-12",
-      "imageUrl": "https://images.unsplash.com/photo-1471193945509-9ad0617afabf?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw3fHxmcmVzaCUyMHZlZ2V0YWJsZXN8ZW58MHx8fHwxNzY0MDUyNjE5fDA&ixlib.rb-4.1.0&q=80&w=1080",
-      "imageHint": "fresh vegetables"
+      "id": "sweet-8",
+      "description": "Cookies",
+      "imageUrl": "https://lh3.googleusercontent.com/d/1jiJFj-OWlVgVmmEOkha3TKpDDCLOwY11/",
+      "imageHint": "cookies",
+      "category": "Sweet"
     },
     {
-      "id": "map",
-      "description": "A map showing the location of The Divine Kitchen in Delft.",
-      "imageUrl": "https://images.unsplash.com/photo-1723238216692-154ae0ecfa03?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw5fHxkZWxmdCUyMG1hcHxlbnwwfHx8fDE3NjQwODUzMTR8MA&ixlib.rb-4.1.0&q=80&w=1080",
-      "imageHint": "delft map"
+      "id": "sweet-9",
+      "description": "Barfi",
+      "imageUrl": "https://lh3.googleusercontent.com/d/1VNBmD2GyZeDJZvDP43L_pImBKan34c6u/",
+      "imageHint": "barfi",
+      "category": "Sweet"
+    },
+    {
+      "id": "sweet-10",
+      "description": "Apple Pie",
+      "imageUrl": "https://lh3.googleusercontent.com/d/19NNdanM8jDLj4bWKuT-s7snQHYnSjvcZ/",
+      "imageHint": "apple pie",
+      "category": "Sweet"
+    },
+    {
+      "id": "sweet-11",
+      "description": "Rasmalai Cake",
+      "imageUrl": "https://lh3.googleusercontent.com/d/17v8ZASZr4rPwvum28tP4VvYSCfVqqD_Z/",
+      "imageHint": "rasmalai cake",
+      "category": "Sweet"
+    },
+    {
+      "id": "sweet-12",
+      "description": "Pumpkin Cake",
+      "imageUrl": "https://lh3.googleusercontent.com/d/1XiwqJ1Rw6U7_tgNb6vvA-AwRDQUVgW1Q/",
+      "imageHint": "pumpkin cake",
+      "category": "Sweet"
+    },
+    {
+      "id": "savory-1",
+      "description": "Tomato Paneer Curry",
+      "imageUrl": "https://lh3.googleusercontent.com/d/1mv-iF0xa4gwVjzMa4l-peThWzxRo2Lv-/",
+      "imageHint": "paneer curry",
+      "category": "Savory"
+    },
+    {
+      "id": "savory-2",
+      "description": "Fried Rice 1",
+      "imageUrl": "https://lh3.googleusercontent.com/d/1xlZmjKYbryCWvHUkxFO7B4QXZHGesA5t/",
+      "imageHint": "fried rice",
+      "category": "Savory"
+    },
+    {
+      "id": "savory-3",
+      "description": "Vada 1",
+      "imageUrl": "https://lh3.googleusercontent.com/d/1sZwkcB2ZQ66gTU3jpzwxAr1H414i8swl/",
+      "imageHint": "vada",
+      "category": "Savory"
+    },
+    {
+      "id": "savory-4",
+      "description": "Vada Pav",
+      "imageUrl": "https://lh3.googleusercontent.com/d/1LFd5376WY7fIo8eK0BNvocoimBUIJtzf",
+      "imageHint": "vada pav",
+      "category": "Savory"
+    },
+    {
+      "id": "savory-5",
+      "description": "Rava Idli",
+      "imageUrl": "https://lh3.googleusercontent.com/d/14ua9t7rDxLPyv-ysE0teAvCZsAaOawPG/",
+      "imageHint": "rava idli",
+      "category": "Savory"
+    },
+    {
+      "id": "mixed-1",
+      "description": "Mixture 1",
+      "imageUrl": "https://lh3.googleusercontent.com/d/1Jf2Cd3baTBfefe4eZQ1Z3y3LpVj8RNw8",
+      "imageHint": "indian mixture",
+      "category": "Mixed"
     }
   ]
 }
