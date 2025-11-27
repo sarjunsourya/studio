@@ -156,27 +156,4 @@ export type InstagramPost = {
 
 export const instagramPosts: InstagramPost[] = [];
 
-export const galleryImages: ImagePlaceholder[] = [
-    getImage('thali-1'),
-    getImage('thali-2'),
-    getImage('thali-3'),
-    getImage('thali-4'),
-    getImage('sweet-1'),
-    getImage('sweet-2'),
-    getImage('sweet-3'),
-    getImage('sweet-4'),
-    getImage('sweet-5'),
-    getImage('sweet-6'),
-    getImage('sweet-7'),
-    getImage('sweet-8'),
-    getImage('sweet-9'),
-    getImage('sweet-10'),
-    getImage('sweet-11'),
-    getImage('sweet-12'),
-    getImage('savory-1'),
-    getImage('savory-2'),
-    getImage('savory-3'),
-    getImage('savory-4'),
-    getImage('savory-5'),
-    getImage('mixed-1'),
-];
+export const galleryImages: ImagePlaceholder[] = [];
