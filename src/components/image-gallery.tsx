@@ -8,7 +8,7 @@ import { Card, CardContent } from '@/components/ui/card';
 const categories = ['Thali/Assortment', 'Sweet', 'Savory', 'Mixed'];
 
 export function ImageGallery() {
-  const galleryImages = PlaceHolderImages.filter(img => img.category);
+  const galleryImages = PlaceHolderImages.filter(img => img.id.startsWith('gallery-'));
 
   return (
     <Tabs defaultValue="Thali/Assortment" className="w-full">
@@ -48,3 +48,5 @@ export function ImageGallery() {
     </Tabs>
   );
 }
+
+    

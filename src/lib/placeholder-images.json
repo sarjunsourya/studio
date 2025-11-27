@@ -97,6 +97,146 @@
       "imageUrl": "https://images.unsplash.com/photo-1725483990172-e5203cc96ef5?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw5fHxuYWFuJTIwYnJlYWR8ZW58MHx8fHwxNzYzOTcxOTY4fDA&ixlib.rb-4.1.0&q=80&w=1080",
       "imageHint": "naan bread",
       "category": "Savory"
+    },
+    {
+      "id": "gallery-thali-1",
+      "description": "Thali",
+      "imageUrl": "https://i.imgur.com/o1JBQOO.jpeg",
+      "imageHint": "indian thali",
+      "category": "Thali/Assortment"
+    },
+    {
+      "id": "gallery-thali-2",
+      "description": "North Indian Assortment",
+      "imageUrl": "https://i.imgur.com/S9WZvze.jpeg",
+      "imageHint": "indian food",
+      "category": "Thali/Assortment"
+    },
+    {
+      "id": "gallery-thali-3",
+      "description": "South Indian Breakfast",
+      "imageUrl": "https://i.imgur.com/cVPQX7U.jpeg",
+      "imageHint": "indian breakfast",
+      "category": "Thali/Assortment"
+    },
+    {
+      "id": "gallery-thali-4",
+      "description": "Lunch Assortment",
+      "imageUrl": "https://i.imgur.com/Zc3In6c.jpeg",
+      "imageHint": "indian lunch",
+      "category": "Thali/Assortment"
+    },
+    {
+      "id": "gallery-sweet-1",
+      "description": "Strawberry Cake",
+      "imageUrl": "https://i.imgur.com/q7tpIwA.jpeg",
+      "imageHint": "strawberry cake",
+      "category": "Sweet"
+    },
+    {
+      "id": "gallery-sweet-2",
+      "description": "Gummy Birthday Cake",
+      "imageUrl": "https://i.imgur.com/YJqIGdL.jpeg",
+      "imageHint": "birthday cake",
+      "category": "Sweet"
+    },
+    {
+      "id": "gallery-sweet-3",
+      "description": "Rasmalai",
+      "imageUrl": "https://i.imgur.com/K9KwTkK.jpeg",
+      "imageHint": "rasmalai dessert",
+      "category": "Sweet"
+    },
+    {
+      "id": "gallery-sweet-4",
+      "description": "Payasam",
+      "imageUrl": "https://i.imgur.com/vXeUHAn.jpeg",
+      "imageHint": "payasam dessert",
+      "category": "Sweet"
+    },
+    {
+      "id": "gallery-sweet-5",
+      "description": "Nut Laddus",
+      "imageUrl": "https://i.imgur.com/pcrTjUA.jpeg",
+      "imageHint": "indian sweets",
+      "category": "Sweet"
+    },
+    {
+      "id": "gallery-sweet-6",
+      "description": "Chocolate Cake",
+      "imageUrl": "https://i.imgur.com/qDZ8GBR.jpeg",
+      "imageHint": "chocolate cake",
+      "category": "Sweet"
+    },
+    {
+      "id": "gallery-sweet-7",
+      "description": "Sunflower Cake",
+      "imageUrl": "https://i.imgur.com/FvCgx4x.jpeg",
+      "imageHint": "decorated cake",
+      "category": "Sweet"
+    },
+    {
+      "id": "gallery-sweet-8",
+      "description": "Cookies",
+      "imageUrl": "https://i.imgur.com/K2iBCYS.jpeg",
+      "imageHint": "cookies",
+      "category": "Sweet"
+    },
+    {
+      "id": "gallery-sweet-9",
+      "description": "Barfi",
+      "imageUrl": "https://i.imgur.com/6oQO5vk.jpeg",
+      "imageHint": "indian sweets",
+      "category": "Sweet"
+    },
+    {
+      "id": "gallery-sweet-10",
+      "description": "Apple Pie",
+      "imageUrl": "https://i.imgur.com/axaFXNX.jpeg",
+      "imageHint": "apple pie",
+      "category": "Sweet"
+    },
+    {
+      "id": "gallery-sweet-11",
+      "description": "Rasmalai Cake",
+      "imageUrl": "https://i.imgur.com/DA53Oj4.jpeg",
+      "imageHint": "rasmalai cake",
+      "category": "Sweet"
+    },
+    {
+      "id": "gallery-sweet-12",
+      "description": "Pumpkin Cake",
+      "imageUrl": "https://i.imgur.com/Z9t77cJ.jpeg",
+      "imageHint": "pumpkin cake",
+      "category": "Sweet"
+    },
+    {
+      "id": "gallery-savory-1",
+      "description": "Tomato Paneer Curry",
+      "imageUrl": "https://i.imgur.com/QprLxlw.jpeg",
+      "imageHint": "paneer curry",
+      "category": "Savory"
+    },
+    {
+      "id": "gallery-savory-2",
+      "description": "Fried Rice",
+      "imageUrl": "https://i.imgur.com/2Ht89kH.jpeg",
+      "imageHint": "fried rice",
+      "category": "Savory"
+    },
+    {
+      "id": "gallery-savory-3",
+      "description": "Vada",
+      "imageUrl": "https://i.imgur.com/eKNOQbp.jpeg",
+      "imageHint": "vada savory",
+      "category": "Savory"
+    },
+    {
+      "id": "gallery-mixed-1",
+      "description": "Mixture",
+      "imageUrl": "https://i.imgur.com/NBOXPJL.jpeg",
+      "imageHint": "indian snack",
+      "category": "Mixed"
     }
   ]
 }
