@@ -104,6 +104,13 @@
       "imageUrl": "https://lh3.googleusercontent.com/d/1TbjdODbcQbUmhXzPWMo2vtLz6VnIx5tZ",
       "imageHint": "indian thali",
       "category": "Thali/Assortment"
+    },
+    {
+      "id": "thali-2",
+      "description": "North Indian Assortiment",
+      "imageUrl": "https://lh3.googleusercontent.com/d/1f6ImCB8sIBsf-DmzJxM-oMb3Sc-YyyqB/",
+      "imageHint": "indian thali",
+      "category": "Thali/Assortment"
     }
   ]
 }
