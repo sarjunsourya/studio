@@ -8,4 +8,5 @@ export type ImagePlaceholder = {
   category: 'Thali/Assortment' | 'Sweet' | 'Savory' | 'Mixed';
 };
 
+// @ts-ignore
 export const PlaceHolderImages: ImagePlaceholder[] = data.placeholderImages;

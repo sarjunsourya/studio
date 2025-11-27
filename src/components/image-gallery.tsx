@@ -1,13 +1,15 @@
 "use client";
 
 import Image from 'next/image';
-import { galleryImages } from '@/lib/data';
+import { PlaceHolderImages } from '@/lib/placeholder-images';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { Card, CardContent } from '@/components/ui/card';
 
 const categories = ['Thali/Assortment', 'Sweet', 'Savory', 'Mixed'];
 
 export function ImageGallery() {
+  const galleryImages = PlaceHolderImages.filter(img => img.category);
+
   return (
     <Tabs defaultValue="Thali/Assortment" className="w-full">
       <TabsList className="grid w-full grid-cols-2 md:grid-cols-4 h-auto">

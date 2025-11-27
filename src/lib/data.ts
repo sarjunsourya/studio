@@ -156,4 +156,5 @@ export type InstagramPost = {
 
 export const instagramPosts: InstagramPost[] = [];
 
-export const galleryImages: ImagePlaceholder[] = [];
+// This is now handled by placeholder-images.json and image-gallery.tsx
+// export const galleryImages: ImagePlaceholder[] = [];
