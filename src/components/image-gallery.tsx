@@ -1,6 +1,7 @@
 "use client";
 
 import Image from 'next/image';
+import { useMemo } from 'react';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { Card, CardContent } from '@/components/ui/card';
@@ -8,7 +9,7 @@ import { Card, CardContent } from '@/components/ui/card';
 const categories = ['Thali/Assortment', 'Sweet', 'Savory', 'Mixed'];
 
 export function ImageGallery() {
-  const galleryImages = PlaceHolderImages.filter(img => img.id.startsWith('gallery-'));
+  const galleryImages = useMemo(() => PlaceHolderImages.filter(img => img.id.startsWith('gallery-')), []);
 
   return (
     <Tabs defaultValue="Thali/Assortment" className="w-full">
