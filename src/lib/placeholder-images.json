@@ -122,7 +122,7 @@
     {
       "id": "gallery-thali-4",
       "description": "Lunch Assortment",
-      "imageUrl": "https://i.imgur.com/Zc3In6c.jpeg",
+      "imageUrl": "https://i.imgur.com/YJqIGdL.jpeg",
       "imageHint": "indian lunch",
       "category": "Thali/Assortment"
     },
@@ -209,6 +209,20 @@
       "imageUrl": "https://i.imgur.com/CTYhLrL.jpeg",
       "imageHint": "pumpkin cake",
       "category": "Sweet"
+    },
+    {
+      "id": "gallery-savory-1",
+      "description": "Tomato Paneer Curry",
+      "imageUrl": "https://i.imgur.com/FvCgx4x.jpeg",
+      "imageHint": "paneer curry",
+      "category": "Savory"
+    },
+    {
+      "id": "gallery-savory-2",
+      "description": "Fried Rice",
+      "imageUrl": "https://i.imgur.com/6oQO5vk.jpeg",
+      "imageHint": "fried rice",
+      "category": "Savory"
     },
     {
       "id": "gallery-savory-3",
