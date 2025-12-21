@@ -211,30 +211,16 @@
       "category": "Sweet"
     },
     {
-      "id": "gallery-savory-1",
-      "description": "Tomato Paneer Curry",
-      "imageUrl": "https://i.imgur.com/QprLxlw.jpeg",
-      "imageHint": "paneer curry",
-      "category": "Savory"
-    },
-    {
-      "id": "gallery-savory-2",
-      "description": "Fried Rice",
-      "imageUrl": "https://i.imgur.com/2Ht89kH.jpeg",
-      "imageHint": "fried rice",
-      "category": "Savory"
-    },
-    {
       "id": "gallery-savory-3",
       "description": "Vada",
-      "imageUrl": "https://i.imgur.com/eKNOQbp.jpeg",
+      "imageUrl": "https://i.imgur.com/QprLxlw.jpeg",
       "imageHint": "vada savory",
       "category": "Savory"
     },
     {
       "id": "gallery-mixed-1",
       "description": "Mixture",
-      "imageUrl": "https://i.imgur.com/NBOXPJL.jpeg",
+      "imageUrl": "https://i.imgur.com/2Ht89kH.jpeg",
       "imageHint": "indian snack",
       "category": "Mixed"
     }
