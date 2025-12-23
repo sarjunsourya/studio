@@ -91,61 +91,128 @@ export type MenuItem = {
     name: string;
     description: string;
     price: string;
-    category: 'Vegetarian' | 'Vegan';
+    category: 'Vegetarian' | 'Vegan' | 'South Indian' | 'Tea Cake';
     image: ImagePlaceholder;
   };
 
-export const weeklyMenu: MenuItem[] = [
+export const southIndianMenu: MenuItem[] = [
     {
-      id: 1,
-      name: 'Samosa (2 pcs)',
-      description: 'Crispy pastry filled with spiced potatoes and peas.',
-      price: '€4.50',
-      category: 'Vegan',
-      image: getImage('menu-1'),
+      id: 101,
+      name: 'Idly with Chutney & Sambar',
+      description: 'Steamed rice cakes served with coconut chutney and lentil-based vegetable stew.',
+      price: '€6,50',
+      category: 'South Indian',
+      image: getImage('menu-idli'),
     },
     {
-      id: 2,
-      name: 'Paneer Butter Masala',
-      description: 'Rich and creamy curry with soft paneer cubes.',
-      price: '€12.00',
-      category: 'Vegetarian',
-      image: getImage('menu-2'),
+      id: 102,
+      name: 'Medu Vada with Chutney',
+      description: 'Crispy, savory doughnuts made from lentil batter, served with chutney.',
+      price: '€3,50',
+      category: 'South Indian',
+      image: getImage('menu-vada'),
     },
     {
-      id: 4,
-      name: 'Dal Makhani',
-      description: 'Creamy black lentils slow-cooked with butter and spices.',
-      price: '€10.50',
-      category: 'Vegetarian',
-      image: getImage('menu-4'),
+      id: 103,
+      name: 'Butter Masala Dosa',
+      description: 'A crispy crepe with a savory potato filling, served with chutney and sambar.',
+      price: '€10,00',
+      category: 'South Indian',
+      image: getImage('menu-dosa'),
     },
     {
-      id: 5,
-      name: 'Aloo Gobi',
-      description: 'A classic dry curry with potatoes and cauliflower.',
-      price: '€9.50',
-      category: 'Vegan',
-      image: getImage('menu-5'),
+      id: 104,
+      name: 'Appam and Veg Stew',
+      description: 'Lacy, soft hoppers served with a fragrant and creamy vegetable stew.',
+      price: '€10,00',
+      category: 'South Indian',
+      image: getImage('menu-appam'),
     },
     {
-      id: 7,
-      name: 'Gulab Jamun (3 pcs)',
-      description: 'Soft, spongy balls soaked in sweet, fragrant syrup.',
-      price: '€5.00',
-      category: 'Vegetarian',
-      image: getImage('menu-7'),
+      id: 105,
+      name: 'Bisibelebath with Raita',
+      description: 'A flavorful mix of rice, lentils, and vegetables, served with cooling yogurt raita.',
+      price: '€8,00',
+      category: 'South Indian',
+      image: getImage('menu-bisibelebath'),
     },
     {
-      id: 8,
-      name: 'Garlic Naan',
-      description: 'Soft flatbread with a hint of garlic and butter.',
-      price: '€3.00',
-      category: 'Vegetarian',
-      image: getImage('menu-8'),
+      id: 106,
+      name: 'South Indian Thali',
+      description: 'A complete meal with a variety of authentic South Indian dishes.',
+      price: '€18,00',
+      category: 'South Indian',
+      image: getImage('menu-thali'),
     },
   ];
   
+  export const teaCakesMenu: MenuItem[] = [
+    {
+      id: 201,
+      name: 'Plain Vanilla',
+      description: 'A classic, light, and fluffy vanilla tea cake.',
+      price: '€5,50',
+      category: 'Tea Cake',
+      image: getImage('menu-cake-vanilla'),
+    },
+    {
+      id: 202,
+      name: 'Chocolate',
+      description: 'A rich and decadent chocolate tea cake for chocolate lovers.',
+      price: '€6,50',
+      category: 'Tea Cake',
+      image: getImage('menu-cake-chocolate'),
+    },
+    {
+      id: 203,
+      name: 'Choco Chip',
+      description: 'A delightful vanilla cake studded with chocolate chips.',
+      price: '€6,50',
+      category: 'Tea Cake',
+      image: getImage('menu-cake-choco-chip'),
+    },
+    {
+      id: 204,
+      name: 'Marble',
+      description: 'A beautiful blend of vanilla and chocolate cake swirled together.',
+      price: '€6,50',
+      category: 'Tea Cake',
+      image: getImage('menu-cake-marble'),
+    },
+    {
+      id: 205,
+      name: 'Coffee',
+      description: 'A fragrant tea cake infused with the rich aroma of coffee.',
+      price: '€6,50',
+      category: 'Tea Cake',
+      image: getImage('menu-cake-coffee'),
+    },
+     {
+      id: 206,
+      name: 'Honey',
+      description: 'A soft, moist cake sweetened with natural honey.',
+      price: '€6,50',
+      category: 'Tea Cake',
+      image: getImage('menu-cake-honey'),
+    },
+    {
+      id: 207,
+      name: 'Carrot Almond',
+      description: 'A wholesome tea cake with grated carrots and crunchy almonds.',
+      price: '€7,50',
+      category: 'Tea Cake',
+      image: getImage('menu-cake-carrot'),
+    },
+    {
+      id: 208,
+      name: 'Banana Walnut',
+      description: 'A classic combination of sweet bananas and toasted walnuts.',
+      price: '€7,50',
+      category: 'Tea Cake',
+      image: getImage('menu-cake-banana'),
+    },
+  ];
+
 export type InstagramPost = {
   id: string;
   image: ImagePlaceholder;

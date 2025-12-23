@@ -5,6 +5,19 @@ import { Button } from './ui/button';
 import { Badge } from './ui/badge';
 
 export function MenuCard({ item }: { item: MenuItem }) {
+  const getBadgeVariant = (category: MenuItem['category']) => {
+    switch (category) {
+      case 'South Indian':
+        return 'default';
+      case 'Tea Cake':
+        return 'secondary';
+      case 'Vegan':
+        return 'outline';
+      default:
+        return 'destructive';
+    }
+  }
+
   return (
     <div className="glass-card flex flex-col overflow-hidden transition-transform duration-300 hover:-translate-y-2">
       <div className="relative h-48 w-full">
@@ -16,7 +29,7 @@ export function MenuCard({ item }: { item: MenuItem }) {
           data-ai-hint={item.image.imageHint}
         />
         <Badge 
-            variant={item.category === 'Vegan' ? 'default' : 'secondary'} 
+            variant={getBadgeVariant(item.category)} 
             className="absolute top-2 right-2"
         >
             {item.category}

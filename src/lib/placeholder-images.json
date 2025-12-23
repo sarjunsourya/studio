@@ -57,48 +57,6 @@
       "category": "Savory"
     },
     {
-      "id": "menu-1",
-      "description": "Samosa",
-      "imageUrl": "https://images.unsplash.com/photo-1601050690597-df0568f70950?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxzYW1vc2F8ZW58MHx8fHwxNzYzOTkyODAwfDA&ixlib.rb-4.1.0&q=80&w=1080",
-      "imageHint": "samosa",
-      "category": "Savory"
-    },
-    {
-      "id": "menu-2",
-      "description": "Paneer Butter Masala",
-      "imageUrl": "https://images.unsplash.com/photo-1640542509430-f529fdfce835?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw4fHxwYW5lZXIlMjBjdXJyeXxlbnwwfHx8fDE3NjQwODQwNjF8MA&ixlib.rb-4.1.0&q=80&w=1080",
-      "imageHint": "paneer curry",
-      "category": "Savory"
-    },
-    {
-      "id": "menu-4",
-      "description": "Dal Makhani",
-      "imageUrl": "https://images.unsplash.com/photo-1678991013288-7a9035d5cac1?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHxkYWwlMjBtYWtoYW5pfGVufDB8fHx8MTc2Mzk1OTYyNHww&ixlib.rb-4.1.0&q=80&w=1080",
-      "imageHint": "dal makhani",
-      "category": "Savory"
-    },
-    {
-      "id": "menu-5",
-      "description": "Aloo Gobi",
-      "imageUrl": "https://images.unsplash.com/photo-1652545296893-ff9227b3512e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxhbG9vJTIwZ29iaXxlbnwwfHx8fDE3NjQwODUzMTR8MA&ixlib.rb-4.1.0&q=80&w=1080",
-      "imageHint": "aloo gobi",
-      "category": "Savory"
-    },
-    {
-      "id": "menu-7",
-      "description": "Gulab Jamun",
-      "imageUrl": "https://images.unsplash.com/photo-1635564981692-857482d9325f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHxpbmRpYW4lMjBkZXNzZXJ0fGVufDB8fHx8MTc2NDA4NTMxNHww&ixlib.rb-4.1.0&q=80&w=1080",
-      "imageHint": "indian dessert",
-      "category": "Sweet"
-    },
-    {
-      "id": "menu-8",
-      "description": "Naan Bread",
-      "imageUrl": "https://images.unsplash.com/photo-1725483990172-e5203cc96ef5?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw5fHxuYWFuJTIwYnJlYWR8ZW58MHx8fHwxNzYzOTcxOTY4fDA&ixlib.rb-4.1.0&q=80&w=1080",
-      "imageHint": "naan bread",
-      "category": "Savory"
-    },
-    {
       "id": "gallery-thali-1",
       "description": "Thali",
       "imageUrl": "https://i.imgur.com/o1JBQOO.jpeg",
@@ -237,6 +195,104 @@
       "imageUrl": "https://i.imgur.com/2Ht89kH.jpeg",
       "imageHint": "indian snack",
       "category": "Mixed"
+    },
+    {
+      "id": "menu-idli",
+      "description": "Idly with Chutney & Sambar",
+      "imageUrl": "https://images.unsplash.com/photo-1723937188995-beac88d36998?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxMHx8aWRsaSUyMHNhbWJhcnxlbnwwfHx8fDE3NjY1MDc3MTd8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "idli sambar",
+      "category": "Savory"
+    },
+    {
+      "id": "menu-vada",
+      "description": "Medu Vada with Chutney",
+      "imageUrl": "https://picsum.photos/seed/vada/400/400",
+      "imageHint": "medu vada",
+      "category": "Savory"
+    },
+    {
+      "id": "menu-dosa",
+      "description": "Butter Masala Dosa",
+      "imageUrl": "https://images.unsplash.com/photo-1743517894265-c86ab035adef?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHxtYXNhbGElMjBkb3NhfGVufDB8fHx8MTc2NjUwNzcxN3ww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "masala dosa",
+      "category": "Savory"
+    },
+    {
+      "id": "menu-appam",
+      "description": "Appam and Veg Stew",
+      "imageUrl": "https://images.unsplash.com/photo-1752162958264-22f6f5aecd96?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHxhcHBhbSUyMHN0ZXd8ZW58MHx8fHwxNzY2NTA3NzE3fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "appam stew",
+      "category": "Savory"
+    },
+    {
+      "id": "menu-bisibelebath",
+      "description": "Bisibelebath with Raita",
+      "imageUrl": "https://picsum.photos/seed/bisibelebath/400/400",
+      "imageHint": "bisibelebath",
+      "category": "Savory"
+    },
+    {
+      "id": "menu-thali",
+      "description": "South Indian Thali",
+      "imageUrl": "https://images.unsplash.com/photo-1742281258189-3b933879867a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxzb3V0aCUyMGluZGlhbiUyMHRoYWxpfGVufDB8fHx8MTc2NjUwNzcxN3ww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "south indian thali",
+      "category": "Thali/Assortment"
+    },
+    {
+      "id": "menu-cake-vanilla",
+      "description": "Plain Vanilla Cake",
+      "imageUrl": "https://images.unsplash.com/photo-1677576149160-15598afdcb2a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxMHx8dmFuaWxsYSUyMGNha2V8ZW58MHx8fHwxNzY2NTA3NzE2fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "vanilla cake",
+      "category": "Sweet"
+    },
+    {
+      "id": "menu-cake-chocolate",
+      "description": "Chocolate Cake",
+      "imageUrl": "https://images.unsplash.com/photo-1517427294546-5aa121f68e8a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHxjaG9jb2xhdGUlMjBjYWtlfGVufDB8fHx8MTc2NjQ1OTExNXww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "chocolate cake",
+      "category": "Sweet"
+    },
+    {
+      "id": "menu-cake-choco-chip",
+      "description": "Choco Chip Cake",
+      "imageUrl": "https://images.unsplash.com/photo-1719903858273-b966f461c6b2?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw3fHxjaG9jbyUyMGNoaXAlMjBjYWtlfGVufDB8fHx8MTc2NjUwNzcxN3ww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "choco chip cake",
+      "category": "Sweet"
+    },
+    {
+      "id": "menu-cake-marble",
+      "description": "Marble Cake",
+      "imageUrl": "https://images.unsplash.com/photo-1658519921417-3862045da5cb?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHxtYXJibGUlMjBjYWtlfGVufDB8fHx8MTc2NjUwNzcxN3ww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "marble cake",
+      "category": "Sweet"
+    },
+    {
+      "id": "menu-cake-coffee",
+      "description": "Coffee Cake",
+      "imageUrl": "https://images.unsplash.com/photo-1505804750389-62ac45da38b7?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw4fHxjb2ZmZWUlMjBjYWtlfGVufDB8fHx8MTc2NjQ5NzEyNHww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "coffee cake",
+      "category": "Sweet"
+    },
+    {
+      "id": "menu-cake-honey",
+      "description": "Honey Cake",
+      "imageUrl": "https://images.unsplash.com/photo-1725275648140-5326d32dbe21?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw2fHxob25leSUyMGNha2V8ZW58MHx8fHwxNzY2NDY2OTk1fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "honey cake",
+      "category": "Sweet"
+    },
+    {
+      "id": "menu-cake-carrot",
+      "description": "Carrot Almond Cake",
+      "imageUrl": "https://images.unsplash.com/photo-1622926421334-6829deee4b4b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHxjYXJyb3QlMjBjYWtlfGVufDB8fHx8MTc2NjQxNzk0OXww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "carrot cake",
+      "category": "Sweet"
+    },
+    {
+      "id": "menu-cake-banana",
+      "description": "Banana Walnut Cake",
+      "imageUrl": "https://images.unsplash.com/photo-1504387720438-88468770d0fc?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwzfHxiYW5hbmElMjBjYWtlfGVufDB8fHx8MTc2NjQ1MDY5NHww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "banana cake",
+      "category": "Sweet"
     }
   ]
 }
