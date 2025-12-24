@@ -3,6 +3,7 @@ import Link from 'next/link';
 import type { MenuItem } from '@/lib/data';
 import { Button } from './ui/button';
 import { Badge } from './ui/badge';
+import { Leaf } from 'lucide-react';
 
 export function MenuCard({ item }: { item: MenuItem }) {
   const getBadgeVariant = (category: MenuItem['category']) => {
@@ -28,12 +29,20 @@ export function MenuCard({ item }: { item: MenuItem }) {
           className="object-cover"
           data-ai-hint={item.image.imageHint}
         />
-        <Badge 
-            variant={getBadgeVariant(item.category)} 
-            className="absolute top-2 right-2"
-        >
-            {item.category}
-        </Badge>
+        <div className="absolute top-2 right-2 flex flex-col items-end gap-2">
+            <Badge 
+                variant={getBadgeVariant(item.category)} 
+            >
+                {item.category}
+            </Badge>
+             <Badge 
+                variant="outline"
+                className="bg-background/80 backdrop-blur-sm"
+            >
+                <Leaf className="w-3 h-3 mr-1 text-primary" />
+                Vegetarian
+            </Badge>
+        </div>
       </div>
       <div className="flex flex-1 flex-col p-5">
         <h3 className="font-headline text-xl font-semibold text-foreground">{item.name}</h3>
