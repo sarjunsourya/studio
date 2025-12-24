@@ -82,6 +82,36 @@ const nextConfig: NextConfig = {
         hostname: 'lh3.googleusercontent.com',
         port: '',
         pathname: '/**',
+      },
+      {
+        protocol: 'https',
+        hostname: 'saravanafoodstuff.com',
+        port: '',
+        pathname: '/**',
+      },
+      {
+        protocol: 'https',
+        hostname: 'static.toiimg.com',
+        port: '',
+        pathname: '/**',
+      },
+      {
+        protocol: 'https',
+        hostname: 'araasfoods.com',
+        port: '',
+        pathname: '/**',
+      },
+      {
+        protocol: 'https',
+        hostname: 'www.currytrail.in',
+        port: '',
+        pathname: '/**',
+      },
+      {
+        protocol: 'https',
+        hostname: 'traditionallymodernfood.com',
+        port: '',
+        pathname: '/**',
       }
     ],
   },
