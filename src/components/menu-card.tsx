@@ -1,3 +1,4 @@
+
 import Image from 'next/image';
 import Link from 'next/link';
 import type { MenuItem } from '@/lib/data';
@@ -59,7 +60,7 @@ export function MenuCard({ item }: { item: MenuItem }) {
         <div className="mt-4 flex items-center justify-between">
           <span className="text-lg font-bold text-primary">{item.price}</span>
           <Button asChild size="sm" className="bg-accent text-accent-foreground hover:bg-accent/90">
-            <Link href={`/contact?dish=${encodeURIComponent(item.name)}`}>Order Inquiry</Link>
+            <Link href={`/order?dish=${encodeURIComponent(item.name)}&price=${encodeURIComponent(item.price)}`}>Order Inquiry</Link>
           </Button>
         </div>
       </div>
