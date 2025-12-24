@@ -38,6 +38,9 @@ export default function ContactPage() {
                         <Mail className="h-5 w-5 text-muted-foreground group-hover:text-primary transition-colors"/>
                         <span className="text-muted-foreground group-hover:text-primary transition-colors">info@the-divine-kitchen.com</span>
                     </a>
+                    <p className="text-sm text-muted-foreground">
+                      You can also place an order directly via Instagram DM.
+                    </p>
                     <div className="flex space-x-4 pt-2">
                         <Button asChild variant="outline" size="icon">
                             <a href="https://instagram.com/thedivinekitchen5/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">

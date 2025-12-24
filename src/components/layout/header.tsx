@@ -42,7 +42,7 @@ export function Header() {
         
         <div className="flex flex-1 items-center justify-end space-x-4">
           <Button asChild className="hidden sm:flex rounded-full font-bold">
-             <Link href="/contact">Contact Us</Link>
+             <Link href="/menu">Order Now</Link>
           </Button>
           <Sheet>
             <SheetTrigger asChild>
@@ -73,7 +73,7 @@ export function Header() {
                   </Link>
                 ))}
                  <Button asChild size="lg" className="mt-6 rounded-full font-bold">
-                    <Link href="/contact">Contact Us</Link>
+                    <Link href="/menu">Order Now</Link>
                  </Button>
               </div>
             </SheetContent>

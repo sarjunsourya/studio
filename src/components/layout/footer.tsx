@@ -33,11 +33,14 @@ export function Footer() {
                   info@the-divine-kitchen.com
                 </a>
               </li>
-              <li className="flex items-center gap-3">
-                <Instagram className="h-4 w-4 text-primary" />
-                <a href="https://instagram.com/thedivinekitchen5/" target="_blank" rel="noopener noreferrer" className="text-muted-foreground transition-colors hover:text-foreground">
-                  Instagram
-                </a>
+              <li className="flex items-start gap-3">
+                <Instagram className="h-4 w-4 text-primary mt-1" />
+                <div>
+                    <a href="https://instagram.com/thedivinekitchen5/" target="_blank" rel="noopener noreferrer" className="text-muted-foreground transition-colors hover:text-foreground">
+                    Instagram
+                    </a>
+                    <p className="text-xs text-muted-foreground/80">(Order via DM available)</p>
+                </div>
               </li>
                <li className="flex items-center gap-3">
                 <MessageCircle className="h-4 w-4 text-accent" />
