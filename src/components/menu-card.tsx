@@ -3,7 +3,7 @@ import Link from 'next/link';
 import type { MenuItem } from '@/lib/data';
 import { Button } from './ui/button';
 import { Badge } from './ui/badge';
-import { Leaf } from 'lucide-react';
+import { Leaf, EggOff } from 'lucide-react';
 
 export function MenuCard({ item }: { item: MenuItem }) {
   const getBadgeVariant = (category: MenuItem['category']) => {
@@ -35,6 +35,15 @@ export function MenuCard({ item }: { item: MenuItem }) {
             >
                 {item.category}
             </Badge>
+            {item.category === 'Tea Cake' && (
+                <Badge
+                    variant="outline"
+                    className="bg-background/80 backdrop-blur-sm"
+                >
+                    <EggOff className="w-3 h-3 mr-1 text-primary" />
+                    Eggless
+                </Badge>
+            )}
              <Badge 
                 variant="outline"
                 className="bg-background/80 backdrop-blur-sm"
