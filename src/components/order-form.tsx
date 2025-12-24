@@ -1,19 +1,19 @@
 
 "use client";
 
+import Link from 'next/link';
 import { useSearchParams } from 'next/navigation';
 import { useForm, useWatch } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
-import { useState, useEffect, useMemo } from 'react';
+import { useState, useMemo } from 'react';
 import { useFormStatus } from 'react-dom';
-import { Loader2, Plus, Minus } from "lucide-react";
+import { Loader2, Plus, Minus, ArrowRight } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form";
-import { Checkbox } from "@/components/ui/checkbox";
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import { Separator } from "@/components/ui/separator";
 
@@ -205,6 +205,14 @@ export function OrderForm() {
                 </div>
                 <div className="mt-6 p-4 bg-background rounded-md border border-primary/50 text-center">
                     <p className="font-semibold">Cash or Tikkie payment on Delivery / Pickup</p>
+                </div>
+                 <div className="mt-6 text-center">
+                    <Button asChild variant="link" className="text-muted-foreground hover:text-primary group">
+                        <Link href={`/contact?dish=${encodeURIComponent(dish)}`}>
+                            Want to know more about this dish before placing an order?
+                            <ArrowRight className="ml-2 h-4 w-4 transform transition-transform group-hover:translate-x-1"/>
+                        </Link>
+                    </Button>
                 </div>
             </div>
         </div>
