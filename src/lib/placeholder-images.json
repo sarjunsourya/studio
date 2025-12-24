@@ -85,13 +85,6 @@
       "category": "Thali/Assortment"
     },
     {
-      "id": "gallery-sweet-1",
-      "description": "Strawberry Cake",
-      "imageUrl": "https://i.imgur.com/Z9t77cJ.jpeg",
-      "imageHint": "strawberry cake",
-      "category": "Sweet"
-    },
-    {
       "id": "gallery-sweet-2",
       "description": "Gummy Birthday Cake",
       "imageUrl": "https://i.imgur.com/axaFXNX.jpeg",
@@ -241,42 +234,42 @@
     {
       "id": "menu-cake-vanilla",
       "description": "Plain Vanilla Cake",
-      "imageUrl": "https://images.unsplash.com/photo-1677576149160-15598afdcb2a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxMHx8dmFuaWxsYSUyMGNha2V8ZW58MHx8fHwxNzY2NTA3NzE2fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageUrl": "https://storeassets.im-cdn.com/temp/bulk_operations/bakerstreetnoida/1707954151/VanillaTeaCake.jpg",
       "imageHint": "vanilla cake",
       "category": "Sweet"
     },
     {
       "id": "menu-cake-chocolate",
       "description": "Chocolate Cake",
-      "imageUrl": "https://images.unsplash.com/photo-1517427294546-5aa121f68e8a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHxjaG9jb2xhdGUlMjBjYWtlfGVufDB8fHx8MTc2NjQ1OTExNXww&ixlib.rb-4.1.0&q=80&w=1080",
+      "imageUrl": "https://laneandgreyfare.com/wp-content/uploads/2022/08/Chocolate-Tea-Cake-4.jpg",
       "imageHint": "chocolate cake",
       "category": "Sweet"
     },
     {
       "id": "menu-cake-choco-chip",
       "description": "Choco Chip Cake",
-      "imageUrl": "https://images.unsplash.com/photo-1719903858273-b966f461c6b2?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw3fHxjaG9jbyUyMGNoaXAlMjBjYWtlfGVufDB8fHx8MTc2NjUwNzcxN3ww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageUrl": "https://static01.nyt.com/images/2014/05/15/dining/Tea-Cake/Tea-Cake-superJumbo.jpg",
       "imageHint": "choco chip cake",
       "category": "Sweet"
     },
     {
       "id": "menu-cake-marble",
       "description": "Marble Cake",
-      "imageUrl": "https://images.unsplash.com/photo-1658519921417-3862045da5cb?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHxtYXJibGUlMjBjYWtlfGVufDB8fHx8MTc2NjUwNzcxN3ww&ixlib.rb-4.1.0&q=80&w=1080",
+      "imageUrl": "https://www.abakingjourney.com/wp-content/uploads/2020/07/Marble-Loaf-Cake-Feature.jpg",
       "imageHint": "marble cake",
       "category": "Sweet"
     },
     {
       "id": "menu-cake-coffee",
       "description": "Coffee Cake",
-      "imageUrl": "https://images.unsplash.com/photo-1505804750389-62ac45da38b7?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw4fHxjb2ZmZWUlMjBjYWtlfGVufDB8fHx8MTc2NjQ5NzEyNHww&ixlib.rb-4.1.0&q=80&w=1080",
+      "imageUrl": "https://www.lemonblossoms.com/wp-content/uploads/2021/09/Coffee-cake-S8.jpg",
       "imageHint": "coffee cake",
       "category": "Sweet"
     },
     {
       "id": "menu-cake-honey",
       "description": "Honey Cake",
-      "imageUrl": "https://images.unsplash.com/photo-1725275648140-5326d32dbe21?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw2fHxob25leSUyMGNha2V8ZW58MHx8fHwxNzY2NDY2OTk1fDA&ixlib.rb-4.1.0&q=80&w=1080",
+      "imageUrl": "https://mykhailaeats.com/wp-content/uploads/2022/08/IMG_8596-scaled.jpg",
       "imageHint": "honey cake",
       "category": "Sweet"
     },
