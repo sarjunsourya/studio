@@ -1,4 +1,5 @@
 
+
 "use client";
 
 import Link from 'next/link';
@@ -206,13 +207,10 @@ export function OrderForm() {
                 <div className="mt-6 p-4 bg-background rounded-md border border-primary/50 text-center">
                     <p className="font-semibold">Cash or Tikkie payment on Delivery / Pickup</p>
                 </div>
-                 <div className="mt-6 text-center">
-                    <Button asChild variant="link" className="text-muted-foreground hover:text-primary group">
-                        <Link href={`/contact?dish=${encodeURIComponent(dish)}`}>
-                            Want to know more about this dish before placing an order?
-                            <ArrowRight className="ml-2 h-4 w-4 transform transition-transform group-hover:translate-x-1"/>
-                        </Link>
-                    </Button>
+                 <div className="mt-6 text-center text-sm">
+                    <p>
+                      You can also place an order directly via Instagram DM.
+                    </p>
                 </div>
             </div>
         </div>

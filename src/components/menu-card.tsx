@@ -1,10 +1,11 @@
 
+
 import Image from 'next/image';
 import Link from 'next/link';
 import type { MenuItem } from '@/lib/data';
 import { Button } from './ui/button';
 import { Badge } from './ui/badge';
-import { Leaf, EggOff } from 'lucide-react';
+import { Leaf, EggOff, ArrowRight } from 'lucide-react';
 
 export function MenuCard({ item }: { item: MenuItem }) {
   const getBadgeVariant = (category: MenuItem['category']) => {
@@ -57,6 +58,14 @@ export function MenuCard({ item }: { item: MenuItem }) {
       <div className="flex flex-1 flex-col p-5">
         <h3 className="font-headline text-xl font-semibold text-foreground">{item.name}</h3>
         <p className="mt-2 flex-grow text-sm text-muted-foreground">{item.description}</p>
+         <div className="mt-4">
+          <Button asChild variant="link" size="sm" className="text-muted-foreground hover:text-primary group px-0">
+              <Link href={`/contact?dish=${encodeURIComponent(item.name)}`}>
+                  Want to know more?
+                  <ArrowRight className="ml-1 h-4 w-4 transform transition-transform group-hover:translate-x-1"/>
+              </Link>
+          </Button>
+        </div>
         <div className="mt-4 flex items-center justify-between">
           <span className="text-lg font-bold text-primary">{item.price}</span>
           <Button asChild size="sm" className="bg-accent text-accent-foreground hover:bg-accent/90">
