@@ -72,16 +72,30 @@ export function OrderForm() {
     setQuantity(prev => Math.max(1, prev + amount));
   };
   
-  // A simple server action placeholder
-  async function processOrder(data: OrderFormValues) {
-    // This will be replaced with Google Form redirection.
-    console.log("Form data to be sent to Google Form:", {
-        ...data,
-        orderedItem: dish,
-        quantity,
-        subtotal,
-        total
+  function processOrder(data: OrderFormValues) {
+    const baseUrl = "https://docs.google.com/forms/d/e/1FAIpQLSecHcfSAshKggQSb3srgGUKsb98jpDYCEn1zPL38Psy8E7Zgg/viewform?usp=pp_url";
+    
+    const params = new URLSearchParams({
+        "entry.497349393": data.firstName,
+        "entry.1639276764": data.lastName,
+        "entry.1575538379": data.companyName || "",
+        "entry.1588386655": "Netherlands",
+        "entry.647121543": data.streetAddress,
+        "entry.1612991386": data.apartment || "",
+        "entry.1301291309": data.city,
+        "entry.2045573858": data.postcode,
+        "entry.1520191789": data.phone,
+        "entry.441161009": data.email,
+        "entry.292612972": data.orderNotes || "",
+        "entry.1322787056": dish || "",
+        "entry.82284634": quantity.toString(),
+        "entry.104603798": shippingMethod === 'delivery' ? 'Delivery' : 'Pickup',
+        "entry.1796185331": `€${subtotal.toFixed(2)}`,
+        "entry.489857107": `€${total.toFixed(2)}`,
     });
+
+    const finalUrl = `${baseUrl}&${params.toString()}`;
+    window.open(finalUrl, '_blank');
   }
 
   if (!dish || !priceString) {
