@@ -8,7 +8,6 @@ import { useForm, useWatch } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
 import { useState, useMemo } from 'react';
-import { useFormStatus } from 'react-dom';
 import { Loader2, Plus, Minus, ArrowRight } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
@@ -34,15 +33,6 @@ const orderFormSchema = z.object({
 });
 
 type OrderFormValues = z.infer<typeof orderFormSchema>;
-
-function SubmitButton() {
-    const { pending } = useFormStatus();
-    return (
-      <Button type="submit" disabled={pending} className="w-full bg-primary hover:bg-primary/90 text-primary-foreground font-bold text-lg py-6 mt-6">
-        {pending ? <><Loader2 className="mr-2 h-5 w-5 animate-spin" /> Placing Order...</> : "Place order"}
-      </Button>
-    );
-}
 
 export function OrderForm() {
   const searchParams = useSearchParams();
@@ -84,20 +74,25 @@ export function OrderForm() {
   
   // A simple server action placeholder
   async function processOrder(data: OrderFormValues) {
-    console.log("Order submitted:", {
+    // This will be replaced with Google Form redirection.
+    console.log("Form data to be sent to Google Form:", {
         ...data,
         orderedItem: dish,
         quantity,
         subtotal,
         total
     });
-    // Here you would typically send data to your backend, via an email API, etc.
-    alert("Order placed successfully! (Check console for details)");
-    // You could redirect to a thank you page here
   }
 
   if (!dish || !priceString) {
-      return <p className='text-center text-destructive'>No dish selected. Please go back to the menu and select an item to order.</p>
+      return (
+        <div className='text-center text-destructive'>
+            <p>No dish selected. Please go back to the menu and select an item to order.</p>
+            <Button asChild variant="link" className="mt-4">
+                <Link href="/menu">Go to Menu</Link>
+            </Button>
+        </div>
+      )
   }
 
   return (
@@ -211,6 +206,9 @@ export function OrderForm() {
                     <p>
                       You can also place an order directly via Instagram DM.
                     </p>
+                    <Button asChild variant="link" className="text-primary">
+                        <a href="https://instagram.com/thedivinekitchen5/" target="_blank" rel="noopener noreferrer">Go to Instagram <ArrowRight className="ml-1 h-4 w-4"/></a>
+                    </Button>
                 </div>
             </div>
         </div>
@@ -219,7 +217,9 @@ export function OrderForm() {
              <p>Your personal data will be used to process your order, support your experience throughout this website, and for other purposes described in our privacy policy.</p>
         </div>
 
-        <SubmitButton />
+        <Button type="submit" className="w-full bg-primary hover:bg-primary/90 text-primary-foreground font-bold text-lg py-6 mt-6">
+            Place order
+        </Button>
       </form>
     </Form>
   );
