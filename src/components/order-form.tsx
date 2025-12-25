@@ -1,5 +1,4 @@
 
-
 "use client";
 
 import Link from 'next/link';
@@ -7,7 +6,7 @@ import { useSearchParams } from 'next/navigation';
 import { useForm, useWatch } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
-import { useState, useMemo } from 'react';
+import { useState, useMemo, useTransition } from 'react';
 import { Loader2, Plus, Minus, ArrowRight } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
@@ -16,6 +15,17 @@ import { Textarea } from "@/components/ui/textarea";
 import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form";
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import { Separator } from "@/components/ui/separator";
+import { useToast } from '@/hooks/use-toast';
+import {
+  AlertDialog,
+  AlertDialogAction,
+  AlertDialogContent,
+  AlertDialogDescription,
+  AlertDialogFooter,
+  AlertDialogHeader,
+  AlertDialogTitle,
+} from "@/components/ui/alert-dialog"
+
 
 const orderFormSchema = z.object({
   firstName: z.string().min(1, "First name is required."),
@@ -36,10 +46,13 @@ type OrderFormValues = z.infer<typeof orderFormSchema>;
 
 export function OrderForm() {
   const searchParams = useSearchParams();
+  const { toast } = useToast();
   const dish = searchParams.get('dish');
   const priceString = searchParams.get('price');
 
   const [quantity, setQuantity] = useState(1);
+  const [isPending, startTransition] = useTransition();
+  const [showSuccessDialog, setShowSuccessDialog] = useState(false);
 
   const form = useForm<OrderFormValues>({
     resolver: zodResolver(orderFormSchema),
@@ -72,30 +85,50 @@ export function OrderForm() {
     setQuantity(prev => Math.max(1, prev + amount));
   };
   
-  function processOrder(data: OrderFormValues) {
-    const baseUrl = "https://docs.google.com/forms/d/e/1FAIpQLSecHcfSAshKggQSb3srgGUKsb98jpDYCEn1zPL38Psy8E7Zgg/viewform?usp=pp_url";
+  async function processOrder(data: OrderFormValues) {
+    const googleFormUrl = "https://docs.google.com/forms/d/e/1FAIpQLSecHcfSAshKggQSb3srgGUKsb98jpDYCEn1zPL38Psy8E7Zgg/formResponse";
     
-    const params = new URLSearchParams({
-        "entry.497349393": data.firstName,
-        "entry.1639276764": data.lastName,
-        "entry.1575538379": data.companyName || "",
-        "entry.1588386655": "Netherlands",
-        "entry.647121543": data.streetAddress,
-        "entry.1612991386": data.apartment || "",
-        "entry.1301291309": data.city,
-        "entry.2045573858": data.postcode,
-        "entry.1520191789": data.phone,
-        "entry.441161009": data.email,
-        "entry.292612972": data.orderNotes || "",
-        "entry.1322787056": dish || "",
-        "entry.82284634": quantity.toString(),
-        "entry.104603798": shippingMethod === 'delivery' ? 'Delivery' : 'Pickup',
-        "entry.1796185331": `€${subtotal.toFixed(2)}`,
-        "entry.489857107": `€${total.toFixed(2)}`,
-    });
+    const formData = new FormData();
+    formData.append("entry.497349393", data.firstName);
+    formData.append("entry.1639276764", data.lastName);
+    formData.append("entry.1575538379", data.companyName || "");
+    formData.append("entry.1588386655", "Netherlands");
+    formData.append("entry.647121543", data.streetAddress);
+    formData.append("entry.1612991386", data.apartment || "");
+    formData.append("entry.1301291309", data.city);
+    formData.append("entry.2045573858", data.postcode);
+    formData.append("entry.1520191789", data.phone);
+    formData.append("entry.441161009", data.email);
+    formData.append("entry.292612972", data.orderNotes || "");
+    formData.append("entry.1322787056", dish || "");
+    formData.append("entry.82284634", quantity.toString());
+    formData.append("entry.104603798", shippingMethod === 'delivery' ? 'Delivery' : 'Pickup');
+    formData.append("entry.1796185331", `€${subtotal.toFixed(2)}`);
+    formData.append("entry.489857107", `€${total.toFixed(2)}`);
 
-    const finalUrl = `${baseUrl}&${params.toString()}`;
-    window.open(finalUrl, '_blank');
+    startTransition(async () => {
+        try {
+            const response = await fetch(googleFormUrl, {
+                method: "POST",
+                body: formData,
+                mode: "no-cors", 
+            });
+
+            // "no-cors" mode means we get an opaque response, we can't check status
+            // We'll optimistically assume it worked.
+            setShowSuccessDialog(true);
+            form.reset();
+            setQuantity(1);
+
+        } catch (error) {
+            console.error("Error submitting form:", error);
+            toast({
+                title: "Submission Error",
+                description: "There was an issue submitting your order. Please try again or contact us directly.",
+                variant: "destructive",
+            });
+        }
+    });
   }
 
   if (!dish || !priceString) {
@@ -110,6 +143,7 @@ export function OrderForm() {
   }
 
   return (
+    <>
     <Form {...form}>
       <form onSubmit={form.handleSubmit(processOrder)} className="space-y-8">
         <div>
@@ -231,10 +265,26 @@ export function OrderForm() {
              <p>Your personal data will be used to process your order, support your experience throughout this website, and for other purposes described in our privacy policy.</p>
         </div>
 
-        <Button type="submit" className="w-full bg-primary hover:bg-primary/90 text-primary-foreground font-bold text-lg py-6 mt-6">
-            Place order
+        <Button type="submit" disabled={isPending} className="w-full bg-primary hover:bg-primary/90 text-primary-foreground font-bold text-lg py-6 mt-6">
+            {isPending ? <><Loader2 className="mr-2 h-4 w-4 animate-spin" /> Placing Order...</> : "Place order"}
         </Button>
       </form>
     </Form>
+    <AlertDialog open={showSuccessDialog} onOpenChange={setShowSuccessDialog}>
+        <AlertDialogContent>
+            <AlertDialogHeader>
+            <AlertDialogTitle>Order Placed Successfully!</AlertDialogTitle>
+            <AlertDialogDescription>
+                Thank you for your order. We have received your details and will get in touch with you shortly to confirm.
+            </AlertDialogDescription>
+            </AlertDialogHeader>
+            <AlertDialogFooter>
+            <AlertDialogAction onClick={() => setShowSuccessDialog(false)}>Close</AlertDialogAction>
+            </AlertDialogFooter>
+        </AlertDialogContent>
+    </AlertDialog>
+    </>
   );
 }
+
+    
