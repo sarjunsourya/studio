@@ -2,290 +2,87 @@
   "placeholderImages": [
     {
       "id": "hero",
-      "description": "A vibrant spread of Indian spices and ingredients.",
+      "description": "Luxury minimalist indian food styling",
       "imageUrl": "https://t3.ftcdn.net/jpg/06/50/60/46/360_F_650604677_lQDktDtlSu3jQTlctUpKPTcKahdrw0am.jpg",
-      "imageHint": "indian spices",
+      "imageHint": "gourmet indian fine dining spices",
       "category": "Mixed"
     },
     {
       "id": "featured-1",
-      "description": "A close-up of a bowl of aromatic Indian curry.",
+      "description": "High-end plated curry",
       "imageUrl": "https://images.unsplash.com/photo-1682496177510-1cf1a963f38d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHxpbmRpYW4lMjBkaXNofGVufDB8fHx8MTc2NDA4NTMxNHww&ixlib.rb-4.1.0&q=80&w=1080",
-      "imageHint": "indian dish",
+      "imageHint": "fine dining indian curry plated",
       "category": "Mixed"
     },
     {
       "id": "featured-3",
-      "description": "A comforting homemade meal in a rustic setting.",
+      "description": "Luxury home kitchen",
       "imageUrl": "https://images.unsplash.com/photo-1517978160212-7dddf0b65934?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw4fHxob21lbWFkZSUyMG1lYWx8ZW58MHx8fHwxNzY0MDg1MzE0fDA&ixlib.rb-4.1.0&q=80&w=1080",
-      "imageHint": "homemade meal",
+      "imageHint": "minimalist luxury kitchen home",
       "category": "Mixed"
     },
     {
       "id": "featured-4",
-      "description": "Plain Dosa",
+      "description": "Plain Dosa Gourmet",
       "imageUrl": "https://www.awesomecuisine.com/wp-content/uploads/2009/06/Plain-Dosa.jpg",
-      "imageHint": "plain dosa",
+      "imageHint": "gourmet dosa plating",
       "category": "Savory"
     },
     {
       "id": "featured-5",
-      "description": "Pav Bhaji",
+      "description": "Pav Bhaji Artisan",
       "imageUrl": "https://images.unsplash.com/photo-1626132647523-66f5bf380027?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxwYXYlMjBiaGFqaXxlbnwwfHx8fDE3NjQwOTIxMzJ8MA&ixlib.rb-4.1.0&q=80&w=1080",
-      "imageHint": "pav bhaji",
+      "imageHint": "artisan pav bhaji fine dining",
       "category": "Savory"
     },
     {
       "id": "featured-6",
-      "description": "Dahi Bhalla",
+      "description": "Dahi Bhalla Exquisite",
       "imageUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS9gnZrQQJb4UANtmwr3CW4jHtn2j-xnvwFO0ird_sw-zkFIaSIifApVgweVTz3VGj2IyV4ZPpQKfN6zzq1JhrWFjiZ6SKRhiF6D3XCAA&s=10",
-      "imageHint": "dahi bhalla",
+      "imageHint": "gourmet dahi bhalla plating",
       "category": "Savory"
     },
     {
       "id": "featured-7",
-      "description": "Plain Idli",
+      "description": "Plain Idli Styled",
       "imageUrl": "https://media.istockphoto.com/id/821399028/photo/tamilnadu-idli-sambar.jpg?s=612x612&w=0&k=20&c=pKFZEDydXZZpF1N7pMz9snwIK4HP9qghgNrNFMGCZv4=",
-      "imageHint": "plain idli",
+      "imageHint": "idli sambar gourmet presentation",
       "category": "Savory"
     },
     {
       "id": "featured-8",
-      "description": "Masala Puri",
+      "description": "Masala Puri Chaat",
       "imageUrl": "https://thewhiskaddict.com/wp-content/uploads/2025/01/IMG_1451-scaled.jpg",
-      "imageHint": "masala puri",
+      "imageHint": "gourmet chaat plating",
       "category": "Savory"
     },
     {
       "id": "gallery-thali-1",
-      "description": "Thali",
+      "description": "Thali Heritage",
       "imageUrl": "https://i.imgur.com/o1JBQOO.jpeg",
-      "imageHint": "indian thali",
+      "imageHint": "luxury indian thali",
       "category": "Thali/Assortment"
     },
     {
       "id": "gallery-thali-2",
-      "description": "North Indian Assortment",
+      "description": "North Indian Feast",
       "imageUrl": "https://i.imgur.com/3FBHPft.jpeg",
-      "imageHint": "indian food",
+      "imageHint": "gourmet north indian food",
       "category": "Thali/Assortment"
     },
     {
       "id": "gallery-thali-3",
-      "description": "South Indian Breakfast",
+      "description": "South Indian Heritage",
       "imageUrl": "https://i.imgur.com/q7tpIwA.jpeg",
-      "imageHint": "indian breakfast",
+      "imageHint": "luxury south indian breakfast",
       "category": "Thali/Assortment"
     },
     {
       "id": "gallery-thali-4",
-      "description": "Lunch Assortment",
+      "description": "Lunch Fine Dining",
       "imageUrl": "https://i.imgur.com/YJqIGdL.jpeg",
-      "imageHint": "indian lunch",
+      "imageHint": "plated indian lunch gourmet",
       "category": "Thali/Assortment"
-    },
-    {
-      "id": "gallery-sweet-2",
-      "description": "Gummy Birthday Cake",
-      "imageUrl": "https://i.imgur.com/axaFXNX.jpeg",
-      "imageHint": "birthday cake",
-      "category": "Sweet"
-    },
-    {
-      "id": "gallery-sweet-3",
-      "description": "Rasmalai",
-      "imageUrl": "https://i.imgur.com/DA53Oj4.jpeg",
-      "imageHint": "rasmalai dessert",
-      "category": "Sweet"
-    },
-    {
-      "id": "gallery-sweet-4",
-      "description": "Payasam",
-      "imageUrl": "https://i.imgur.com/eKNOQbp.jpeg",
-      "imageHint": "payasam dessert",
-      "category": "Sweet"
-    },
-    {
-      "id": "gallery-sweet-5",
-      "description": "Nut Laddus",
-      "imageUrl": "https://i.imgur.com/8AOpnyQ.jpeg",
-      "imageHint": "indian sweets",
-      "category": "Sweet"
-    },
-    {
-      "id": "gallery-sweet-6",
-      "description": "Chocolate Cake",
-      "imageUrl": "https://i.imgur.com/pcrTjUA.jpeg",
-      "imageHint": "chocolate cake",
-      "category": "Sweet"
-    },
-    {
-      "id": "gallery-sweet-7",
-      "description": "Sunflower Cake",
-      "imageUrl": "https://i.imgur.com/NBOXPJL.jpeg",
-      "imageHint": "decorated cake",
-      "category": "Sweet"
-    },
-    {
-      "id": "gallery-sweet-8",
-      "description": "Cookies",
-      "imageUrl": "https://i.imgur.com/qDZ8GBR.jpeg",
-      "imageHint": "cookies",
-      "category": "Sweet"
-    },
-    {
-      "id": "gallery-sweet-9",
-      "description": "Barfi",
-      "imageUrl": "https://i.imgur.com/vXeUHAn.jpeg",
-      "imageHint": "indian sweets",
-      "category": "Sweet"
-    },
-    {
-      "id": "gallery-sweet-10",
-      "description": "Apple Pie",
-      "imageUrl": "https://i.imgur.com/K9KwTkK.jpeg",
-      "imageHint": "apple pie",
-      "category": "Sweet"
-    },
-    {
-      "id": "gallery-sweet-11",
-      "description": "Rasmalai Cake",
-      "imageUrl": "https://i.imgur.com/U6X7J9b.jpeg",
-      "imageHint": "rasmalai cake",
-      "category": "Sweet"
-    },
-    {
-      "id": "gallery-sweet-12",
-      "description": "Pumpkin Cake",
-      "imageUrl": "https://i.imgur.com/CTYhLrL.jpeg",
-      "imageHint": "pumpkin cake",
-      "category": "Sweet"
-    },
-    {
-      "id": "gallery-savory-1",
-      "description": "Tomato Paneer Curry",
-      "imageUrl": "https://i.imgur.com/FvCgx4x.jpeg",
-      "imageHint": "paneer curry",
-      "category": "Savory"
-    },
-    {
-      "id": "gallery-savory-2",
-      "description": "Fried Rice",
-      "imageUrl": "https://i.imgur.com/6oQO5vk.jpeg",
-      "imageHint": "fried rice",
-      "category": "Savory"
-    },
-    {
-      "id": "gallery-savory-3",
-      "description": "Vada",
-      "imageUrl": "https://i.imgur.com/QprLxlw.jpg",
-      "imageHint": "vada savory",
-      "category": "Savory"
-    },
-    {
-      "id": "gallery-mixed-1",
-      "description": "Mixture",
-      "imageUrl": "https://i.imgur.com/2Ht89kH.jpg",
-      "imageHint": "indian snack",
-      "category": "Mixed"
-    },
-    {
-      "id": "menu-idli",
-      "description": "Idly with Chutney & Sambar",
-      "imageUrl": "https://media.istockphoto.com/id/182491284/photo/idli-sambhar-and-chutney-south-indian-dish-on-banana-leaf.jpg?s=612x612&w=0&k=20&c=LCAfM8HrWBZsRZHTjAXzYAWvG63oDagBimAMXXq-zFk=",
-      "imageHint": "idli sambar",
-      "category": "Savory"
-    },
-    {
-      "id": "menu-vada",
-      "description": "Medu Vada with Chutney",
-      "imageUrl": "https://saravanafoodstuff.com/wp-content/uploads/2024/07/Urad-dal-vada-_-Medu-Vada-Air-fry-_-Fry-SecondRecipe_cleanup.webp",
-      "imageHint": "medu vada",
-      "category": "Savory"
-    },
-    {
-      "id": "menu-dosa",
-      "description": "Butter Masala Dosa",
-      "imageUrl": "https://static.toiimg.com/thumb/54289752.cms?imgsize=495844&width=800&height=800",
-      "imageHint": "masala dosa",
-      "category": "Savory"
-    },
-    {
-      "id": "menu-appam",
-      "description": "Appam and Veg Stew",
-      "imageUrl": "https://araasfoods.com/wp-content/uploads/2025/07/df2a503004.webp",
-      "imageHint": "appam stew",
-      "category": "Savory"
-    },
-    {
-      "id": "menu-bisibelebath",
-      "description": "Bisibelebath with Raita",
-      "imageUrl": "https://www.currytrail.in/wp-content/uploads/2017/01/IMG_6945-2.jpg",
-      "imageHint": "bisibelebath",
-      "category": "Savory"
-    },
-    {
-      "id": "menu-thali",
-      "description": "South Indian Thali",
-      "imageUrl": "https://traditionallymodernfood.com/wp-content/uploads/2023/01/cooking-for-guests-south-indian-lunch-combo-1-scaled.jpeg",
-      "imageHint": "south indian thali",
-      "category": "Thali/Assortment"
-    },
-    {
-      "id": "menu-cake-vanilla",
-      "description": "Plain Vanilla Cake",
-      "imageUrl": "https://storeassets.im-cdn.com/temp/bulk_operations/bakerstreetnoida/1707954151/VanillaTeaCake.jpg",
-      "imageHint": "vanilla cake",
-      "category": "Sweet"
-    },
-    {
-      "id": "menu-cake-chocolate",
-      "description": "Chocolate Cake",
-      "imageUrl": "https://laneandgreyfare.com/wp-content/uploads/2022/08/Chocolate-Tea-Cake-4.jpg",
-      "imageHint": "chocolate cake",
-      "category": "Sweet"
-    },
-    {
-      "id": "menu-cake-choco-chip",
-      "description": "Choco Chip Cake",
-      "imageUrl": "https://static01.nyt.com/images/2014/05/15/dining/Tea-Cake/Tea-Cake-superJumbo.jpg",
-      "imageHint": "choco chip cake",
-      "category": "Sweet"
-    },
-    {
-      "id": "menu-cake-marble",
-      "description": "Marble Cake",
-      "imageUrl": "https://www.abakingjourney.com/wp-content/uploads/2020/07/Marble-Loaf-Cake-Feature.jpg",
-      "imageHint": "marble cake",
-      "category": "Sweet"
-    },
-    {
-      "id": "menu-cake-coffee",
-      "description": "Coffee Cake",
-      "imageUrl": "https://www.lemonblossoms.com/wp-content/uploads/2021/09/Coffee-cake-S8.jpg",
-      "imageHint": "coffee cake",
-      "category": "Sweet"
-    },
-    {
-      "id": "menu-cake-honey",
-      "description": "Honey Cake",
-      "imageUrl": "https://mykhailaeats.com/wp-content/uploads/2022/08/IMG_8596-scaled.jpg",
-      "imageHint": "honey cake",
-      "category": "Sweet"
-    },
-    {
-      "id": "menu-cake-carrot",
-      "description": "Carrot Almond Cake",
-      "imageUrl": "https://images.unsplash.com/photo-1622926421334-6829deee4b4b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHxjYXJyb3QlMjBjYWtlfGVufDB8fHx8MTc2NjQxNzk0OXww&ixlib.rb-4.1.0&q=80&w=1080",
-      "imageHint": "carrot cake",
-      "category": "Sweet"
-    },
-    {
-      "id": "menu-cake-banana",
-      "description": "Banana Walnut Cake",
-      "imageUrl": "https://images.unsplash.com/photo-1504387720438-88468770d0fc?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwzfHxiYW5hbmElMjBjYWtlfGVufDB8fHx8MTc2NjQ1MDY5NHww&ixlib.rb-4.1.0&q=80&w=1080",
-      "imageHint": "banana cake",
-      "category": "Sweet"
     }
   ]
 }

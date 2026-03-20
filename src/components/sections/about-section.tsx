@@ -1,36 +1,41 @@
 import Image from "next/image";
-import { Logo } from "../logo";
 
 export function AboutSection() {
     return (
-        <section className="w-full py-16 md:py-24 bg-secondary/30">
-            <div className="container mx-auto max-w-5xl px-4">
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-12 items-center">
-                    <div className="md:col-span-1 flex justify-center">
-                        <div className="relative">
+        <section className="w-full py-24 md:py-32 bg-background overflow-hidden">
+            <div className="container mx-auto max-w-6xl px-4">
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
+                    <div className="relative group">
+                        <div className="absolute -inset-4 bg-primary/10 rounded-full blur-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
+                        <div className="relative aspect-square max-w-md mx-auto luxury-button">
                             <Image 
                                 src="https://i.imgur.com/REENKrh.jpeg" 
                                 alt="Roopa Gokul"
-                                width={250}
-                                height={250}
-                                className="rounded-full shadow-lg border-4 border-background"
+                                fill
+                                className="rounded-full object-cover shadow-2xl border-8 border-background z-10"
                             />
+                            <div className="absolute inset-0 rounded-full border border-primary/20 scale-110 animate-spin-slow" />
                         </div>
                     </div>
-                    <div className="md:col-span-2 text-center md:text-left">
-                        <h2 className="font-headline text-3xl md:text-4xl font-bold text-primary">
-                            From the Heart of My Kitchen
-                        </h2>
-                        <div className="mt-6 space-y-4 text-muted-foreground text-lg">
+                    <div className="space-y-8 text-center lg:text-left">
+                        <div className="space-y-2">
+                             <span className="text-primary font-bold tracking-[0.2em] uppercase text-xs">A Culinary Legacy</span>
+                             <h2 className="font-headline text-4xl md:text-6xl font-normal text-foreground leading-tight">
+                                Crafted with <br /><span className="text-accent italic">Soul & Science</span>
+                             </h2>
+                        </div>
+                        <div className="space-y-6 text-muted-foreground text-lg md:text-xl font-light leading-relaxed">
                             <p>
-                                I’m Roopa Gokul, the founder of The Divine Kitchen, a homemade kitchen built from passion, heritage, and a love for authentic flavors. My cooking journey began with the two women who inspired me most—my mother and grandmother.
+                                I am <span className="text-foreground font-semibold">Roopa Gokul</span>. The Divine Kitchen is my laboratory of tradition, where the sacred flavors of my ancestors are preserved and perfected.
                             </p>
                             <p>
-                                For more than 18 years, I’ve continued refining their traditions. What started in India has now crossed countries, allowing me to bring these heartfelt flavors to our new community in Delft.
+                                With 18 years of refinement, I translate the vibrant spirit of Indian home-cooking into a luxury culinary experience for the modern Delft community.
                             </p>
-                             <p className="font-semibold text-foreground">
-                                At The Divine Kitchen, the motto is simple: real food, true flavours, and the comfort of home in every bite.
-                            </p>
+                             <div className="pt-6">
+                                <p className="font-headline text-2xl text-foreground italic border-l-4 border-primary pl-6">
+                                    "Real food, true flavours, and the pure comfort of home in every exquisite bite."
+                                </p>
+                             </div>
                         </div>
                     </div>
                 </div>
