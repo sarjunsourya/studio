@@ -1,5 +1,5 @@
 import type { Metadata } from 'next';
-import { Alegreya, Belleza } from 'next/font/google';
+import { Poppins, Inter } from 'next/font/google';
 import './globals.css';
 import { cn } from '@/lib/utils';
 import { Header } from '@/components/layout/header';
@@ -9,18 +9,18 @@ import Image from 'next/image';
 import Link from 'next/link';
 
 export const metadata: Metadata = {
-  title: 'The Divine Kitchen | Luxury Home Cooking',
-  description: 'Authentic South Indian flavors and eggless delights by Roopa Gokul in Delft. High-end home catering and weekly menus.',
+  title: 'The Divine Kitchen | Authentic Homemade Meals',
+  description: 'Home-Cooked Goodness by Roopa Gokul in Delft. Authentic homemade meals, crafted fresh with love.',
 };
 
-const fontBody = Alegreya({
+const fontBody = Inter({
   subsets: ['latin'],
   variable: '--font-body',
 });
 
-const fontHeadline = Belleza({
+const fontHeadline = Poppins({
   subsets: ['latin'],
-  weight: ['400'],
+  weight: ['300', '400', '500', '600', '700'],
   variable: '--font-headline',
 });
 
@@ -39,32 +39,31 @@ export default function RootLayout({
         )}
       >
         <Header />
-        <main className="flex-grow">{children}</main>
+        <main className="flex-grow pt-24">{children}</main>
         <Footer />
-        <div className="w-full bg-background py-6 border-t border-border/50">
-            <div className="container mx-auto flex flex-col items-center justify-center text-xs tracking-widest uppercase text-muted-foreground space-y-3">
-                <div className="flex items-center gap-2">
+        <div className="w-full bg-foreground py-8 border-t border-white/5">
+            <div className="container mx-auto flex flex-col items-center justify-center text-xs tracking-[0.2em] uppercase text-muted-foreground/60 space-y-4">
+                <div className="flex flex-col md:flex-row items-center gap-2 md:gap-4">
                     <span className="opacity-60">Crafted By</span>
                     <Link 
                       href="https://www.sarjunsourya.com/" 
                       target="_blank" 
                       rel="noopener noreferrer" 
-                      className="font-bold text-foreground hover:text-primary transition-all flex items-center gap-2 group"
+                      className="font-bold text-white hover:text-primary transition-all flex items-center gap-3 group"
                     >
                       <Image 
                           src="https://i.imgur.com/FtqBAlG.png" 
                           alt="Arjun Sourya Srirangam Logo"
-                          width={16}
-                          height={16}
+                          width={18}
+                          height={18}
                           className="grayscale group-hover:grayscale-0 transition-all"
                       />
                       sarjunsourya.com
                     </Link>
-                </div>
-                <div className="flex items-center gap-4 opacity-40">
-                    <span>Brand Design</span>
-                    <span className="w-1 h-1 rounded-full bg-muted-foreground" />
-                    <span>Website Development ✨</span>
+                    <span className="hidden md:inline-block text-white/20">•</span>
+                    <span className="text-white/80">Brand Design</span>
+                    <span className="hidden md:inline-block text-white/20">•</span>
+                    <span className="text-white/80">Website Development ✨</span>
                 </div>
             </div>
         </div>

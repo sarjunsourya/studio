@@ -10,42 +10,13 @@ export const navLinks: { href: string; label: string; icon: LucideIcon }[] = [
   { href: '/contact', label: 'Contact', icon: Phone },
 ];
 
-export const whyUsPoints = [
-  {
-    icon: Home,
-    title: 'From My Home',
-    description: 'Built from passion, heritage, and a love for authentic flavors passed down through generations.',
-  },
-  {
-    icon: Leaf,
-    title: 'Fresh Ingredients',
-    description: 'Only the finest and freshest ingredients are chosen to create genuine, heartfelt meals.',
-  },
-  {
-    icon: Sparkles,
-    title: 'Hygienic Kitchen',
-    description: 'Prepared with the utmost care in a clean, professional home kitchen environment.',
-  },
-  {
-    icon: Flame,
-    title: 'Authentic Flavors',
-    description: 'Experience the true taste of tradition with recipes refined over 18 years of practice.',
-  },
-  {
-    icon: MapPin,
-    title: 'Proudly in Delft',
-    description: 'Bringing authentic, heartfelt Indian flavors from my home to our new community in Delft.',
-  },
-];
-
 const getImage = (id: string): ImagePlaceholder => {
     const img = PlaceHolderImages.find((img) => img.id === id);
     if (!img) {
-      // Fallback to a default image if not found
       return {
         id: 'fallback',
         imageUrl: 'https://picsum.photos/seed/fallback/600/400',
-        imageHint: 'food',
+        imageHint: 'gourmet food',
         description: 'Fallback image',
         category: 'Mixed'
       };
@@ -72,19 +43,7 @@ export const featuredDishes = [
       description: 'Soft lentil dumplings soaked in creamy yogurt and topped with sweet and tangy chutneys.',
       image: getImage('featured-6'),
     },
-    {
-      id: 7,
-      name: 'Plain Idli',
-      description: 'Soft, fluffy steamed rice cakes, a staple of South Indian cuisine.',
-      image: getImage('featured-7'),
-    },
-    {
-        id: 8,
-        name: 'Masala Puri',
-        description: 'A popular Indian street food chaat made with crispy puri, ragda, and spices.',
-        image: getImage('featured-8'),
-    }
-]
+];
 
 export type MenuItem = {
     id: number;
@@ -187,7 +146,7 @@ export const southIndianMenu: MenuItem[] = [
       category: 'Tea Cake',
       image: getImage('menu-cake-coffee'),
     },
-     {
+    {
       id: 206,
       name: 'Honey',
       description: 'A soft, moist cake sweetened with natural honey.',
@@ -222,6 +181,3 @@ export type InstagramPost = {
 };
 
 export const instagramPosts: InstagramPost[] = [];
-
-// This is now handled by placeholder-images.json and image-gallery.tsx
-// export const galleryImages: ImagePlaceholder[] = [];

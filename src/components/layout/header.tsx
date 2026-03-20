@@ -14,29 +14,29 @@ export function Header() {
   const pathname = usePathname();
 
   return (
-    <header className="fixed top-0 z-[100] w-full transition-all duration-300">
-      <div className="container mx-auto px-4 py-4">
-        <div className="bg-background/80 backdrop-blur-2xl border border-border/40 rounded-full px-6 md:px-10 h-20 md:h-24 flex items-center justify-between shadow-2xl">
+    <header className="fixed top-0 z-[100] w-full px-4 py-6">
+      <div className="container mx-auto">
+        <div className="glass-card h-20 md:h-24 px-6 md:px-10 flex items-center justify-between">
           <div className="flex-1 flex justify-start">
-            <Logo className="scale-75 md:scale-100 origin-left" />
+            <Logo className="scale-75 md:scale-90 origin-left" />
           </div>
           
           <nav className="hidden md:flex flex-1 justify-center items-center">
-            <div className="flex gap-1">
+            <div className="flex gap-2">
               {navLinks.map((link) => (
                 <Link
                   key={link.href}
                   href={link.href}
                   className={cn(
-                    "relative px-4 py-2 text-xs uppercase tracking-[0.2em] font-bold transition-all hover:text-primary",
+                    "relative px-5 py-2 text-[10px] uppercase tracking-[0.3em] font-bold transition-all hover:text-primary",
                     pathname === link.href
                       ? "text-primary"
-                      : "text-foreground/60"
+                      : "text-foreground/70"
                   )}
                 >
                   {link.label}
                   {pathname === link.href && (
-                    <span className="absolute bottom-0 left-1/2 -translate-x-1/2 w-1 h-1 bg-primary rounded-full" />
+                    <span className="absolute bottom-0 left-1/2 -translate-x-1/2 w-1.5 h-1.5 bg-primary rounded-full shadow-[0_0_10px_#F3C654]" />
                   )}
                 </Link>
               ))}
@@ -44,31 +44,31 @@ export function Header() {
           </nav>
           
           <div className="flex-1 flex items-center justify-end gap-4">
-            <Button asChild className="hidden sm:flex bg-foreground text-background hover:bg-primary transition-colors rounded-full px-8 font-bold uppercase text-[10px] tracking-widest luxury-button">
+            <Button asChild className="hidden sm:flex bg-foreground text-white hover:bg-primary hover:text-foreground transition-all rounded-full px-8 font-bold uppercase text-[10px] tracking-widest luxury-button">
                <Link href="/menu">Order Menu</Link>
             </Button>
             
             <Sheet>
               <SheetTrigger asChild>
                 <Button variant="ghost" size="icon" className="md:hidden rounded-full hover:bg-primary/10">
-                  <Menu className="h-5 w-5" />
+                  <Menu className="h-6 w-6" />
                 </Button>
               </SheetTrigger>
-              <SheetContent side="right" className="w-full sm:max-w-md p-10 bg-background/95 backdrop-blur-2xl border-none">
+              <SheetContent side="right" className="w-full sm:max-w-md p-10 glass-card-dark border-none">
                   <SheetTitle className="sr-only">Menu</SheetTitle>
                   <div className="flex flex-col h-full">
-                    <div className="flex justify-between items-center mb-12">
+                    <div className="flex justify-between items-center mb-16">
                       <Logo className="scale-75 origin-left" />
                     </div>
                     
-                    <div className="flex flex-col gap-8">
+                    <div className="flex flex-col gap-10">
                       {navLinks.map((link) => (
                         <Link
                           key={link.href}
                           href={link.href}
                           className={cn(
-                            "text-4xl font-headline transition-all hover:translate-x-4 hover:text-primary",
-                            pathname === link.href ? "text-primary" : "text-foreground"
+                            "text-5xl font-headline font-bold transition-all hover:translate-x-4 hover:text-primary",
+                            pathname === link.href ? "text-primary" : "text-white"
                           )}
                         >
                           {link.label}
@@ -76,8 +76,8 @@ export function Header() {
                       ))}
                     </div>
                     
-                    <div className="mt-auto pt-10 border-t border-border/50">
-                       <Button asChild size="lg" className="w-full h-16 rounded-2xl bg-primary text-white font-bold luxury-button text-lg">
+                    <div className="mt-auto pt-10 border-t border-white/10">
+                       <Button asChild size="lg" className="w-full h-16 rounded-2xl bg-primary text-foreground font-bold luxury-button text-lg">
                           <Link href="/menu">Order Now</Link>
                        </Button>
                     </div>
