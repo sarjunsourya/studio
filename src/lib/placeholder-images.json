@@ -127,6 +127,90 @@
       "category": "Sweet"
     },
     {
+      "id": "gallery-sweet-1",
+      "description": "Strawberry Cake",
+      "imageUrl": "https://i.imgur.com/Z9t77cJ.jpeg",
+      "imageHint": "luxury strawberry cake",
+      "category": "Sweet"
+    },
+    {
+      "id": "gallery-sweet-2",
+      "description": "Gummy Birthday Cake",
+      "imageUrl": "https://i.imgur.com/axaFXNX.jpeg",
+      "imageHint": "colorful gummy cake",
+      "category": "Sweet"
+    },
+    {
+      "id": "gallery-sweet-3",
+      "description": "Rasmalai",
+      "imageUrl": "https://i.imgur.com/DA53Oj4.jpeg",
+      "imageHint": "traditional rasmalai luxury",
+      "category": "Sweet"
+    },
+    {
+      "id": "gallery-sweet-4",
+      "description": "Paysam",
+      "imageUrl": "https://i.imgur.com/eKNOQbp.jpeg",
+      "imageHint": "luxury indian dessert paysam",
+      "category": "Sweet"
+    },
+    {
+      "id": "gallery-sweet-5",
+      "description": "Nut Laddus",
+      "imageUrl": "https://i.imgur.com/8AOpnyQ.jpeg",
+      "imageHint": "healthy nut laddus",
+      "category": "Sweet"
+    },
+    {
+      "id": "gallery-sweet-6",
+      "description": "Chocolate Cake",
+      "imageUrl": "https://i.imgur.com/pcrTjUA.jpeg",
+      "imageHint": "decadent chocolate cake",
+      "category": "Sweet"
+    },
+    {
+      "id": "gallery-sweet-7",
+      "description": "Sunflower Cake",
+      "imageUrl": "https://i.imgur.com/NBOXPJL.jpeg",
+      "imageHint": "sunflower floral cake",
+      "category": "Sweet"
+    },
+    {
+      "id": "gallery-sweet-8",
+      "description": "Cookies",
+      "imageUrl": "https://i.imgur.com/qDZ8GBR.jpeg",
+      "imageHint": "assorted luxury cookies",
+      "category": "Sweet"
+    },
+    {
+      "id": "gallery-sweet-9",
+      "description": "Barfi",
+      "imageUrl": "https://i.imgur.com/vXeUHAn.jpeg",
+      "imageHint": "elegant indian barfi",
+      "category": "Sweet"
+    },
+    {
+      "id": "gallery-sweet-10",
+      "description": "Apple Pie",
+      "imageUrl": "https://i.imgur.com/K9KwTkK.jpeg",
+      "imageHint": "luxury apple pie",
+      "category": "Sweet"
+    },
+    {
+      "id": "gallery-sweet-11",
+      "description": "Rasmalai Cake",
+      "imageUrl": "https://i.imgur.com/U6X7J9b.jpeg",
+      "imageHint": "rasmalai fusion cake",
+      "category": "Sweet"
+    },
+    {
+      "id": "gallery-sweet-12",
+      "description": "Pumpkin Cake",
+      "imageUrl": "https://i.imgur.com/CTYhLrL.jpeg",
+      "imageHint": "luxury pumpkin cake",
+      "category": "Sweet"
+    },
+    {
       "id": "gallery-thali-1",
       "description": "Thali Heritage",
       "imageUrl": "https://i.imgur.com/o1JBQOO.jpeg",

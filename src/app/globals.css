@@ -1,68 +1,44 @@
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 @layer base {
   :root {
-    --background: 0 0% 96%; /* #F5F5F5 - Very light grey */
-    --foreground: 170 53% 11%; /* Dark Teal for contrast */
-
-    --card: 0 0% 100%;
-    --card-foreground: 170 53% 11%;
- 
-    --popover: 0 0% 100%;
-    --popover-foreground: 170 53% 11%;
- 
-    --primary: 43 89% 64%; /* #F3C654 - Gold */
-    --primary-foreground: 170 53% 11%;
- 
-    --secondary: 170 30% 90%; /* Light teal tint */
-    --secondary-foreground: 170 53% 11%;
- 
-    --muted: 0 0% 90%;
-    --muted-foreground: 170 10% 40%;
- 
-    --accent: 126 52% 42%; /* #3FAE49 - Green */
-    --accent-foreground: 0 0% 100%;
- 
-    --destructive: 0 84% 60%;
-    --destructive-foreground: 0 0% 98%;
-
-    --border: 0 0% 85%;
-    --input: 0 0% 85%;
-    --ring: 43 89% 64%;
- 
-    --radius: 1.5rem;
-  }
- 
-  .dark {
-    --background: 170 53% 5%;
+    --background: 170 53% 5%; /* Dark Teal Deep */
     --foreground: 0 0% 98%;
- 
+
     --card: 170 53% 8%;
     --card-foreground: 0 0% 98%;
  
     --popover: 170 53% 5%;
     --popover-foreground: 0 0% 98%;
  
-    --primary: 43 89% 64%;
+    --primary: 43 89% 64%; /* Gold */
     --primary-foreground: 170 53% 11%;
  
-    --secondary: 170 30% 15%;
+    --secondary: 170 30% 12%;
     --secondary-foreground: 0 0% 98%;
  
     --muted: 170 20% 15%;
     --muted-foreground: 170 10% 65%;
  
-    --accent: 126 52% 45%;
+    --accent: 126 52% 45%; /* Classic Green */
     --accent-foreground: 0 0% 100%;
  
     --destructive: 0 62% 30%;
     --destructive-foreground: 0 0% 98%;
- 
-    --border: 170 20% 20%;
+
+    --border: 170 20% 20%; /* Silver/Teal Border */
     --input: 170 20% 20%;
     --ring: 43 89% 64%;
+ 
+    --radius: 1.5rem;
+  }
+ 
+  .dark {
+    --background: 170 53% 3%;
+    --foreground: 0 0% 98%;
   }
 }
  
@@ -71,7 +47,7 @@
     @apply border-border;
   }
   body {
-    @apply bg-background text-foreground selection:bg-primary/30;
+    @apply bg-background text-foreground selection:bg-primary/30 antialiased;
   }
   h1, h2, h3, h4, h5, h6 {
     @apply font-headline tracking-tight;
@@ -80,47 +56,49 @@
 
 @layer components {
   .glass-card {
-    background: rgba(255, 255, 255, 0.25);
-    backdrop-filter: blur(14px);
-    -webkit-backdrop-filter: blur(14px);
-    border: 1px solid rgba(255, 255, 255, 0.45);
-    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.1);
-    @apply rounded-[2rem];
+    background: rgba(10, 46, 42, 0.4);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
+    @apply rounded-[2.5rem];
   }
   
   .glass-card-dark {
-    background: rgba(10, 46, 42, 0.7);
-    backdrop-filter: blur(14px);
-    -webkit-backdrop-filter: blur(14px);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    @apply rounded-[2rem];
+    background: rgba(5, 25, 23, 0.8);
+    backdrop-filter: blur(25px);
+    -webkit-backdrop-filter: blur(25px);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    @apply rounded-[2.5rem];
   }
 
   .luxury-button {
-    @apply relative overflow-hidden transition-all duration-300 hover:scale-[1.02] active:scale-95 shadow-lg hover:shadow-primary/20;
+    @apply relative overflow-hidden transition-all duration-500 hover:scale-[1.02] active:scale-95 shadow-2xl hover:shadow-primary/30;
   }
 
   .silver-border {
-    @apply border border-[#C0C0C0]/30;
+    @apply border border-white/10 hover:border-white/30 transition-colors;
   }
 
   .gold-text {
-    @apply text-primary font-bold;
+    @apply text-primary font-bold tracking-widest;
   }
 }
 
 .animate-fade-in {
-  animation: fadeIn 0.8s ease-out forwards;
+  animation: fadeIn 1.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
 
 @keyframes fadeIn {
-  from { opacity: 0; transform: translateY(20px); }
+  from { opacity: 0; transform: translateY(30px); }
   to { opacity: 1; transform: translateY(0); }
 }
 
-.parallax-bg {
-  background-attachment: fixed;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
+.animate-spin-slow {
+  animation: spin 15s linear infinite;
+}
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
 }
