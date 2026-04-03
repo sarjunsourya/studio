@@ -1,3 +1,4 @@
+
 "use server";
 
 import { z } from "zod";
@@ -94,8 +95,9 @@ export async function adminLogin(prevState: any, formData: FormData) {
     const cookieStore = await cookies();
     cookieStore.set("admin_session", "tdk_secret_session_active", {
       httpOnly: true,
-      secure: true,
-      sameSite: "strict",
+      secure: process.env.NODE_ENV === "production",
+      sameSite: "lax",
+      path: "/",
       maxAge: 60 * 60 * 24, // 24 hours
     });
     return { success: true };
@@ -117,5 +119,6 @@ export async function adminLogout() {
  */
 export async function checkAdminSession() {
   const cookieStore = await cookies();
-  return cookieStore.get("admin_session")?.value === "tdk_secret_session_active";
+  const session = cookieStore.get("admin_session")?.value;
+  return session === "tdk_secret_session_active";
 }

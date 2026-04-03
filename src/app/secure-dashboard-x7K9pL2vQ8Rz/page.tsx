@@ -1,3 +1,4 @@
+
 "use client";
 
 import { useEffect, useState } from "react";
@@ -36,28 +37,33 @@ export default function AdminDashboardPage() {
   const router = useRouter();
   const firestore = useFirestore();
   const auth = useAuth();
-  const { user } = useUser();
+  const { user, isUserLoading } = useUser();
 
   // 1. Auth Guard & Firebase Session Sync
   useEffect(() => {
     async function verify() {
+      // Only verify if we haven't already confirmed authentication
+      if (isAuthenticated === true && user) return;
+
       const active = await checkAdminSession();
       if (!active) {
         router.push("/secure-dashboard-x7K9pL2vQ8Rz/login");
-      } else {
-        setIsAuthenticated(true);
-        // Sync Firebase auth state if not already signed in
-        if (auth && !user) {
-          try {
-            await signInAnonymously(auth);
-          } catch (e) {
-            console.error("Firebase background sync failed:", e);
-          }
+        return;
+      }
+      
+      setIsAuthenticated(true);
+
+      // Sync Firebase auth state if not already signed in
+      if (auth && !user && !isUserLoading) {
+        try {
+          await signInAnonymously(auth);
+        } catch (e) {
+          console.error("Firebase background sync failed:", e);
         }
       }
     }
     verify();
-  }, [router, auth, user]);
+  }, [router, auth, user, isUserLoading, isAuthenticated]);
 
   // 2. Fetch Orders
   const ordersQuery = useMemoFirebase(() => {
