@@ -33,8 +33,8 @@ const cateringInquirySchema = z.object({
 function SubmitButton() {
     const { pending } = useFormStatus();
     return (
-      <Button type="submit" disabled={pending} className="w-full bg-primary hover:bg-primary/90 text-primary-foreground font-bold">
-        {pending ? <><Loader2 className="mr-2 h-4 w-4 animate-spin" /> Submitting...</> : "Submit Inquiry"}
+      <Button type="submit" disabled={pending} className="w-full bg-primary hover:bg-white text-background font-bold h-14 rounded-2xl luxury-button border-none">
+        {pending ? <><Loader2 className="mr-2 h-5 w-5 animate-spin" /> SUBMITTING...</> : "SUBMIT INQUIRY"}
       </Button>
     );
   }
@@ -60,7 +60,7 @@ export function CateringForm() {
     useEffect(() => {
         if (state.message && !state.errors) {
             toast({
-                title: "Success!",
+                title: "Inquiry Sent",
                 description: state.message,
                 variant: "default",
             });
@@ -76,8 +76,8 @@ export function CateringForm() {
 
   return (
     <Form {...form}>
-        <form action={formAction} className="space-y-6">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <form action={formAction} className="space-y-8">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                 <FormField
                     control={form.control}
                     name="name"
@@ -85,7 +85,7 @@ export function CateringForm() {
                     <FormItem>
                         <FormLabel>Full Name</FormLabel>
                         <FormControl>
-                            <Input placeholder="John Doe" {...field} />
+                            <Input placeholder="John Doe" className="bg-background/50 border-white/10" {...field} />
                         </FormControl>
                         <FormMessage />
                     </FormItem>
@@ -98,14 +98,14 @@ export function CateringForm() {
                     <FormItem>
                         <FormLabel>Email Address</FormLabel>
                         <FormControl>
-                            <Input type="email" placeholder="your@email.com" {...field} />
+                            <Input type="email" placeholder="your@email.com" className="bg-background/50 border-white/10" {...field} />
                         </FormControl>
                         <FormMessage />
                     </FormItem>
                     )}
                 />
             </div>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                 <FormField
                     control={form.control}
                     name="phone"
@@ -113,7 +113,7 @@ export function CateringForm() {
                     <FormItem>
                         <FormLabel>Phone Number</FormLabel>
                         <FormControl>
-                            <Input placeholder="+31 12 345 6789" {...field} />
+                            <Input placeholder="+31 12 345 6789" className="bg-background/50 border-white/10" {...field} />
                         </FormControl>
                         <FormMessage />
                     </FormItem>
@@ -126,7 +126,7 @@ export function CateringForm() {
                     <FormItem className="flex flex-col">
                         <FormLabel>Event Date</FormLabel>
                         <FormControl>
-                            <DatePicker date={field.value} setDate={field.onChange} />
+                            <DatePicker date={field.value} setDate={field.onChange} className="bg-background/50 border-white/10" />
                         </FormControl>
                         <FormMessage />
                     </FormItem>
@@ -140,13 +140,13 @@ export function CateringForm() {
                 <FormItem>
                     <FormLabel>Event Address</FormLabel>
                     <FormControl>
-                        <Input placeholder="123 Main St, Delft" {...field} />
+                        <Input placeholder="123 Main St, Delft" className="bg-background/50 border-white/10" {...field} />
                     </FormControl>
                     <FormMessage />
                 </FormItem>
                 )}
             />
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                  <FormField
                     control={form.control}
                     name="guestCount"
@@ -154,7 +154,7 @@ export function CateringForm() {
                     <FormItem>
                         <FormLabel>Number of Guests</FormLabel>
                         <FormControl>
-                            <Input type="number" min="1" placeholder="25" {...field} />
+                            <Input type="number" min="1" placeholder="25" className="bg-background/50 border-white/10" {...field} />
                         </FormControl>
                         <FormMessage />
                     </FormItem>
@@ -168,11 +168,11 @@ export function CateringForm() {
                             <FormLabel>Food Preference</FormLabel>
                             <Select onValueChange={field.onChange} defaultValue={field.value}>
                                 <FormControl>
-                                    <SelectTrigger>
+                                    <SelectTrigger className="bg-background/50 border-white/10">
                                         <SelectValue placeholder="Select food preference" />
                                     </SelectTrigger>
                                 </FormControl>
-                                <SelectContent>
+                                <SelectContent className="glass-card-dark border-white/10">
                                     <SelectItem value="Vegetarian">Vegetarian</SelectItem>
                                     <SelectItem value="Vegan">Vegan</SelectItem>
                                     <SelectItem value="Both">Both</SelectItem>
@@ -192,7 +192,7 @@ export function CateringForm() {
                     <FormControl>
                     <Textarea
                         placeholder="e.g., no nuts, focus on specific dishes..."
-                        className="min-h-24"
+                        className="min-h-32 bg-background/50 border-white/10"
                         {...field}
                     />
                     </FormControl>
@@ -209,6 +209,7 @@ export function CateringForm() {
                     <FormControl>
                     <Textarea
                         placeholder="Any other details like venue specifics, occasion, etc."
+                        className="bg-background/50 border-white/10"
                         {...field}
                     />
                     </FormControl>

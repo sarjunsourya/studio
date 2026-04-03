@@ -1,4 +1,3 @@
-
 "use client";
 
 import Link from 'next/link';
@@ -25,7 +24,6 @@ import {
   AlertDialogHeader,
   AlertDialogTitle,
 } from "@/components/ui/alert-dialog"
-
 
 const orderFormSchema = z.object({
   firstName: z.string().min(1, "First name is required."),
@@ -77,9 +75,8 @@ export function OrderForm() {
   }, [priceString]);
 
   const subtotal = price * quantity;
-  const shippingCost = shippingMethod === 'delivery' ? 5.00 : 0; // Example shipping cost
+  const shippingCost = shippingMethod === 'delivery' ? 5.00 : 0;
   const total = subtotal + shippingCost;
-
 
   const handleQuantityChange = (amount: number) => {
     setQuantity(prev => Math.max(1, prev + amount));
@@ -108,20 +105,15 @@ export function OrderForm() {
 
     startTransition(async () => {
         try {
-            const response = await fetch(googleFormUrl, {
+            await fetch(googleFormUrl, {
                 method: "POST",
                 body: formData,
                 mode: "no-cors", 
             });
-
-            // "no-cors" mode means we get an opaque response, we can't check status
-            // We'll optimistically assume it worked.
             setShowSuccessDialog(true);
             form.reset();
             setQuantity(1);
-
         } catch (error) {
-            console.error("Error submitting form:", error);
             toast({
                 title: "Submission Error",
                 description: "There was an issue submitting your order. Please try again or contact us directly.",
@@ -133,9 +125,9 @@ export function OrderForm() {
 
   if (!dish || !priceString) {
       return (
-        <div className='text-center text-destructive'>
-            <p>No dish selected. Please go back to the menu and select an item to order.</p>
-            <Button asChild variant="link" className="mt-4">
+        <div className='text-center py-12'>
+            <p className="text-muted-foreground mb-6">No dish selected. Please go back to the menu and select an item to order.</p>
+            <Button asChild variant="outline" className="border-primary text-primary hover:bg-primary hover:text-primary-foreground">
                 <Link href="/menu">Go to Menu</Link>
             </Button>
         </div>
@@ -145,146 +137,142 @@ export function OrderForm() {
   return (
     <>
     <Form {...form}>
-      <form onSubmit={form.handleSubmit(processOrder)} className="space-y-8">
+      <form onSubmit={form.handleSubmit(processOrder)} className="space-y-12">
         <div>
-          <h2 className="text-2xl font-headline font-semibold mb-6">Billing details</h2>
-          <div className="space-y-4">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <h2 className="text-2xl font-headline font-semibold mb-8 text-foreground">Billing details</h2>
+          <div className="space-y-6">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <FormField control={form.control} name="firstName" render={({ field }) => (
-                    <FormItem><FormLabel>First name *</FormLabel><FormControl><Input {...field} /></FormControl><FormMessage /></FormItem>
+                    <FormItem><FormLabel>First name *</FormLabel><FormControl><Input className="bg-background/50 border-white/10" {...field} /></FormControl><FormMessage /></FormItem>
                 )} />
                 <FormField control={form.control} name="lastName" render={({ field }) => (
-                    <FormItem><FormLabel>Last name *</FormLabel><FormControl><Input {...field} /></FormControl><FormMessage /></FormItem>
+                    <FormItem><FormLabel>Last name *</FormLabel><FormControl><Input className="bg-background/50 border-white/10" {...field} /></FormControl><FormMessage /></FormItem>
                 )} />
             </div>
             <FormField control={form.control} name="companyName" render={({ field }) => (
-                <FormItem><FormLabel>Company name (optional)</FormLabel><FormControl><Input {...field} /></FormControl><FormMessage /></FormItem>
+                <FormItem><FormLabel>Company name (optional)</FormLabel><FormControl><Input className="bg-background/50 border-white/10" {...field} /></FormControl><FormMessage /></FormItem>
             )} />
             
             <FormItem>
                 <FormLabel>Country / Region *</FormLabel>
-                <FormControl><Input value="Netherlands" disabled /></FormControl>
+                <FormControl><Input value="Netherlands" disabled className="bg-muted/20 border-white/5 opacity-50" /></FormControl>
             </FormItem>
 
             <FormField control={form.control} name="streetAddress" render={({ field }) => (
-                <FormItem><FormLabel>Street address *</FormLabel><FormControl><Input placeholder="House number and street name" {...field} /></FormControl><FormMessage /></FormItem>
+                <FormItem><FormLabel>Street address *</FormLabel><FormControl><Input placeholder="House number and street name" className="bg-background/50 border-white/10" {...field} /></FormControl><FormMessage /></FormItem>
             )} />
             <FormField control={form.control} name="apartment" render={({ field }) => (
-                <FormItem><FormLabel>Apartment, suite, unit, etc. (optional)</FormLabel><FormControl><Input placeholder="Apartment, suite, unit, etc." {...field} /></FormControl><FormMessage /></FormItem>
+                <FormItem><FormLabel>Apartment, suite, unit, etc. (optional)</FormLabel><FormControl><Input placeholder="Apartment, suite, unit, etc." className="bg-background/50 border-white/10" {...field} /></FormControl><FormMessage /></FormItem>
             )} />
-             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <FormField control={form.control} name="city" render={({ field }) => (
-                    <FormItem><FormLabel>Town / City *</FormLabel><FormControl><Input {...field} /></FormControl><FormMessage /></FormItem>
+                    <FormItem><FormLabel>Town / City *</FormLabel><FormControl><Input className="bg-background/50 border-white/10" {...field} /></FormControl><FormMessage /></FormItem>
                 )} />
                 <FormField control={form.control} name="postcode" render={({ field }) => (
-                    <FormItem><FormLabel>Postcode / ZIP *</FormLabel><FormControl><Input {...field} /></FormControl><FormMessage /></FormItem>
+                    <FormItem><FormLabel>Postcode / ZIP *</FormLabel><FormControl><Input className="bg-background/50 border-white/10" {...field} /></FormControl><FormMessage /></FormItem>
                 )} />
             </div>
-             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <FormField control={form.control} name="phone" render={({ field }) => (
-                    <FormItem><FormLabel>Phone *</FormLabel><FormControl><Input type="tel" {...field} /></FormControl><FormMessage /></FormItem>
+                    <FormItem><FormLabel>Phone *</FormLabel><FormControl><Input type="tel" className="bg-background/50 border-white/10" {...field} /></FormControl><FormMessage /></FormItem>
                 )} />
                 <FormField control={form.control} name="email" render={({ field }) => (
-                    <FormItem><FormLabel>Email address *</FormLabel><FormControl><Input type="email" {...field} /></FormControl><FormMessage /></FormItem>
+                    <FormItem><FormLabel>Email address *</FormLabel><FormControl><Input type="email" className="bg-background/50 border-white/10" {...field} /></FormControl><FormMessage /></FormItem>
                 )} />
             </div>
           </div>
         </div>
 
-        <Separator />
+        <Separator className="bg-white/5" />
         
-        {/* We can add ship to different address logic here if needed */}
-
         <FormField control={form.control} name="orderNotes" render={({ field }) => (
-            <FormItem><FormLabel>Order notes (optional)</FormLabel><FormControl><Textarea placeholder="Notes about your order, e.g. special notes for delivery." {...field} /></FormControl><FormMessage /></FormItem>
+            <FormItem><FormLabel>Order notes (optional)</FormLabel><FormControl><Textarea placeholder="Notes about your order, e.g. special notes for delivery." className="bg-background/50 border-white/10 min-h-[120px]" {...field} /></FormControl><FormMessage /></FormItem>
         )} />
 
-        <Separator />
+        <Separator className="bg-white/5" />
 
         <div>
-            <h2 className="text-2xl font-headline font-semibold mb-6">Your order</h2>
-            <div className="border rounded-lg p-6 bg-secondary/30">
+            <h2 className="text-2xl font-headline font-semibold mb-8 text-foreground">Your order</h2>
+            <div className="glass-card-dark p-8 md:p-10 border-white/5">
                 <div className="flow-root">
-                    <div className="flex justify-between font-semibold">
+                    <div className="flex justify-between font-bold text-primary uppercase tracking-widest text-xs">
                         <span>Product</span>
                         <span>Subtotal</span>
                     </div>
-                    <Separator className="my-4"/>
+                    <Separator className="my-6 bg-white/10"/>
                     <div className="flex justify-between items-center">
                         <div className='flex flex-col'>
-                            <span className="text-muted-foreground">{dish}</span>
-                             <div className="flex items-center gap-2 mt-2">
-                                <Button type='button' variant="outline" size="icon" className="h-6 w-6" onClick={() => handleQuantityChange(-1)}><Minus className="h-3 w-3"/></Button>
-                                <span className="font-bold w-4 text-center">{quantity}</span>
-                                <Button type='button' variant="outline" size="icon" className="h-6 w-6" onClick={() => handleQuantityChange(1)}><Plus className="h-3 w-3"/></Button>
+                            <span className="text-foreground font-semibold text-lg">{dish}</span>
+                             <div className="flex items-center gap-4 mt-4">
+                                <Button type='button' variant="outline" size="icon" className="h-8 w-8 rounded-full border-white/20 hover:bg-primary hover:text-primary-foreground" onClick={() => handleQuantityChange(-1)}><Minus className="h-4 w-4"/></Button>
+                                <span className="font-bold w-4 text-center text-foreground">{quantity}</span>
+                                <Button type='button' variant="outline" size="icon" className="h-8 w-8 rounded-full border-white/20 hover:bg-primary hover:text-primary-foreground" onClick={() => handleQuantityChange(1)}><Plus className="h-4 w-4"/></Button>
                             </div>
                         </div>
-                        <span className="font-semibold">€{subtotal.toFixed(2)}</span>
+                        <span className="font-bold text-lg text-foreground">€{subtotal.toFixed(2)}</span>
                     </div>
-                    <Separator className="my-4"/>
-                    <div className="space-y-2">
-                         <div className="flex justify-between"><span className='font-semibold'>Subtotal</span> <span className="font-semibold">€{subtotal.toFixed(2)}</span></div>
-                         <div className="flex justify-between"><span className='font-semibold'>Shipping</span> <span>{shippingMethod === 'pickup' ? 'Pickup' : `Delivery: €${shippingCost.toFixed(2)}`}</span></div>
+                    <Separator className="my-6 bg-white/10"/>
+                    <div className="space-y-4">
+                         <div className="flex justify-between text-muted-foreground"><span className='font-medium'>Subtotal</span> <span className="font-semibold text-foreground">€{subtotal.toFixed(2)}</span></div>
+                         <div className="flex justify-between text-muted-foreground"><span className='font-medium'>Shipping</span> <span className="text-foreground">{shippingMethod === 'pickup' ? 'Pickup' : `Delivery: €${shippingCost.toFixed(2)}`}</span></div>
                     </div>
-                     <Separator className="my-4"/>
-                     <div className="flex justify-between text-xl"><span className='font-bold'>Total</span> <span className="font-bold">€{total.toFixed(2)}</span></div>
+                     <Separator className="my-6 bg-white/10"/>
+                     <div className="flex justify-between text-2xl"><span className='font-bold text-foreground'>Total</span> <span className="font-bold text-primary">€{total.toFixed(2)}</span></div>
                 </div>
-                <div className="mt-6">
+                <div className="mt-10">
                     <FormField
                         control={form.control}
                         name="shipping"
                         render={({ field }) => (
-                            <RadioGroup onValueChange={field.onChange} defaultValue={field.value} className="space-y-2">
-                                <FormItem className="flex items-center space-x-3 space-y-0 p-3 rounded-md border has-[[data-state=checked]]:border-primary">
+                            <RadioGroup onValueChange={field.onChange} defaultValue={field.value} className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                                <FormItem className="flex items-center space-x-3 space-y-0 p-4 rounded-2xl border border-white/10 has-[[data-state=checked]]:border-primary has-[[data-state=checked]]:bg-primary/5 transition-all">
                                     <FormControl><RadioGroupItem value="delivery" /></FormControl>
-                                    <FormLabel className="font-normal mb-0!">Delivery</FormLabel>
+                                    <FormLabel className="font-semibold cursor-pointer text-foreground">Delivery (€5,00)</FormLabel>
                                 </FormItem>
-                                <FormItem className="flex items-center space-x-3 space-y-0 p-3 rounded-md border has-[[data-state=checked]]:border-primary">
+                                <FormItem className="flex items-center space-x-3 space-y-0 p-4 rounded-2xl border border-white/10 has-[[data-state=checked]]:border-primary has-[[data-state=checked]]:bg-primary/5 transition-all">
                                     <FormControl><RadioGroupItem value="pickup" /></FormControl>
-                                    <FormLabel className="font-normal mb-0!">Pickup</FormLabel>
+                                    <FormLabel className="font-semibold cursor-pointer text-foreground">Pickup (Free)</FormLabel>
                                 </FormItem>
                             </RadioGroup>
                         )}
                     />
                 </div>
-                <div className="mt-6 p-4 bg-background rounded-md border border-primary/50 text-center">
-                    <p className="font-semibold">Cash or Tikkie payment on Delivery / Pickup</p>
+                <div className="mt-8 p-6 bg-primary/10 rounded-2xl border border-primary/20 text-center">
+                    <p className="font-bold text-primary tracking-wide">CASH OR TIKKIE PAYMENT ON DELIVERY / PICKUP</p>
                 </div>
-                 <div className="mt-6 text-center text-sm">
-                    <p>
-                      You can also place an order directly via Instagram DM.
+                 <div className="mt-8 text-center">
+                    <p className="text-sm text-muted-foreground mb-2">
+                      Need help? Place your order via Instagram DM.
                     </p>
-                    <Button asChild variant="link" className="text-primary">
-                        <a href="https://instagram.com/thedivinekitchen5/" target="_blank" rel="noopener noreferrer">Go to Instagram <ArrowRight className="ml-1 h-4 w-4"/></a>
+                    <Button asChild variant="link" className="text-primary font-bold hover:no-underline">
+                        <a href="https://instagram.com/thedivinekitchen5/" target="_blank" rel="noopener noreferrer">Message on Instagram <ArrowRight className="ml-2 h-4 w-4"/></a>
                     </Button>
                 </div>
             </div>
         </div>
 
-        <div className="text-sm text-muted-foreground">
-             <p>Your personal data will be used to process your order, support your experience throughout this website, and for other purposes described in our privacy policy.</p>
+        <div className="text-xs text-muted-foreground/60 leading-relaxed max-w-2xl">
+             <p>Your personal data will be used to process your order, support your experience throughout this website, and for other purposes described in our privacy policy. We value your privacy and trust.</p>
         </div>
 
-        <Button type="submit" disabled={isPending} className="w-full bg-primary hover:bg-primary/90 text-primary-foreground font-bold text-lg py-6 mt-6">
-            {isPending ? <><Loader2 className="mr-2 h-4 w-4 animate-spin" /> Placing Order...</> : "Place order"}
+        <Button type="submit" disabled={isPending} className="w-full bg-primary hover:bg-white text-background font-bold text-xl py-8 rounded-2xl luxury-button transition-all border-none">
+            {isPending ? <><Loader2 className="mr-2 h-5 w-5 animate-spin" /> PLACING ORDER...</> : "PLACE ORDER"}
         </Button>
       </form>
     </Form>
     <AlertDialog open={showSuccessDialog} onOpenChange={setShowSuccessDialog}>
-        <AlertDialogContent>
+        <AlertDialogContent className="glass-card-dark border-primary/20">
             <AlertDialogHeader>
-            <AlertDialogTitle>Order Placed Successfully!</AlertDialogTitle>
-            <AlertDialogDescription>
-                Thank you for your order. We have received your details and will get in touch with you shortly to confirm.
+            <AlertDialogTitle className="text-2xl text-primary font-headline">Order Placed Successfully!</AlertDialogTitle>
+            <AlertDialogDescription className="text-muted-foreground text-lg pt-4">
+                Thank you for choosing The Divine Kitchen. We have received your order details and will contact you shortly to confirm the pickup or delivery time.
             </AlertDialogDescription>
             </AlertDialogHeader>
-            <AlertDialogFooter>
-            <AlertDialogAction onClick={() => setShowSuccessDialog(false)}>Close</AlertDialogAction>
+            <AlertDialogFooter className="pt-6">
+            <AlertDialogAction className="bg-primary text-background font-bold hover:bg-white rounded-xl" onClick={() => setShowSuccessDialog(false)}>Got it, thanks!</AlertDialogAction>
             </AlertDialogFooter>
         </AlertDialogContent>
     </AlertDialog>
     </>
   );
 }
-
-    

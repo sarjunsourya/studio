@@ -1,4 +1,3 @@
-
 "use client";
 
 import { useActionState } from "react";
@@ -26,8 +25,8 @@ const contactFormSchema = z.object({
 function SubmitButton() {
   const { pending } = useFormStatus();
   return (
-    <Button type="submit" disabled={pending} className="w-full bg-accent hover:bg-accent/90 text-accent-foreground font-bold">
-      {pending ? <><Loader2 className="mr-2 h-4 w-4 animate-spin" /> Sending...</> : "Send Message"}
+    <Button type="submit" disabled={pending} className="w-full bg-accent hover:bg-white text-background font-bold h-14 rounded-2xl luxury-button border-none">
+      {pending ? <><Loader2 className="mr-2 h-5 w-5 animate-spin" /> SENDING...</> : "SEND MESSAGE"}
     </Button>
   );
 }
@@ -68,13 +67,15 @@ export function ContactForm() {
   }, [state, toast, form]);
 
   useEffect(() => {
-    form.setValue('message', defaultMessage);
+    if (defaultMessage) {
+        form.setValue('message', defaultMessage);
+    }
   }, [defaultMessage, form]);
 
   return (
     <Form {...form}>
-      <form action={formAction} className="space-y-6">
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+      <form action={formAction} className="space-y-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
           <FormField
             control={form.control}
             name="name"
@@ -82,7 +83,7 @@ export function ContactForm() {
               <FormItem>
                 <FormLabel>Name</FormLabel>
                 <FormControl>
-                  <Input placeholder="Your Name" {...field} />
+                  <Input placeholder="Your Name" className="bg-background/50 border-white/10" {...field} />
                 </FormControl>
                 <FormMessage />
               </FormItem>
@@ -95,7 +96,7 @@ export function ContactForm() {
               <FormItem>
                 <FormLabel>Email</FormLabel>
                 <FormControl>
-                  <Input type="email" placeholder="your@email.com" {...field} />
+                  <Input type="email" placeholder="your@email.com" className="bg-background/50 border-white/10" {...field} />
                 </FormControl>
                 <FormMessage />
               </FormItem>
@@ -111,7 +112,7 @@ export function ContactForm() {
               <FormControl>
                 <Textarea
                   placeholder="How can we help you?"
-                  className="min-h-32"
+                  className="min-h-40 bg-background/50 border-white/10"
                   {...field}
                 />
               </FormControl>

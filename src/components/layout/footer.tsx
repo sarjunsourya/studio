@@ -69,8 +69,8 @@ export function Footer() {
           </div>
         </div>
 
-        <div className="mt-20 pt-8 border-t border-white/5 flex flex-col items-center gap-6">
-          <div className="text-center text-[10px] uppercase tracking-[0.2em] text-muted-foreground/40">
+        <div className="mt-20 pt-8 border-t border-white/5 flex flex-col items-center gap-4">
+          <div className="text-center text-[10px] uppercase tracking-[0.2em] text-muted-foreground/60">
             &copy; {new Date().getFullYear()} The Divine Kitchen • Authentic Homemade Excellence
           </div>
           <div className="text-center">
