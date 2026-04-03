@@ -244,6 +244,20 @@
       "imageUrl": "https://i.imgur.com/3FBHPft.jpeg",
       "imageHint": "gourmet north indian food",
       "category": "Thali/Assortment"
+    },
+    {
+      "id": "gallery-thali-3",
+      "description": "Southern Sunrise Feast",
+      "imageUrl": "https://i.imgur.com/q7tpIwA.jpeg",
+      "imageHint": "traditional south indian breakfast feast",
+      "category": "Thali/Assortment"
+    },
+    {
+      "id": "gallery-thali-4",
+      "description": "Midday Gourmet Feast",
+      "imageUrl": "https://i.imgur.com/YJqIGdL.jpeg",
+      "imageHint": "exquisite indian lunch thali",
+      "category": "Thali/Assortment"
     }
   ]
 }
