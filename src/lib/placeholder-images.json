@@ -211,6 +211,27 @@
       "category": "Sweet"
     },
     {
+      "id": "gallery-savory-1",
+      "description": "Tomato Paneer Curry",
+      "imageUrl": "https://i.imgur.com/FvCgx4x.jpeg",
+      "imageHint": "gourmet paneer curry",
+      "category": "Savory"
+    },
+    {
+      "id": "gallery-savory-2",
+      "description": "Fried Rice",
+      "imageUrl": "https://i.imgur.com/6oQO5vk.jpeg",
+      "imageHint": "fragrant vegetable fried rice",
+      "category": "Savory"
+    },
+    {
+      "id": "gallery-savory-3",
+      "description": "Vada",
+      "imageUrl": "https://i.imgur.com/QprLxlw.jpg",
+      "imageHint": "crispy south indian vada",
+      "category": "Savory"
+    },
+    {
       "id": "gallery-thali-1",
       "description": "Thali Heritage",
       "imageUrl": "https://i.imgur.com/o1JBQOO.jpeg",
