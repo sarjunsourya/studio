@@ -33,11 +33,11 @@ export function WhyUsSection() {
     <section className="w-full py-24 md:py-32 bg-foreground relative overflow-hidden">
       <div className="container mx-auto max-w-7xl px-4 relative z-10">
         <div className="text-center mb-20">
-          <h2 className="font-headline text-4xl md:text-6xl font-bold text-white mb-6">
+          <h2 className="font-headline text-4xl md:text-6xl font-bold text-background mb-6">
             Why <span className="text-primary italic">The Divine Kitchen?</span>
           </h2>
           <div className="w-24 h-1 bg-primary mx-auto rounded-full mb-8" />
-          <p className="mt-4 text-xl text-white/60 font-light max-w-2xl mx-auto">
+          <p className="mt-4 text-xl text-background/60 font-light max-w-2xl mx-auto">
             A standard of excellence rooted in tradition and purity.
           </p>
         </div>
