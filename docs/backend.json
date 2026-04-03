@@ -1,0 +1,509 @@
+{
+  "entities": {
+    "Dish": {
+      "$schema": "http://json-schema.org/draft-07/schema#",
+      "title": "Dish",
+      "type": "object",
+      "description": "Represents a single menu item available from The Divine Kitchen.",
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "Unique identifier for the Dish entity."
+        },
+        "name": {
+          "type": "string",
+          "description": "The name of the dish."
+        },
+        "description": {
+          "type": "string",
+          "description": "A detailed description of the dish, including ingredients and preparation."
+        },
+        "price": {
+          "type": "number",
+          "description": "The price of a single serving of the dish."
+        },
+        "imageUrl": {
+          "type": "string",
+          "description": "URL to an image of the dish.",
+          "format": "uri"
+        },
+        "dietaryPreferences": {
+          "type": "array",
+          "description": "A list of dietary preferences or restrictions this dish adheres to (e.g., 'Vegetarian', 'Gluten-Free', 'Vegan').",
+          "items": {
+            "type": "string"
+          }
+        },
+        "isActive": {
+          "type": "boolean",
+          "description": "Indicates if the dish is currently active and available for ordering or display."
+        },
+        "createdAt": {
+          "type": "string",
+          "description": "Timestamp when the dish record was created.",
+          "format": "date-time"
+        },
+        "updatedAt": {
+          "type": "string",
+          "description": "Timestamp when the dish record was last updated.",
+          "format": "date-time"
+        }
+      },
+      "required": [
+        "id",
+        "name",
+        "description",
+        "price",
+        "imageUrl",
+        "isActive",
+        "createdAt"
+      ]
+    },
+    "WeeklyMenu": {
+      "$schema": "http://json-schema.org/draft-07/schema#",
+      "title": "WeeklyMenu",
+      "type": "object",
+      "description": "Defines a menu for a specific week, comprising a selection of dishes.",
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "Unique identifier for the WeeklyMenu entity."
+        },
+        "weekStartDate": {
+          "type": "string",
+          "description": "The start date of the week for which this menu is valid.",
+          "format": "date"
+        },
+        "weekEndDate": {
+          "type": "string",
+          "description": "The end date of the week for which this menu is valid.",
+          "format": "date"
+        },
+        "dishIds": {
+          "type": "array",
+          "description": "References to Dish entities included in this weekly menu. (Relationship: Dish N:N WeeklyMenu)",
+          "items": {
+            "type": "string"
+          }
+        },
+        "description": {
+          "type": "string",
+          "description": "An optional description or theme for the weekly menu."
+        },
+        "createdAt": {
+          "type": "string",
+          "description": "Timestamp when the weekly menu record was created.",
+          "format": "date-time"
+        },
+        "updatedAt": {
+          "type": "string",
+          "description": "Timestamp when the weekly menu record was last updated.",
+          "format": "date-time"
+        }
+      },
+      "required": [
+        "id",
+        "weekStartDate",
+        "weekEndDate",
+        "dishIds",
+        "createdAt"
+      ]
+    },
+    "CateringInquiry": {
+      "$schema": "http://json-schema.org/draft-07/schema#",
+      "title": "CateringInquiry",
+      "type": "object",
+      "description": "Stores details submitted by a user for a catering service inquiry.",
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "Unique identifier for the CateringInquiry entity."
+        },
+        "customerName": {
+          "type": "string",
+          "description": "The name of the customer submitting the inquiry."
+        },
+        "customerEmail": {
+          "type": "string",
+          "description": "The email address of the customer for communication.",
+          "format": "email"
+        },
+        "customerPhone": {
+          "type": "string",
+          "description": "The phone number of the customer for communication."
+        },
+        "eventDate": {
+          "type": "string",
+          "description": "The requested date for the catering event.",
+          "format": "date"
+        },
+        "numberOfGuests": {
+          "type": "number",
+          "description": "The estimated number of guests for the event."
+        },
+        "menuPreferences": {
+          "type": "string",
+          "description": "Details about preferred menu items, themes, or dietary requirements (free text)."
+        },
+        "message": {
+          "type": "string",
+          "description": "Any additional message or specific requests from the customer."
+        },
+        "inquiryDate": {
+          "type": "string",
+          "description": "Timestamp when the catering inquiry was submitted.",
+          "format": "date-time"
+        },
+        "status": {
+          "type": "string",
+          "description": "The current status of the inquiry (e.g., 'New', 'Contacted', 'Quoted', 'Booked', 'Archived')."
+        },
+        "notes": {
+          "type": "string",
+          "description": "Internal administrative notes regarding the catering inquiry."
+        }
+      },
+      "required": [
+        "id",
+        "customerName",
+        "customerEmail",
+        "eventDate",
+        "numberOfGuests",
+        "message",
+        "inquiryDate",
+        "status"
+      ]
+    },
+    "Image": {
+      "$schema": "http://json-schema.org/draft-07/schema#",
+      "title": "Image",
+      "type": "object",
+      "description": "Stores information about food photography and 'Behind the Scenes' images for the gallery.",
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "Unique identifier for the Image entity."
+        },
+        "title": {
+          "type": "string",
+          "description": "A title for the image."
+        },
+        "description": {
+          "type": "string",
+          "description": "A description of the image content."
+        },
+        "url": {
+          "type": "string",
+          "description": "The URL where the image file is hosted.",
+          "format": "uri"
+        },
+        "category": {
+          "type": "string",
+          "description": "The category of the image (e.g., 'Featured Dish', 'Behind the Scenes', 'Event')."
+        },
+        "uploadDate": {
+          "type": "string",
+          "description": "Timestamp when the image was uploaded.",
+          "format": "date-time"
+        }
+      },
+      "required": [
+        "id",
+        "title",
+        "url",
+        "category",
+        "uploadDate"
+      ]
+    },
+    "ContactInquiry": {
+      "$schema": "http://json-schema.org/draft-07/schema#",
+      "title": "ContactInquiry",
+      "type": "object",
+      "description": "Stores messages submitted through the general contact form.",
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "Unique identifier for the ContactInquiry entity."
+        },
+        "customerName": {
+          "type": "string",
+          "description": "The name of the customer submitting the inquiry."
+        },
+        "customerEmail": {
+          "type": "string",
+          "description": "The email address of the customer for communication.",
+          "format": "email"
+        },
+        "subject": {
+          "type": "string",
+          "description": "The subject of the contact inquiry."
+        },
+        "message": {
+          "type": "string",
+          "description": "The detailed message from the customer."
+        },
+        "inquiryDate": {
+          "type": "string",
+          "description": "Timestamp when the contact inquiry was submitted.",
+          "format": "date-time"
+        },
+        "status": {
+          "type": "string",
+          "description": "The current status of the inquiry (e.g., 'New', 'Responded', 'Archived')."
+        },
+        "notes": {
+          "type": "string",
+          "description": "Internal administrative notes regarding the contact inquiry."
+        }
+      },
+      "required": [
+        "id",
+        "customerName",
+        "customerEmail",
+        "subject",
+        "message",
+        "inquiryDate",
+        "status"
+      ]
+    },
+    "Order": {
+      "$schema": "http://json-schema.org/draft-07/schema#",
+      "title": "Order",
+      "type": "object",
+      "description": "Stores details about a customer's food order, including order number and delivery times.",
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "Unique identifier for the Order entity."
+        },
+        "orderNumber": {
+          "type": "string",
+          "description": "A unique 6-digit order number composed of digits 1-9 (no zeros allowed).",
+          "format": "string",
+          "items": {
+            "type": "string"
+          }
+        },
+        "customerName": {
+          "type": "string",
+          "description": "The name of the customer who placed the order."
+        },
+        "customerEmail": {
+          "type": "string",
+          "description": "The email address of the customer for order communication.",
+          "format": "email"
+        },
+        "customerPhone": {
+          "type": "string",
+          "description": "The phone number of the customer for delivery and communication."
+        },
+        "deliveryAddress": {
+          "type": "string",
+          "description": "The address where the order should be delivered."
+        },
+        "orderDate": {
+          "type": "string",
+          "description": "Timestamp when the order was placed by the customer.",
+          "format": "date-time"
+        },
+        "estimatedCompletionTime": {
+          "type": "string",
+          "description": "The estimated time when the order will be ready for pickup or delivery.",
+          "format": "date-time"
+        },
+        "actualCompletionTime": {
+          "type": "string",
+          "description": "The actual time when the order was completed, picked up, or delivered.",
+          "format": "date-time"
+        },
+        "totalAmount": {
+          "type": "number",
+          "description": "The total monetary amount of the order."
+        },
+        "status": {
+          "type": "string",
+          "description": "The current status of the order (e.g., 'Pending', 'Confirmed', 'Preparing', 'Out for Delivery', 'Completed', 'Cancelled')."
+        },
+        "orderItemIds": {
+          "type": "array",
+          "description": "References to OrderItem entities that comprise this order. (Relationship: Order 1:N OrderItem)",
+          "items": {
+            "type": "string"
+          }
+        },
+        "notes": {
+          "type": "string",
+          "description": "General notes or special instructions provided by the customer for the entire order."
+        },
+        "adminNotes": {
+          "type": "string",
+          "description": "Internal administrative notes regarding the order."
+        }
+      },
+      "required": [
+        "id",
+        "orderNumber",
+        "customerName",
+        "customerEmail",
+        "deliveryAddress",
+        "orderDate",
+        "estimatedCompletionTime",
+        "totalAmount",
+        "status",
+        "orderItemIds"
+      ]
+    },
+    "OrderItem": {
+      "$schema": "http://json-schema.org/draft-07/schema#",
+      "title": "OrderItem",
+      "type": "object",
+      "description": "Represents a single item or dish within a customer's order.",
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "Unique identifier for the OrderItem entity."
+        },
+        "orderId": {
+          "type": "string",
+          "description": "Reference to the Order entity this item belongs to. (Relationship: Order 1:N OrderItem)"
+        },
+        "dishId": {
+          "type": "string",
+          "description": "Reference to the Dish entity being ordered. (Relationship: Dish 1:N OrderItem)"
+        },
+        "quantity": {
+          "type": "number",
+          "description": "The quantity of the dish ordered."
+        },
+        "unitPrice": {
+          "type": "number",
+          "description": "The price of the dish at the time the order was placed, for historical accuracy."
+        },
+        "itemNotes": {
+          "type": "string",
+          "description": "Specific notes or special instructions for this particular item (e.g., 'no cilantro', 'extra spicy')."
+        }
+      },
+      "required": [
+        "id",
+        "orderId",
+        "dishId",
+        "quantity",
+        "unitPrice"
+      ]
+    }
+  },
+  "auth": {
+    "providers": [
+      "password",
+      "anonymous"
+    ]
+  },
+  "firestore": {
+    "structure": [
+      {
+        "path": "/dishes",
+        "definition": {
+          "entityName": "Dish",
+          "schema": {
+            "$ref": "#/backend/entities/Dish"
+          },
+          "description": "Publicly readable collection of all menu dishes. Write access is restricted to authenticated administrators."
+        }
+      },
+      {
+        "path": "/weekly_menus",
+        "definition": {
+          "entityName": "WeeklyMenu",
+          "schema": {
+            "$ref": "#/backend/entities/WeeklyMenu"
+          },
+          "description": "Publicly readable collection of weekly menus. Write access is restricted to authenticated administrators."
+        }
+      },
+      {
+        "path": "/catering_inquiries",
+        "definition": {
+          "entityName": "CateringInquiry",
+          "schema": {
+            "$ref": "#/backend/entities/CateringInquiry"
+          },
+          "description": "Stores all customer catering inquiry submissions. Accessible only by authenticated administrators."
+        }
+      },
+      {
+        "path": "/images",
+        "definition": {
+          "entityName": "Image",
+          "schema": {
+            "$ref": "#/backend/entities/Image"
+          },
+          "description": "Publicly readable collection of gallery images. Write access is restricted to authenticated administrators."
+        }
+      },
+      {
+        "path": "/contact_inquiries",
+        "definition": {
+          "entityName": "ContactInquiry",
+          "schema": {
+            "$ref": "#/backend/entities/ContactInquiry"
+          },
+          "description": "Stores all general customer contact form submissions. Accessible only by authenticated administrators."
+        }
+      },
+      {
+        "path": "/orders/{orderId}",
+        "definition": {
+          "entityName": "Order",
+          "schema": {
+            "$ref": "#/backend/entities/Order"
+          },
+          "description": "Stores details about customer food orders, including the unique 6-digit order number and estimated completion time. Accessible only by authenticated administrators. Frontend 'Thank You' page display of order details should be mediated by a secure backend service.",
+          "params": [
+            {
+              "name": "orderId",
+              "description": "Unique identifier for the order."
+            }
+          ]
+        }
+      },
+      {
+        "path": "/orders/{orderId}/order_items/{orderItemId}",
+        "definition": {
+          "entityName": "OrderItem",
+          "schema": {
+            "$ref": "#/backend/entities/OrderItem"
+          },
+          "description": "Subcollection storing individual items within a specific order. Accessible only by authenticated administrators. Authorization is independent, as it relies on the same global admin role check as the parent 'Order' collection.",
+          "params": [
+            {
+              "name": "orderId",
+              "description": "Identifier of the parent order."
+            },
+            {
+              "name": "orderItemId",
+              "description": "Unique identifier for an item within the order."
+            }
+          ]
+        }
+      },
+      {
+        "path": "/roles_admin/{uid}",
+        "definition": {
+          "entityName": "AdminRole",
+          "schema": {
+            "$ref": "#/backend/entities/User"
+          },
+          "description": "Dedicated collection for Database Access Control (DBAC). Documents in this collection signify administrator privileges. The existence of a document at /roles_admin/{request.auth.uid} grants admin access. Used for 'Existence over Content' pattern.",
+          "params": [
+            {
+              "name": "uid",
+              "description": "The unique user ID of an authenticated Firebase user who has administrator privileges."
+            }
+          ]
+        }
+      }
+    ],
+    "reasoning": "The Firestore data structure is designed to enforce strict security, maintain data integrity, and ensure debuggability by adhering to the core design principles: Authorization Independence, Structural Segregation, Access Modeling, and Data Clarity. \n\n**Authorization Independence (CRITICAL):**\nThis design achieves authorization independence by ensuring that no subcollection's access relies on a get() call to its parent document for authorization. Instead, authorization is either public by default for display-oriented content or strictly based on a global admin role. \n- **Public Collections (/dishes, /weekly_menus, /images):** These collections are publicly readable. Write access is granted only to users explicitly defined as administrators via the /roles_admin/{uid} collection. Their security posture is uniform across all documents within the collection, and their access is not contingent on any other document's data. \n- **Admin-Only Collections (/catering_inquiries, /contact_inquiries, /orders, and /orders/{orderId}/order_items):** All documents within these collections are accessible exclusively to authenticated users whose uid exists in the /roles_admin collection. For the subcollection /orders/{orderId}/order_items/{orderItemId}, access is also governed solely by the global admin role. It does not require fetching the parent Order document's data to determine permissions, because the OrderItem documents do not have individual ownerId fields that would differ from the Order's access logic. The admin role is checked independently for each access request, thus maintaining authorization independence even for nested data.\n\n**QAPs (Rules are not Filters):**\nThis structure strongly supports QAPs by segregating data based on its security posture. \n- **Public-facing data** (e.g., /dishes, /weekly_menus, /images) is in collections that allow list operations for all users. The security rules will permit reading the entire collection for public display. \n- **Admin-only data** (e.g., /catering_inquiries, /contact_inquiries, /orders) is stored in collections where list operations are strictly restricted to authenticated administrators. The security rules for these collections will explicitly deny any list operation if the requesting user is not an admin, thereby preventing unauthorized users from querying these collections altogether, rather than returning a filtered (and potentially incomplete or misleading) subset of data. This ensures that unauthorized list queries fail entirely with a permission denied error, upholding the QAP principle.\n\n**Structural Segregation:**\nCollections are segregated based on their security requirements:\n- Publicly readable data (e.g., Dish, WeeklyMenu, Image) is in dedicated top-level collections.\n- Private administrative data (e.g., CateringInquiry, ContactInquiry, Order, OrderItem) is in separate top-level or sub-collections that require admin authentication.\n- A dedicated collection (/roles_admin) is used for managing administrator privileges, adhering to the DBAC principle.\n\n**Access Modeling:**\n- **Global Roles (DBAC):** The /roles_admin/{uid} collection serves as the central point for Database Access Control. The existence of a document at /roles_admin/$(request.auth.uid) grants administrative access. This uses the \"Existence over Content\" pattern.\n- **Hierarchical Paths for Related Data:** Order and OrderItem entities are structured hierarchically (/orders/{orderId}/order_items/{orderItemId}). However, since both are governed by the same global admin-only access rule, this hierarchy aids data organization without creating complex, dependent authorization rules.\n\n**Data Clarity and Predictability:**\n- All paths use descriptive wildcards (e.g., {orderId}, {dishId}).\n- The status field in CateringInquiry, ContactInquiry, and Order explicitly models the state of the entity.\n- The orderNumber field in Order is explicitly defined as a unique 6-digit number, generated by backend logic.\n\n**Admin Dashboard Security:**\nWhile the frontend dashboard route (/secure-dashboard-x7K9pL2vQ8Rz) provides obscurity at the UI layer, the actual data security is enforced by Firestore Security Rules. All Order data, including orderNumber and estimatedCompletionTime, is protected within the admin-only /orders and /orders/{orderId}/order_items collections. Displaying orderNumber and estimatedCompletionTime on the \"Thank You / Order Confirmation page\" for customers is assumed to be handled by a secure backend service (e.g., a Cloud Function) that fetches the data from Firestore on behalf of the unauthenticated user, thus preventing direct client-side access to the protected Order collection."
+  }
+}
