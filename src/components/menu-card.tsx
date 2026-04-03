@@ -14,11 +14,10 @@ export function MenuCard({ item }: { item: MenuItem }) {
           alt={item.name}
           fill
           className="object-cover transition-transform duration-700 group-hover:scale-110"
-          data-ai-hint="gourmet plated indian food fine dining"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-60" />
         <div className="absolute top-4 right-4 flex flex-col items-end gap-2 z-10">
-            <Badge className="bg-primary text-foreground border-none px-3 py-1 uppercase tracking-widest text-[10px] font-bold">
+            <Badge className="bg-primary text-primary-foreground border-none px-3 py-1 uppercase tracking-widest text-[10px] font-bold">
                 {item.category}
             </Badge>
             <Badge variant="outline" className="bg-accent/90 backdrop-blur-md border-none px-3 py-1 text-white">
@@ -26,7 +25,7 @@ export function MenuCard({ item }: { item: MenuItem }) {
                 Vegetarian
             </Badge>
             {item.category === 'Tea Cake' && (
-                <Badge variant="outline" className="bg-white/90 backdrop-blur-md border-none px-3 py-1 text-foreground">
+                <Badge variant="outline" className="bg-white/90 backdrop-blur-md border-none px-3 py-1 text-background">
                     <EggOff className="w-3 h-3 mr-1 text-accent" />
                     Eggless
                 </Badge>
@@ -43,7 +42,7 @@ export function MenuCard({ item }: { item: MenuItem }) {
         <p className="text-sm text-muted-foreground font-light leading-relaxed line-clamp-2 mb-6">{item.description}</p>
         
         <div className="flex flex-col gap-4">
-          <Button asChild size="lg" className="w-full bg-foreground text-white hover:bg-primary hover:text-foreground transition-all rounded-xl font-bold luxury-button">
+          <Button asChild size="lg" className="w-full bg-primary text-primary-foreground hover:bg-white hover:text-background transition-all rounded-xl font-bold luxury-button border-none">
             <Link href={`/order?dish=${encodeURIComponent(item.name)}&price=${encodeURIComponent(item.price)}`}>Order Now</Link>
           </Button>
           

@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { Menu, X } from "lucide-react";
+import { Menu } from "lucide-react";
 
 import { navLinks } from "@/lib/data";
 import { cn } from "@/lib/utils";
@@ -44,14 +44,14 @@ export function Header() {
           </nav>
           
           <div className="flex-1 flex items-center justify-end gap-4">
-            <Button asChild className="hidden sm:flex bg-foreground text-white hover:bg-primary hover:text-foreground transition-all rounded-full px-8 font-bold uppercase text-[10px] tracking-widest luxury-button">
+            <Button asChild className="hidden sm:flex bg-primary text-primary-foreground hover:bg-white hover:text-background transition-all rounded-full px-8 font-bold uppercase text-[10px] tracking-widest luxury-button border-none">
                <Link href="/menu">Order Menu</Link>
             </Button>
             
             <Sheet>
               <SheetTrigger asChild>
                 <Button variant="ghost" size="icon" className="md:hidden rounded-full hover:bg-primary/10">
-                  <Menu className="h-6 w-6" />
+                  <Menu className="h-6 w-6 text-primary" />
                 </Button>
               </SheetTrigger>
               <SheetContent side="right" className="w-full sm:max-w-md p-10 glass-card-dark border-none">
@@ -77,7 +77,7 @@ export function Header() {
                     </div>
                     
                     <div className="mt-auto pt-10 border-t border-white/10">
-                       <Button asChild size="lg" className="w-full h-16 rounded-2xl bg-primary text-foreground font-bold luxury-button text-lg">
+                       <Button asChild size="lg" className="w-full h-16 rounded-2xl bg-primary text-primary-foreground font-bold luxury-button text-lg border-none">
                           <Link href="/menu">Order Now</Link>
                        </Button>
                     </div>
