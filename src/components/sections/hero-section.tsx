@@ -50,7 +50,7 @@ export function HeroSection() {
         </div>
         
         <div className="flex flex-col sm:flex-row gap-6 pt-10">
-            <Button asChild size="lg" className="bg-primary hover:bg-primary/90 text-foreground font-bold text-lg h-16 px-12 rounded-full luxury-button">
+            <Button asChild size="lg" className="bg-primary hover:bg-primary/90 text-primary-foreground font-bold text-lg h-16 px-12 rounded-full luxury-button">
                 <Link href="/menu">Explore Weekly Menu</Link>
             </Button>
              <Button asChild size="lg" variant="outline" className="text-white border-white/40 hover:bg-white/10 backdrop-blur-md font-bold text-lg h-16 px-12 rounded-full luxury-button">

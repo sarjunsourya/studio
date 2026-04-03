@@ -1,4 +1,3 @@
-
 "use client";
 
 import Image from 'next/image';
@@ -28,7 +27,7 @@ export function ImageGallery() {
               <TabsTrigger 
                 key={category} 
                 value={category}
-                className="rounded-full px-8 py-3 text-xs uppercase tracking-[0.2em] font-bold data-[state=active]:bg-primary data-[state=active]:text-foreground transition-all duration-500"
+                className="rounded-full px-8 py-3 text-xs uppercase tracking-[0.2em] font-bold data-[state=active]:bg-primary data-[state=active]:text-primary-foreground transition-all duration-500"
               >
                 {category}
               </TabsTrigger>
