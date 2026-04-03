@@ -9,7 +9,7 @@ export function AboutSection() {
                         <div className="absolute -inset-4 bg-primary/10 rounded-full blur-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
                         <div className="relative aspect-square max-w-md mx-auto luxury-button">
                             <Image 
-                                src="https://i.imgur.com/8pWv0XN.jpeg" 
+                                src="https://i.imgur.com/KDttnPo.png" 
                                 alt="Roopa Gokul"
                                 fill
                                 className="rounded-full object-cover shadow-2xl border-8 border-background z-10"
