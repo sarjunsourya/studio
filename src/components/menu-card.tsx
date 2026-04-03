@@ -3,7 +3,7 @@ import Link from 'next/link';
 import type { MenuItem } from '@/lib/data';
 import { Button } from './ui/button';
 import { Badge } from './ui/badge';
-import { EggOff, ArrowRight } from 'lucide-react';
+import { EggOff, ArrowRight, Leaf } from 'lucide-react';
 
 export function MenuCard({ item }: { item: MenuItem }) {
   return (
@@ -20,6 +20,10 @@ export function MenuCard({ item }: { item: MenuItem }) {
         <div className="absolute top-4 right-4 flex flex-col items-end gap-2 z-10">
             <Badge className="bg-primary text-foreground border-none px-3 py-1 uppercase tracking-widest text-[10px] font-bold">
                 {item.category}
+            </Badge>
+            <Badge variant="outline" className="bg-accent/90 backdrop-blur-md border-none px-3 py-1 text-white">
+                <Leaf className="w-3 h-3 mr-1" />
+                Vegetarian
             </Badge>
             {item.category === 'Tea Cake' && (
                 <Badge variant="outline" className="bg-white/90 backdrop-blur-md border-none px-3 py-1 text-foreground">

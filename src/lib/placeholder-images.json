@@ -31,91 +31,91 @@
     {
       "id": "menu-idli",
       "description": "Idli Sambar",
-      "imageUrl": "https://traditionallymodernfood.com/wp-content/uploads/2022/03/idli-recipe-soft-idli-tips-scaled.jpeg",
+      "imageUrl": "https://saravanafoodstuff.com/wp-content/uploads/2024/07/Urad-dal-vada-_-Medu-Vada-Air-fry-_-Fry-SecondRecipe_cleanup.webp",
       "imageHint": "soft idli sambar",
       "category": "Savory"
     },
     {
       "id": "menu-vada",
       "description": "Medu Vada",
-      "imageUrl": "https://araasfoods.com/cdn/shop/articles/meduvada.jpg?v=1686903720",
+      "imageUrl": "https://saravanafoodstuff.com/wp-content/uploads/2024/07/Urad-dal-vada-_-Medu-Vada-Air-fry-_-Fry-SecondRecipe_cleanup.webp",
       "imageHint": "crispy medu vada",
       "category": "Savory"
     },
     {
       "id": "menu-dosa",
       "description": "Masala Dosa",
-      "imageUrl": "https://static.toiimg.com/thumb/54289752.cms?width=1200&height=900",
+      "imageUrl": "https://static.toiimg.com/thumb/54289752.cms?imgsize=495844&width=800&height=800",
       "imageHint": "masala dosa plating",
       "category": "Savory"
     },
     {
       "id": "menu-appam",
       "description": "Appam Stew",
-      "imageUrl": "https://www.currytrail.in/wp-content/uploads/2019/04/Kerala-Vegetable-Stew-Appam.jpg",
+      "imageUrl": "https://araasfoods.com/wp-content/uploads/2025/07/df2a503004.webp",
       "imageHint": "appam and vegetable stew",
       "category": "Savory"
     },
     {
       "id": "menu-bisibelebath",
       "description": "Bisibelebath",
-      "imageUrl": "https://saravanafoodstuff.com/wp-content/uploads/2021/04/Bisi-Bele-Bath-recipe.jpg",
+      "imageUrl": "https://www.currytrail.in/wp-content/uploads/2017/01/IMG_6945-2.jpg",
       "imageHint": "hot bisibelebath rice",
       "category": "Savory"
     },
     {
       "id": "menu-thali",
       "description": "South Indian Thali",
-      "imageUrl": "https://i.imgur.com/o1JBQOO.jpeg",
+      "imageUrl": "https://traditionallymodernfood.com/wp-content/uploads/2023/01/cooking-for-guests-south-indian-lunch-combo-1-scaled.jpeg",
       "imageHint": "luxury south indian thali",
       "category": "Thali/Assortment"
     },
     {
       "id": "menu-cake-vanilla",
       "description": "Vanilla Tea Cake",
-      "imageUrl": "https://www.lemonblossoms.com/wp-content/uploads/2023/10/Best-Vanilla-Cake-Recipe-S6.jpg",
+      "imageUrl": "https://storeassets.im-cdn.com/temp/bulk_operations/bakerstreetnoida/1707954151/VanillaTeaCake.jpg",
       "imageHint": "vanilla pound cake",
       "category": "Sweet"
     },
     {
       "id": "menu-cake-chocolate",
       "description": "Chocolate Tea Cake",
-      "imageUrl": "https://mykhailaeats.com/wp-content/uploads/2023/06/IMG_6397-scaled.jpg",
+      "imageUrl": "https://laneandgreyfare.com/wp-content/uploads/2022/08/Chocolate-Tea-Cake-4.jpg",
       "imageHint": "rich chocolate cake",
       "category": "Sweet"
     },
     {
       "id": "menu-cake-choco-chip",
       "description": "Choco Chip Cake",
-      "imageUrl": "https://www.abakingjourney.com/wp-content/uploads/2022/10/Chocolate-Chip-Loaf-Cake-Feature.jpg",
+      "imageUrl": "https://static01.nyt.com/images/2014/05/15/dining/Tea-Cake/Tea-Cake-superJumbo.jpg",
       "imageHint": "chocolate chip pound cake",
       "category": "Sweet"
     },
     {
       "id": "menu-cake-marble",
       "description": "Marble Tea Cake",
-      "imageUrl": "https://laneandgreyfare.com/wp-content/uploads/2023/09/Gluten-Free-Marble-Cake-Featured-Image.jpg",
+      "imageUrl": "https://www.abakingjourney.com/wp-content/uploads/2020/07/Marble-Loaf-Cake-Feature.jpg",
       "imageHint": "marble swirl cake",
       "category": "Sweet"
     },
     {
       "id": "menu-cake-coffee",
       "description": "Coffee Tea Cake",
-      "imageUrl": "https://static01.nyt.com/images/2022/01/12/dining/11CoffeeCake-1/11CoffeeCake-1-articleLarge.jpg",
+      "imageUrl": "https://www.lemonblossoms.com/wp-content/uploads/2021/09/Coffee-cake-S8.jpg",
       "imageHint": "aromatic coffee cake",
       "category": "Sweet"
     },
     {
       "id": "menu-cake-honey",
       "description": "Honey Tea Cake",
-      "imageUrl": "https://storeassets.im-cdn.com/products/482703/1628169123_HoneyTeaCake.jpg",
+      "imageUrl": "https://mykhailaeats.com/wp-content/uploads/2022/08/IMG_8596-scaled.jpg",
       "imageHint": "honey glazed cake",
       "category": "Sweet"
     },
     {
       "id": "menu-cake-carrot",
       "description": "Carrot Almond Cake",
-      "imageUrl": "https://images.unsplash.com/photo-1606761560479-66467f832476",
+      "imageUrl": "https://images.unsplash.com/photo-1622926421334-6829deee4b4b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHxjYXJyb3QlMjBjYWtlfGVufDB8fHx8MTc2NjQxNzk0OXww&ixlib.rb-4.1.0&q=80&w=1080",
       "imageHint": "carrot cake with nuts",
       "category": "Sweet"
     },
