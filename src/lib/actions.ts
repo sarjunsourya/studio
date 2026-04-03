@@ -1,6 +1,7 @@
 "use server";
 
 import { z } from "zod";
+import { cookies } from "next/headers";
 
 const cateringInquirySchema = z.object({
   name: z.string().min(2, { message: "Name must be at least 2 characters." }),
@@ -18,6 +19,11 @@ const contactFormSchema = z.object({
   name: z.string().min(2, { message: "Name must be at least 2 characters." }),
   email: z.string().email({ message: "Please enter a valid email address." }),
   message: z.string().min(10, { message: "Message must be at least 10 characters." }),
+});
+
+const adminLoginSchema = z.object({
+  username: z.string(),
+  password: z.string(),
 });
 
 export async function submitCateringInquiry(prevState: any, formData: FormData) {
@@ -65,4 +71,51 @@ export async function submitContactForm(prevState: any, formData: FormData) {
     console.log("Contact Form Submission:", validatedFields.data);
 
     return { message: "Thank you for your message! We will get back to you shortly." };
+}
+
+/**
+ * Handles custom admin login.
+ */
+export async function adminLogin(prevState: any, formData: FormData) {
+  const validatedFields = adminLoginSchema.safeParse({
+    username: formData.get("username"),
+    password: formData.get("password"),
+  });
+
+  if (!validatedFields.success) {
+    return { error: "Invalid input" };
+  }
+
+  const { username, password } = validatedFields.data;
+
+  // STRICT CREDENTIALS CHECK
+  // Note: In production, use hashed passwords and secret management.
+  if (username === "roopag14" && password === "TheDivineKitchen1!") {
+    const cookieStore = await cookies();
+    cookieStore.set("admin_session", "tdk_secret_session_active", {
+      httpOnly: true,
+      secure: true,
+      sameSite: "strict",
+      maxAge: 60 * 60 * 24, // 24 hours
+    });
+    return { success: true };
+  }
+
+  return { error: "Invalid username or password" };
+}
+
+/**
+ * Logs out the admin.
+ */
+export async function adminLogout() {
+  const cookieStore = await cookies();
+  cookieStore.delete("admin_session");
+}
+
+/**
+ * Checks if admin session is active.
+ */
+export async function checkAdminSession() {
+  const cookieStore = await cookies();
+  return cookieStore.get("admin_session")?.value === "tdk_secret_session_active";
 }

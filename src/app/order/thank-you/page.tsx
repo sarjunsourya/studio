@@ -3,7 +3,7 @@
 import { Suspense } from "react";
 import { useSearchParams } from "next/navigation";
 import Link from "next/link";
-import { CheckCircle2, Home, Utensils } from "lucide-react";
+import { CheckCircle2, Home, Utensils, Hash, Clock } from "lucide-react";
 import { Logo } from "@/components/logo";
 import { Button } from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator";
@@ -14,6 +14,8 @@ function ThankYouContent() {
   const dish = searchParams.get("dish") || "Unknown Dish";
   const quantity = searchParams.get("quantity") || "0";
   const total = searchParams.get("total") || "0.00";
+  const orderNumber = searchParams.get("orderNumber") || "N/A";
+  const estimatedTime = searchParams.get("estimatedTime") || "Calculating...";
 
   return (
     <div className="min-h-screen bg-secondary/30 py-16 md:py-24 flex items-center justify-center px-4">
@@ -33,6 +35,19 @@ function ThankYouContent() {
             <p className="text-lg text-muted-foreground font-light">
               Your order has been received and is being prepared with love.
             </p>
+          </div>
+
+          <div className="grid grid-cols-2 gap-4">
+             <div className="glass-card-dark p-6 border-primary/10 flex flex-col items-center justify-center">
+                <Hash className="h-5 w-5 text-primary mb-2" />
+                <span className="text-[10px] uppercase tracking-widest text-muted-foreground mb-1">Order #</span>
+                <span className="text-2xl font-bold text-white tracking-[0.2em]">{orderNumber}</span>
+             </div>
+             <div className="glass-card-dark p-6 border-primary/10 flex flex-col items-center justify-center">
+                <Clock className="h-5 w-5 text-primary mb-2" />
+                <span className="text-[10px] uppercase tracking-widest text-muted-foreground mb-1">Estimated Ready</span>
+                <span className="text-2xl font-bold text-white">{estimatedTime}</span>
+             </div>
           </div>
 
           <div className="glass-card-dark p-8 border-white/5 space-y-6 text-left">

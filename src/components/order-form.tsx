@@ -15,6 +15,9 @@ import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import { Separator } from "@/components/ui/separator";
 import { useToast } from '@/hooks/use-toast';
+import { generateOrderNumber, calculateEstimatedCompletionTime } from '@/lib/utils';
+import { useFirestore, addDocumentNonBlocking } from '@/firebase';
+import { collection } from 'firebase/firestore';
 
 const orderFormSchema = z.object({
   firstName: z.string().min(1, "First name is required."),
@@ -37,6 +40,7 @@ export function OrderForm() {
   const searchParams = useSearchParams();
   const router = useRouter();
   const { toast } = useToast();
+  const firestore = useFirestore();
   const dish = searchParams.get('dish');
   const priceString = searchParams.get('price');
 
@@ -74,47 +78,71 @@ export function OrderForm() {
   };
   
   async function processOrder(data: OrderFormValues) {
-    const googleFormUrl = "https://docs.google.com/forms/d/e/1FAIpQLSecHcfSAshKggQSb3srgGUKsb98jpDYCEn1zPL38Psy8E7Zgg/formResponse";
+    const orderNumber = generateOrderNumber();
+    const estimatedCompletion = calculateEstimatedCompletionTime();
     
-    const formData = new FormData();
-    formData.append("entry.497349393", data.firstName);
-    formData.append("entry.1639276764", data.lastName);
-    formData.append("entry.1575538379", data.companyName || "");
-    formData.append("entry.1588386655", "Netherlands");
-    formData.append("entry.647121543", data.streetAddress);
-    formData.append("entry.1612991386", data.apartment || "");
-    formData.append("entry.1301291309", data.city);
-    formData.append("entry.2045573858", data.postcode);
-    formData.append("entry.1520191789", data.phone);
-    formData.append("entry.441161009", data.email);
-    formData.append("entry.292612972", data.orderNotes || "");
-    formData.append("entry.1322787056", dish || "");
-    formData.append("entry.82284634", quantity.toString());
-    formData.append("entry.104603798", shippingMethod === 'delivery' ? 'Delivery' : 'Pickup');
-    formData.append("entry.1796185331", `€${subtotal.toFixed(2)}`);
-    formData.append("entry.489857107", `€${total.toFixed(2)}`);
-
     startTransition(async () => {
         try {
-            await fetch(googleFormUrl, {
+            // 1. Store in Firestore (Admin access only)
+            const orderData = {
+                orderNumber,
+                customerName: `${data.firstName} ${data.lastName}`,
+                customerEmail: data.email,
+                customerPhone: data.phone,
+                deliveryAddress: `${data.streetAddress}, ${data.apartment ? data.apartment + ', ' : ''}${data.city}, ${data.postcode}`,
+                orderDate: new Date().toISOString(),
+                estimatedCompletionTime: estimatedCompletion.toISOString(),
+                totalAmount: total,
+                status: 'Pending',
+                notes: data.orderNotes || "",
+                items: [{ dish, quantity, unitPrice: price }]
+            };
+
+            const ordersRef = collection(firestore, 'orders');
+            await addDocumentNonBlocking(ordersRef, orderData);
+
+            // 2. Background Google Form Submission
+            const googleFormUrl = "https://docs.google.com/forms/d/e/1FAIpQLSecHcfSAshKggQSb3srgGUKsb98jpDYCEn1zPL38Psy8E7Zgg/formResponse";
+            const googleFormData = new FormData();
+            googleFormData.append("entry.497349393", data.firstName);
+            googleFormData.append("entry.1639276764", data.lastName);
+            googleFormData.append("entry.1575538379", data.companyName || "");
+            googleFormData.append("entry.1588386655", "Netherlands");
+            googleFormData.append("entry.647121543", data.streetAddress);
+            googleFormData.append("entry.1612991386", data.apartment || "");
+            googleFormData.append("entry.1301291309", data.city);
+            googleFormData.append("entry.2045573858", data.postcode);
+            googleFormData.append("entry.1520191789", data.phone);
+            googleFormData.append("entry.441161009", data.email);
+            googleFormData.append("entry.292612972", `${data.orderNotes || ""} | Order #: ${orderNumber}`);
+            googleFormData.append("entry.1322787056", dish || "");
+            googleFormData.append("entry.82284634", quantity.toString());
+            googleFormData.append("entry.104603798", shippingMethod === 'delivery' ? 'Delivery' : 'Pickup');
+            googleFormData.append("entry.1796185331", `€${subtotal.toFixed(2)}`);
+            googleFormData.append("entry.489857107", `€${total.toFixed(2)}`);
+
+            // No-cors fetch for background submission
+            fetch(googleFormUrl, {
                 method: "POST",
-                body: formData,
+                body: googleFormData,
                 mode: "no-cors", 
             });
             
-            // Redirect to thank you page with order details
+            // 3. Redirect to thank you page with enriched details
             const queryParams = new URLSearchParams({
                 name: data.firstName,
                 dish: dish || "",
                 quantity: quantity.toString(),
                 total: total.toFixed(2),
+                orderNumber: orderNumber,
+                estimatedTime: estimatedCompletion.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })
             });
             router.push(`/order/thank-you?${queryParams.toString()}`);
             
         } catch (error) {
             toast({
                 title: "Submission Error",
-                description: "There was an issue submitting your order. Please try again or contact us directly.",
+                description: "There was an issue processing your order. Please try again.",
                 variant: "destructive",
             });
         }
