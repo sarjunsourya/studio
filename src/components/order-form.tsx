@@ -1,7 +1,7 @@
 "use client";
 
 import Link from 'next/link';
-import { useSearchParams } from 'next/navigation';
+import { useSearchParams, useRouter } from 'next/navigation';
 import { useForm, useWatch } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
@@ -15,15 +15,6 @@ import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import { Separator } from "@/components/ui/separator";
 import { useToast } from '@/hooks/use-toast';
-import {
-  AlertDialog,
-  AlertDialogAction,
-  AlertDialogContent,
-  AlertDialogDescription,
-  AlertDialogFooter,
-  AlertDialogHeader,
-  AlertDialogTitle,
-} from "@/components/ui/alert-dialog"
 
 const orderFormSchema = z.object({
   firstName: z.string().min(1, "First name is required."),
@@ -44,13 +35,13 @@ type OrderFormValues = z.infer<typeof orderFormSchema>;
 
 export function OrderForm() {
   const searchParams = useSearchParams();
+  const router = useRouter();
   const { toast } = useToast();
   const dish = searchParams.get('dish');
   const priceString = searchParams.get('price');
 
   const [quantity, setQuantity] = useState(1);
   const [isPending, startTransition] = useTransition();
-  const [showSuccessDialog, setShowSuccessDialog] = useState(false);
 
   const form = useForm<OrderFormValues>({
     resolver: zodResolver(orderFormSchema),
@@ -110,9 +101,16 @@ export function OrderForm() {
                 body: formData,
                 mode: "no-cors", 
             });
-            setShowSuccessDialog(true);
-            form.reset();
-            setQuantity(1);
+            
+            // Redirect to thank you page with order details
+            const queryParams = new URLSearchParams({
+                name: data.firstName,
+                dish: dish || "",
+                quantity: quantity.toString(),
+                total: total.toFixed(2),
+            });
+            router.push(`/order/thank-you?${queryParams.toString()}`);
+            
         } catch (error) {
             toast({
                 title: "Submission Error",
@@ -135,7 +133,6 @@ export function OrderForm() {
   }
 
   return (
-    <>
     <Form {...form}>
       <form onSubmit={form.handleSubmit(processOrder)} className="space-y-12">
         <div>
@@ -260,19 +257,5 @@ export function OrderForm() {
         </Button>
       </form>
     </Form>
-    <AlertDialog open={showSuccessDialog} onOpenChange={setShowSuccessDialog}>
-        <AlertDialogContent className="glass-card-dark border-primary/20">
-            <AlertDialogHeader>
-            <AlertDialogTitle className="text-2xl text-primary font-headline">Order Placed Successfully!</AlertDialogTitle>
-            <AlertDialogDescription className="text-muted-foreground text-lg pt-4">
-                Thank you for choosing The Divine Kitchen. We have received your order details and will contact you shortly to confirm the pickup or delivery time.
-            </AlertDialogDescription>
-            </AlertDialogHeader>
-            <AlertDialogFooter className="pt-6">
-            <AlertDialogAction className="bg-primary text-background font-bold hover:bg-white rounded-xl" onClick={() => setShowSuccessDialog(false)}>Got it, thanks!</AlertDialogAction>
-            </AlertDialogFooter>
-        </AlertDialogContent>
-    </AlertDialog>
-    </>
   );
 }
