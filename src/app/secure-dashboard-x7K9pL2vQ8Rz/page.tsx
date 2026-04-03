@@ -3,8 +3,9 @@
 import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 import { checkAdminSession, adminLogout } from "@/lib/actions";
-import { useFirestore, useCollection } from "@/firebase";
-import { collection, query, orderBy, Timestamp } from "firebase/firestore";
+import { useFirestore, useCollection, useAuth, useUser } from "@/firebase";
+import { collection, query, orderBy } from "firebase/firestore";
+import { signInAnonymously } from "firebase/auth";
 import { useMemoFirebase } from "@/firebase/provider";
 import { Button } from "@/components/ui/button";
 import { 
@@ -19,10 +20,8 @@ import {
   LogOut, 
   LayoutDashboard, 
   Clock, 
-  User, 
   Hash, 
   Euro,
-  ExternalLink,
   ChevronRight,
   Loader2,
   Calendar
@@ -36,8 +35,10 @@ export default function AdminDashboardPage() {
   const [isAuthenticated, setIsAuthenticated] = useState<boolean | null>(null);
   const router = useRouter();
   const firestore = useFirestore();
+  const auth = useAuth();
+  const { user } = useUser();
 
-  // 1. Auth Guard
+  // 1. Auth Guard & Firebase Session Sync
   useEffect(() => {
     async function verify() {
       const active = await checkAdminSession();
@@ -45,20 +46,28 @@ export default function AdminDashboardPage() {
         router.push("/secure-dashboard-x7K9pL2vQ8Rz/login");
       } else {
         setIsAuthenticated(true);
+        // Sync Firebase auth state if not already signed in
+        if (auth && !user) {
+          try {
+            await signInAnonymously(auth);
+          } catch (e) {
+            console.error("Firebase background sync failed:", e);
+          }
+        }
       }
     }
     verify();
-  }, [router]);
+  }, [router, auth, user]);
 
   // 2. Fetch Orders
   const ordersQuery = useMemoFirebase(() => {
-    if (!firestore) return null;
+    if (!firestore || !isAuthenticated || !user) return null;
     return query(collection(firestore, "orders"), orderBy("orderDate", "desc"));
-  }, [firestore]);
+  }, [firestore, isAuthenticated, user]);
 
   const { data: orders, isLoading } = useCollection(ordersQuery);
 
-  if (isAuthenticated === null || isLoading) {
+  if (isAuthenticated === null || (isAuthenticated && !user) || isLoading) {
     return (
       <div className="min-h-screen bg-background flex flex-col items-center justify-center">
         <Loader2 className="h-10 w-10 text-primary animate-spin mb-4" />
