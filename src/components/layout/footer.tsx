@@ -81,10 +81,11 @@ export function Footer() {
           </div>
           <div className="text-center px-4 max-w-lg">
             <Link 
+              id="developer-branding"
               href="https://www.sarjunsourya.com/" 
               target="_blank" 
               rel="noopener noreferrer"
-              className="text-[7px] sm:text-[9px] tracking-[0.2em] sm:tracking-[0.3em] font-bold text-primary hover:opacity-80 transition-opacity uppercase text-center block leading-loose"
+              className="text-[8px] sm:text-[10px] tracking-[0.1em] sm:tracking-[0.2em] font-bold text-primary hover:text-white transition-colors uppercase text-center block leading-loose scroll-mt-24"
             >
               CRAFTED BY MADE BY. SARJUNSOURYA.COM BRAND DESIGN & WEBSITE DEVELOPMENT ✨
             </Link>

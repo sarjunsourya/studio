@@ -54,33 +54,31 @@ export function Header() {
                   <Menu className="h-6 w-6 text-primary" />
                 </Button>
               </SheetTrigger>
-              <SheetContent side="right" className="w-full sm:max-w-md p-6 sm:p-10 glass-card-dark border-none overflow-y-auto">
+              <SheetContent side="right" className="w-full sm:max-w-md p-6 sm:p-10 glass-card-dark border-none flex flex-col">
                   <SheetTitle className="sr-only">Menu</SheetTitle>
-                  <div className="flex flex-col h-full">
-                    <div className="flex justify-between items-center mb-10 sm:mb-16">
-                      <Logo className="scale-60 sm:scale-75 origin-left" />
-                    </div>
-                    
-                    <div className="flex flex-col gap-6 sm:gap-10">
-                      {navLinks.map((link) => (
-                        <Link
-                          key={link.href}
-                          href={link.href}
-                          className={cn(
-                            "text-3xl sm:text-5xl font-headline font-bold transition-all hover:translate-x-4 hover:text-primary",
-                            pathname === link.href ? "text-primary" : "text-white"
-                          )}
-                        >
-                          {link.label}
-                        </Link>
-                      ))}
-                    </div>
-                    
-                    <div className="mt-auto pt-10 border-t border-white/10">
-                       <Button asChild size="lg" className="w-full h-14 sm:h-16 rounded-2xl bg-primary text-primary-foreground font-bold luxury-button text-base sm:text-lg border-none">
-                          <Link href="/menu">Order Now</Link>
-                       </Button>
-                    </div>
+                  <div className="flex justify-between items-center mb-10 sm:mb-16">
+                    <Logo className="scale-50 sm:scale-60 origin-left" />
+                  </div>
+                  
+                  <div className="flex flex-col gap-4 sm:gap-8">
+                    {navLinks.map((link) => (
+                      <Link
+                        key={link.href}
+                        href={link.href}
+                        className={cn(
+                          "text-2xl sm:text-4xl font-headline font-bold transition-all hover:translate-x-4 hover:text-primary",
+                          pathname === link.href ? "text-primary" : "text-white"
+                        )}
+                      >
+                        {link.label}
+                      </Link>
+                    ))}
+                  </div>
+                  
+                  <div className="mt-auto pt-10 border-t border-white/10">
+                     <Button asChild size="lg" className="w-full h-14 sm:h-16 rounded-2xl bg-primary text-primary-foreground font-bold luxury-button text-base sm:text-lg border-none">
+                        <Link href="/menu">Order Now</Link>
+                     </Button>
                   </div>
               </SheetContent>
             </Sheet>
