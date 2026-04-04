@@ -79,15 +79,15 @@ export function Footer() {
           <div className="text-center text-[8px] sm:text-[10px] uppercase tracking-[0.2em] text-muted-foreground/60">
             &copy; {new Date().getFullYear()} The Divine Kitchen • Authentic Homemade Excellence
           </div>
-          <div className="text-center px-4 max-w-lg">
+          <div className="text-center px-4 max-w-2xl">
             <Link 
               id="developer-branding"
               href="https://www.sarjunsourya.com/" 
               target="_blank" 
               rel="noopener noreferrer"
-              className="text-[7px] sm:text-[8px] tracking-[0.15em] font-bold text-primary/80 hover:text-white transition-all uppercase text-center block leading-relaxed scroll-mt-32"
+              className="text-[7px] sm:text-[8px] tracking-[0.15em] font-bold text-primary/80 hover:text-white transition-all uppercase text-center block leading-relaxed scroll-mt-32 hover:scale-105"
             >
-              CRAFTED BY SARJUNSOURYA.COM ✨
+              CRAFTED BY MADE BY. SARJUNSOURYA.COM • BRAND DESIGN • WEBSITE DEVELOPMENT
             </Link>
           </div>
         </div>
