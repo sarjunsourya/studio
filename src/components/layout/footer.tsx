@@ -85,9 +85,9 @@ export function Footer() {
               href="https://www.sarjunsourya.com/" 
               target="_blank" 
               rel="noopener noreferrer"
-              className="text-[8px] sm:text-[10px] tracking-[0.1em] sm:tracking-[0.2em] font-bold text-primary hover:text-white transition-colors uppercase text-center block leading-loose scroll-mt-24"
+              className="text-[7px] sm:text-[8px] tracking-[0.15em] font-bold text-primary/80 hover:text-white transition-all uppercase text-center block leading-relaxed scroll-mt-32"
             >
-              CRAFTED BY MADE BY. SARJUNSOURYA.COM BRAND DESIGN & WEBSITE DEVELOPMENT ✨
+              CRAFTED BY SARJUNSOURYA.COM ✨
             </Link>
           </div>
         </div>

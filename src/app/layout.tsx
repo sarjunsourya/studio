@@ -44,19 +44,19 @@ export default function RootLayout({
           <main className="flex-grow pt-24">{children}</main>
           <Footer />
           
-          {/* Persistent Branding Blob */}
+          {/* Persistent Branding Blob - Refined size */}
           <Link 
             href="#developer-branding" 
             className="fixed bottom-6 right-6 z-[200] transition-transform hover:scale-110 active:scale-95 group hidden sm:block"
           >
-            <div className="relative flex items-center justify-center w-12 h-12 rounded-full border border-white/20 bg-[#0a2e2a]/80 backdrop-blur-md shadow-2xl overflow-hidden">
+            <div className="relative flex items-center justify-center w-10 h-10 rounded-full border border-white/20 bg-[#0a2e2a]/90 backdrop-blur-lg shadow-2xl overflow-hidden">
               <div className="absolute inset-0 bg-primary/10 opacity-0 group-hover:opacity-100 transition-opacity" />
               <Image 
                 src="https://alekhya-anantapantula.vercel.app/_next/image?url=https%3A%2F%2Fi.imgur.com%2FdErpdLj.png&w=48&q=75" 
                 alt="Branding Icon" 
-                width={32} 
-                height={32} 
-                className="w-7 h-7 md:w-8 md:h-8 drop-shadow-md relative"
+                width={24} 
+                height={24} 
+                className="w-6 h-6 drop-shadow-md relative"
               />
             </div>
           </Link>
