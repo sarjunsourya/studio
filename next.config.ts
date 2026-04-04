@@ -148,6 +148,12 @@ const nextConfig: NextConfig = {
         hostname: 'mykhailaeats.com',
         port: '',
         pathname: '/**',
+      },
+      {
+        protocol: 'https',
+        hostname: 'alekhya-anantapantula.vercel.app',
+        port: '',
+        pathname: '/**',
       }
     ],
   },

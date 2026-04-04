@@ -14,11 +14,11 @@ export function Header() {
   const pathname = usePathname();
 
   return (
-    <header className="fixed top-0 z-[100] w-full px-4 py-6">
+    <header className="fixed top-0 z-[100] w-full px-2 sm:px-4 py-4 sm:py-6">
       <div className="container mx-auto">
-        <div className="glass-card h-20 md:h-24 px-6 md:px-10 flex items-center justify-between">
+        <div className="glass-card h-16 sm:h-20 md:h-24 px-4 sm:px-6 md:px-10 flex items-center justify-between">
           <div className="flex-1 flex justify-start">
-            <Logo className="scale-75 md:scale-90 origin-left" />
+            <Logo className="scale-60 sm:scale-75 md:scale-90 origin-left" />
           </div>
           
           <nav className="hidden md:flex flex-1 justify-center items-center">
@@ -43,7 +43,7 @@ export function Header() {
             </div>
           </nav>
           
-          <div className="flex-1 flex items-center justify-end gap-4">
+          <div className="flex-1 flex items-center justify-end gap-2 sm:gap-4">
             <Button asChild className="hidden sm:flex bg-primary text-primary-foreground hover:bg-white hover:text-background transition-all rounded-full px-8 font-bold uppercase text-[10px] tracking-widest luxury-button border-none">
                <Link href="/menu">Order Menu</Link>
             </Button>
@@ -54,20 +54,20 @@ export function Header() {
                   <Menu className="h-6 w-6 text-primary" />
                 </Button>
               </SheetTrigger>
-              <SheetContent side="right" className="w-full sm:max-w-md p-10 glass-card-dark border-none">
+              <SheetContent side="right" className="w-full sm:max-w-md p-6 sm:p-10 glass-card-dark border-none overflow-y-auto">
                   <SheetTitle className="sr-only">Menu</SheetTitle>
                   <div className="flex flex-col h-full">
-                    <div className="flex justify-between items-center mb-16">
-                      <Logo className="scale-75 origin-left" />
+                    <div className="flex justify-between items-center mb-10 sm:mb-16">
+                      <Logo className="scale-60 sm:scale-75 origin-left" />
                     </div>
                     
-                    <div className="flex flex-col gap-10">
+                    <div className="flex flex-col gap-6 sm:gap-10">
                       {navLinks.map((link) => (
                         <Link
                           key={link.href}
                           href={link.href}
                           className={cn(
-                            "text-5xl font-headline font-bold transition-all hover:translate-x-4 hover:text-primary",
+                            "text-3xl sm:text-5xl font-headline font-bold transition-all hover:translate-x-4 hover:text-primary",
                             pathname === link.href ? "text-primary" : "text-white"
                           )}
                         >
@@ -77,7 +77,7 @@ export function Header() {
                     </div>
                     
                     <div className="mt-auto pt-10 border-t border-white/10">
-                       <Button asChild size="lg" className="w-full h-16 rounded-2xl bg-primary text-primary-foreground font-bold luxury-button text-lg border-none">
+                       <Button asChild size="lg" className="w-full h-14 sm:h-16 rounded-2xl bg-primary text-primary-foreground font-bold luxury-button text-base sm:text-lg border-none">
                           <Link href="/menu">Order Now</Link>
                        </Button>
                     </div>

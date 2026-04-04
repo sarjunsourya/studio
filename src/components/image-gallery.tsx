@@ -1,4 +1,3 @@
-
 "use client";
 
 import Image from 'next/image';
@@ -21,16 +20,16 @@ export function ImageGallery() {
   [galleryImages, activeCategory]);
 
   return (
-    <div className="space-y-8 md:space-y-12">
+    <div className="space-y-6 sm:space-y-8 md:space-y-12">
       <Tabs defaultValue="Sweet" onValueChange={setActiveCategory} className="w-full">
-        <div className="flex justify-center mb-8 md:mb-12 px-4">
+        <div className="flex justify-center mb-6 sm:mb-8 md:mb-12 px-2 sm:px-4">
           <ScrollArea className="w-full whitespace-nowrap md:w-auto">
-            <TabsList className="bg-transparent border border-white/10 p-1 rounded-full backdrop-blur-md h-auto gap-2 inline-flex">
+            <TabsList className="bg-transparent border border-white/10 p-1 rounded-full backdrop-blur-md h-auto gap-1 sm:gap-2 inline-flex">
               {categories.map((category) => (
                 <TabsTrigger 
                   key={category} 
                   value={category}
-                  className="rounded-full px-5 md:px-8 py-2 md:py-3 text-[10px] md:text-xs uppercase tracking-[0.15em] md:tracking-[0.2em] font-bold data-[state=active]:bg-primary data-[state=active]:text-primary-foreground transition-all duration-500"
+                  className="rounded-full px-4 sm:px-6 md:px-8 py-2 sm:py-2.5 md:py-3 text-[9px] sm:text-[10px] md:text-xs uppercase tracking-[0.1em] sm:tracking-[0.15em] md:tracking-[0.2em] font-bold data-[state=active]:bg-primary data-[state=active]:text-primary-foreground transition-all duration-500"
                 >
                   {category}
                 </TabsTrigger>
@@ -41,14 +40,14 @@ export function ImageGallery() {
         </div>
         
         <AnimatePresence mode="wait">
-          <TabsContent key={activeCategory} value={activeCategory} className="mt-0 px-4">
+          <TabsContent key={activeCategory} value={activeCategory} className="mt-0 px-2 sm:px-4">
             <motion.div 
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -20 }}
               transition={{ duration: 0.5, ease: "easeOut" }}
               className={cn(
-                "grid gap-6 md:gap-8",
+                "grid gap-4 sm:gap-6 md:gap-8",
                 filteredImages.length === 1 
                   ? "grid-cols-1 max-w-sm mx-auto" 
                   : "grid-cols-1 sm:grid-cols-2 lg:grid-cols-3"
@@ -61,7 +60,7 @@ export function ImageGallery() {
                   animate={{ opacity: 1, scale: 1 }}
                   transition={{ delay: index * 0.05 }}
                 >
-                  <Card className="overflow-hidden group relative bg-transparent border-none shadow-none rounded-[1.5rem] md:rounded-[2rem]">
+                  <Card className="overflow-hidden group relative bg-transparent border-none shadow-none rounded-[1.25rem] sm:rounded-[1.5rem] md:rounded-[2rem]">
                     <CardContent className="p-0">
                       <div className="aspect-[4/5] w-full overflow-hidden relative">
                         <Image
@@ -71,16 +70,16 @@ export function ImageGallery() {
                           className="object-cover w-full h-full transition-transform duration-700 group-hover:scale-110"
                           data-ai-hint={image.imageHint}
                         />
-                        <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent opacity-80 md:opacity-0 group-hover:opacity-100 transition-all duration-500 flex flex-col justify-end p-6 md:p-8">
-                          <span className="text-primary text-[9px] md:text-[10px] uppercase tracking-[0.3em] font-bold mb-1 md:mb-2 translate-y-0 md:translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
+                        <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent opacity-100 sm:opacity-0 group-hover:opacity-100 transition-all duration-500 flex flex-col justify-end p-4 sm:p-6 md:p-8">
+                          <span className="text-primary text-[8px] sm:text-[9px] md:text-[10px] uppercase tracking-[0.2em] sm:tracking-[0.3em] font-bold mb-1 md:mb-2 translate-y-0 sm:translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
                             {image.category}
                           </span>
-                          <h3 className="text-white text-lg md:text-2xl font-headline font-semibold translate-y-0 md:translate-y-4 group-hover:translate-y-0 transition-transform duration-500 delay-75">
+                          <h3 className="text-white text-base sm:text-lg md:text-2xl font-headline font-semibold translate-y-0 sm:translate-y-4 group-hover:translate-y-0 transition-transform duration-500 delay-75">
                             {image.description}
                           </h3>
                         </div>
                         {/* High-tech border glow */}
-                        <div className="absolute inset-0 border border-white/10 group-hover:border-primary/30 transition-colors duration-500 rounded-[1.5rem] md:rounded-[2rem] pointer-events-none" />
+                        <div className="absolute inset-0 border border-white/10 group-hover:border-primary/30 transition-colors duration-500 rounded-[1.25rem] sm:rounded-[1.5rem] md:rounded-[2rem] pointer-events-none" />
                       </div>
                     </CardContent>
                   </Card>
@@ -88,8 +87,8 @@ export function ImageGallery() {
               ))}
             </motion.div>
             {filteredImages.length === 0 && (
-              <div className="text-center py-20 md:py-24 glass-card border-white/5 mx-4">
-                <p className="text-muted-foreground uppercase tracking-widest text-xs">No images in this collection yet.</p>
+              <div className="text-center py-16 sm:py-20 md:py-24 glass-card border-white/5 mx-2">
+                <p className="text-muted-foreground uppercase tracking-widest text-[10px] sm:text-xs">No images in this collection yet.</p>
               </div>
             )}
           </TabsContent>

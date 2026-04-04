@@ -1,4 +1,3 @@
-
 import Link from "next/link";
 import { navLinks } from "@/lib/data";
 import { Instagram, Mail, MessageCircle, MapPin, ShieldCheck } from "lucide-react";
@@ -6,10 +5,10 @@ import { Instagram, Mail, MessageCircle, MapPin, ShieldCheck } from "lucide-reac
 export function Footer() {
   return (
     <footer className="w-full border-t border-white/5 bg-background">
-      <div className="container mx-auto max-w-7xl px-6 py-16">
-        <div className="grid grid-cols-1 gap-12 md:grid-cols-12 items-start text-center md:text-left">
+      <div className="container mx-auto max-w-7xl px-6 py-12 md:py-16">
+        <div className="grid grid-cols-1 gap-10 md:grid-cols-12 items-start text-center md:text-left">
           <div className="md:col-span-4">
-            <h3 className="font-headline text-lg font-semibold text-white mb-6">Sitemap</h3>
+            <h3 className="font-headline text-base sm:text-lg font-semibold text-white mb-6 uppercase tracking-wider">Sitemap</h3>
             <ul className="space-y-4 inline-block md:block">
               {navLinks.map((link) => (
                 <li key={link.href}>
@@ -29,7 +28,7 @@ export function Footer() {
           </div>
           
           <div className="md:col-span-4">
-            <h3 className="font-headline text-lg font-semibold text-white mb-6">Contact Us</h3>
+            <h3 className="font-headline text-base sm:text-lg font-semibold text-white mb-6 uppercase tracking-wider">Contact Us</h3>
             <ul className="space-y-5 text-sm inline-block md:block">
               <li className="flex items-center justify-center md:justify-start gap-3">
                 <div className="bg-primary/10 p-2 rounded-full">
@@ -62,7 +61,7 @@ export function Footer() {
           </div>
 
            <div className="md:col-span-4">
-            <h3 className="font-headline text-lg font-semibold text-white mb-6 flex items-center justify-center md:justify-start gap-2">
+            <h3 className="font-headline text-base sm:text-lg font-semibold text-white mb-6 flex items-center justify-center md:justify-start gap-2 uppercase tracking-wider">
                 <div className="bg-primary/10 p-2 rounded-full">
                     <MapPin className="h-4 w-4 text-primary"/>
                 </div>
@@ -76,16 +75,16 @@ export function Footer() {
           </div>
         </div>
 
-        <div className="mt-20 pt-8 border-t border-white/5 flex flex-col items-center gap-6">
-          <div className="text-center text-[10px] uppercase tracking-[0.2em] text-muted-foreground/60">
+        <div className="mt-16 pt-8 border-t border-white/5 flex flex-col items-center gap-4">
+          <div className="text-center text-[8px] sm:text-[10px] uppercase tracking-[0.2em] text-muted-foreground/60">
             &copy; {new Date().getFullYear()} The Divine Kitchen • Authentic Homemade Excellence
           </div>
-          <div className="text-center px-4">
+          <div className="text-center px-4 max-w-lg">
             <Link 
               href="https://www.sarjunsourya.com/" 
               target="_blank" 
               rel="noopener noreferrer"
-              className="text-[9px] md:text-xs tracking-[0.2em] md:tracking-[0.3em] font-bold text-primary hover:opacity-80 transition-opacity uppercase text-center block"
+              className="text-[7px] sm:text-[9px] tracking-[0.2em] sm:tracking-[0.3em] font-bold text-primary hover:opacity-80 transition-opacity uppercase text-center block leading-loose"
             >
               CRAFTED BY MADE BY. SARJUNSOURYA.COM BRAND DESIGN & WEBSITE DEVELOPMENT ✨
             </Link>
