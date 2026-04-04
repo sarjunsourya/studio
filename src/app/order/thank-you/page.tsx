@@ -1,3 +1,4 @@
+
 "use client";
 
 import { Suspense } from "react";
@@ -18,51 +19,51 @@ function ThankYouContent() {
   const estimatedTime = searchParams.get("estimatedTime") || "Calculating...";
 
   return (
-    <div className="min-h-screen bg-secondary/30 py-16 md:py-24 flex items-center justify-center px-4">
+    <div className="min-h-screen bg-secondary/30 py-8 md:py-24 flex items-center justify-center px-4">
       <div className="container mx-auto max-w-2xl">
-        <div className="glass-card p-10 md:p-16 text-center space-y-10 border-primary/20">
+        <div className="glass-card p-6 md:p-16 text-center space-y-8 md:space-y-10 border-primary/20">
           <div className="flex justify-center">
-            <Logo className="scale-110 mb-4" />
+            <Logo className="scale-90 md:scale-110 mb-2 md:mb-4" />
           </div>
           
           <div className="space-y-4">
             <div className="flex justify-center">
-                <CheckCircle2 className="h-16 w-16 text-primary animate-pulse" />
+                <CheckCircle2 className="h-12 w-12 md:h-16 md:h-16 text-primary animate-pulse" />
             </div>
-            <h1 className="font-headline text-4xl md:text-5xl font-bold text-white">
+            <h1 className="font-headline text-2xl md:text-5xl font-bold text-white px-2">
               Thank You, <span className="text-primary">{name}</span>!
             </h1>
-            <p className="text-lg text-muted-foreground font-light">
+            <p className="text-sm md:text-lg text-muted-foreground font-light max-w-xs mx-auto md:max-w-none">
               Your order has been received and is being prepared with love.
             </p>
           </div>
 
-          <div className="grid grid-cols-2 gap-4">
-             <div className="glass-card-dark p-6 border-primary/10 flex flex-col items-center justify-center">
-                <Hash className="h-5 w-5 text-primary mb-2" />
-                <span className="text-[10px] uppercase tracking-widest text-muted-foreground mb-1">Order #</span>
-                <span className="text-2xl font-bold text-white tracking-[0.2em]">{orderNumber}</span>
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+             <div className="glass-card-dark p-4 md:p-6 border-primary/10 flex flex-col items-center justify-center">
+                <Hash className="h-4 w-4 md:h-5 md:w-5 text-primary mb-2" />
+                <span className="text-[9px] md:text-[10px] uppercase tracking-widest text-muted-foreground mb-1">Order #</span>
+                <span className="text-xl md:text-2xl font-bold text-white tracking-[0.2em]">{orderNumber}</span>
              </div>
-             <div className="glass-card-dark p-6 border-primary/10 flex flex-col items-center justify-center">
-                <Clock className="h-5 w-5 text-primary mb-2" />
-                <span className="text-[10px] uppercase tracking-widest text-muted-foreground mb-1">Estimated Ready</span>
-                <span className="text-2xl font-bold text-white">{estimatedTime}</span>
+             <div className="glass-card-dark p-4 md:p-6 border-primary/10 flex flex-col items-center justify-center">
+                <Clock className="h-4 w-4 md:h-5 md:w-5 text-primary mb-2" />
+                <span className="text-[9px] md:text-[10px] uppercase tracking-widest text-muted-foreground mb-1">Estimated Ready</span>
+                <span className="text-xl md:text-2xl font-bold text-white">{estimatedTime}</span>
              </div>
           </div>
 
-          <div className="glass-card-dark p-8 border-white/5 space-y-6 text-left">
-            <h2 className="text-primary font-bold uppercase tracking-[0.2em] text-xs">Order Summary</h2>
+          <div className="glass-card-dark p-6 md:p-8 border-white/5 space-y-6 text-left">
+            <h2 className="text-primary font-bold uppercase tracking-[0.2em] text-[10px] md:text-xs">Order Summary</h2>
             <div className="space-y-4">
-                <div className="flex justify-between items-center">
+                <div className="flex justify-between items-center gap-4">
                     <div className="flex flex-col">
-                        <span className="text-foreground font-semibold text-lg">{dish}</span>
-                        <span className="text-muted-foreground text-sm">Quantity: {quantity}</span>
+                        <span className="text-foreground font-semibold text-sm md:text-lg truncate max-w-[150px] md:max-w-none">{dish}</span>
+                        <span className="text-muted-foreground text-xs md:text-sm">Quantity: {quantity}</span>
                     </div>
-                    <span className="text-xl font-bold text-white">€{total}</span>
+                    <span className="text-lg md:text-xl font-bold text-white">€{total}</span>
                 </div>
                 <Separator className="bg-white/10" />
                 <div className="bg-primary/5 p-4 rounded-xl border border-primary/10">
-                    <p className="text-xs text-primary/80 leading-relaxed italic">
+                    <p className="text-[10px] md:text-xs text-primary/80 leading-relaxed italic text-center md:text-left">
                         "We will contact you shortly to confirm the details. Payment is required upon delivery or pickup (Cash or Tikkie)."
                     </p>
                 </div>
@@ -70,11 +71,11 @@ function ThankYouContent() {
           </div>
 
           <div className="flex flex-col sm:flex-row gap-4 pt-6">
-            <Button asChild size="lg" className="flex-1 bg-primary text-background font-bold h-14 rounded-2xl luxury-button border-none">
-              <Link href="/"><Home className="mr-2 h-5 w-5" /> Back Home</Link>
+            <Button asChild size="lg" className="flex-1 bg-primary text-background font-bold h-12 md:h-14 rounded-2xl luxury-button border-none text-sm md:text-base">
+              <Link href="/"><Home className="mr-2 h-4 w-4 md:h-5 md:w-5" /> Back Home</Link>
             </Button>
-            <Button asChild variant="outline" size="lg" className="flex-1 border-white/10 text-white hover:bg-white/5 h-14 rounded-2xl luxury-button">
-              <Link href="/menu"><Utensils className="mr-2 h-5 w-5" /> View Menu</Link>
+            <Button asChild variant="outline" size="lg" className="flex-1 border-white/10 text-white hover:bg-white/5 h-12 md:h-14 rounded-2xl luxury-button text-sm md:text-base">
+              <Link href="/menu"><Utensils className="mr-2 h-4 w-4 md:h-5 md:w-5" /> View Menu</Link>
             </Button>
           </div>
         </div>
@@ -85,7 +86,7 @@ function ThankYouContent() {
 
 export default function ThankYouPage() {
   return (
-    <Suspense fallback={<div className="min-h-screen bg-secondary/30 flex items-center justify-center"><p className="text-primary animate-pulse">Processing your gratitude...</p></div>}>
+    <Suspense fallback={<div className="min-h-screen bg-secondary/30 flex items-center justify-center"><p className="text-primary animate-pulse uppercase tracking-widest text-xs">Processing your gratitude...</p></div>}>
       <ThankYouContent />
     </Suspense>
   );
