@@ -1,3 +1,4 @@
+
 "use client";
 
 import Link from 'next/link';
@@ -6,7 +7,7 @@ import { useForm, useWatch } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
 import { useState, useMemo, useTransition } from 'react';
-import { Loader2, Plus, Minus, ArrowRight } from "lucide-react";
+import { Loader2, Plus, Minus, ArrowRight, AlertTriangle } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -18,6 +19,7 @@ import { useToast } from '@/hooks/use-toast';
 import { generateOrderNumber, calculateEstimatedCompletionTime } from '@/lib/utils';
 import { useFirestore, addDocumentNonBlocking } from '@/firebase';
 import { collection } from 'firebase/firestore';
+import { cn } from '@/lib/utils';
 
 const orderFormSchema = z.object({
   firstName: z.string().min(1, "First name is required."),
@@ -75,6 +77,15 @@ export function OrderForm() {
 
   const handleQuantityChange = (amount: number) => {
     setQuantity(prev => Math.max(1, prev + amount));
+  };
+
+  const handleManualQuantityChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const val = parseInt(e.target.value);
+    if (!isNaN(val)) {
+        setQuantity(Math.max(1, val));
+    } else if (e.target.value === '') {
+        setQuantity(1);
+    }
   };
   
   async function processOrder(data: OrderFormValues) {
@@ -226,15 +237,32 @@ export function OrderForm() {
                     </div>
                     <Separator className="my-6 bg-white/10"/>
                     <div className="flex justify-between items-center">
-                        <div className='flex flex-col'>
+                        <div className='flex flex-col flex-1'>
                             <span className="text-foreground font-semibold text-lg">{dish}</span>
                              <div className="flex items-center gap-4 mt-4">
                                 <Button type='button' variant="outline" size="icon" className="h-8 w-8 rounded-full border-white/20 hover:bg-primary hover:text-primary-foreground" onClick={() => handleQuantityChange(-1)}><Minus className="h-4 w-4"/></Button>
-                                <span className="font-bold w-4 text-center text-foreground">{quantity}</span>
+                                <Input 
+                                    type="number"
+                                    min="1"
+                                    value={quantity}
+                                    onChange={handleManualQuantityChange}
+                                    className="w-16 h-8 bg-background/50 border-white/10 text-center font-bold text-foreground focus:ring-primary [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none"
+                                />
                                 <Button type='button' variant="outline" size="icon" className="h-8 w-8 rounded-full border-white/20 hover:bg-primary hover:text-primary-foreground" onClick={() => handleQuantityChange(1)}><Plus className="h-4 w-4"/></Button>
                             </div>
+                            {quantity > 10 && (
+                                <div className="mt-4 p-3 bg-primary/10 border border-primary/20 rounded-xl flex items-start gap-3 animate-in fade-in slide-in-from-top-1 duration-300">
+                                    <AlertTriangle className="h-5 w-5 text-primary shrink-0 mt-0.5" />
+                                    <div className="space-y-1">
+                                        <p className="text-xs font-bold text-primary">Large Order Detected</p>
+                                        <p className="text-[10px] text-primary/80 leading-relaxed">
+                                            Please <Link href="/catering" className="underline font-bold hover:text-white transition-colors">contact us for catering</Link> for orders this big to ensure we can meet your requirements!
+                                        </p>
+                                    </div>
+                                </div>
+                            )}
                         </div>
-                        <span className="font-bold text-lg text-foreground">€{subtotal.toFixed(2)}</span>
+                        <span className="font-bold text-lg text-foreground ml-4">€{subtotal.toFixed(2)}</span>
                     </div>
                     <Separator className="my-6 bg-white/10"/>
                     <div className="space-y-4">

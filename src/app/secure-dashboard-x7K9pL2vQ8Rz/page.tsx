@@ -1,3 +1,4 @@
+
 "use client";
 
 import { useEffect, useState } from "react";
@@ -22,18 +23,31 @@ import {
   Clock, 
   Hash, 
   Euro,
-  ChevronRight,
   Loader2,
   Calendar,
-  User as UserIcon
+  User as UserIcon,
+  MapPin,
+  Mail,
+  Phone,
+  MessageSquare,
+  Package,
+  ExternalLink
 } from "lucide-react";
 import { Logo } from "@/components/logo";
 import { Badge } from "@/components/ui/badge";
 import { ScrollArea, ScrollBar } from "@/components/ui/scroll-area";
 import { format } from "date-fns";
+import {
+  Dialog,
+  DialogContent,
+  DialogHeader,
+  DialogTitle,
+} from "@/components/ui/dialog";
+import { Separator } from "@/components/ui/separator";
 
 export default function AdminDashboardPage() {
   const [isAuthenticated, setIsAuthenticated] = useState<boolean | null>(null);
+  const [selectedOrder, setSelectedOrder] = useState<any | null>(null);
   const router = useRouter();
   const firestore = useFirestore();
   const auth = useAuth();
@@ -202,7 +216,12 @@ export default function AdminDashboardPage() {
                       €{order.totalAmount.toFixed(2)}
                     </TableCell>
                     <TableCell className="text-right">
-                      <Button variant="ghost" size="sm" className="opacity-100 sm:opacity-0 group-hover:opacity-100 transition-opacity hover:bg-primary hover:text-background rounded-full h-7 sm:h-8 px-3 sm:px-4 text-[8px] sm:text-[10px] font-bold uppercase">
+                      <Button 
+                        onClick={() => setSelectedOrder(order)}
+                        variant="ghost" 
+                        size="sm" 
+                        className="opacity-100 sm:opacity-0 group-hover:opacity-100 transition-opacity hover:bg-primary hover:text-background rounded-full h-7 sm:h-8 px-3 sm:px-4 text-[8px] sm:text-[10px] font-bold uppercase"
+                      >
                         OPEN
                       </Button>
                     </TableCell>
@@ -221,6 +240,116 @@ export default function AdminDashboardPage() {
           </ScrollArea>
         </div>
       </main>
+
+      {/* Order Details Dialog */}
+      <Dialog open={!!selectedOrder} onOpenChange={() => setSelectedOrder(null)}>
+        <DialogContent className="max-w-3xl glass-card-dark border-white/10 p-0 overflow-hidden">
+          <DialogHeader className="p-8 pb-4">
+            <div className="flex items-center justify-between">
+              <div className="space-y-1">
+                <DialogTitle className="font-headline text-3xl font-bold flex items-center gap-3">
+                  <Package className="h-8 w-8 text-primary" />
+                  Order #{selectedOrder?.orderNumber}
+                </DialogTitle>
+                <p className="text-[10px] text-muted-foreground uppercase tracking-[0.3em]">
+                  Placed on {selectedOrder && format(new Date(selectedOrder.orderDate), 'PPP p')}
+                </p>
+              </div>
+              <Badge className="bg-accent/20 text-accent border-none px-4 py-1 uppercase tracking-widest text-[10px] font-bold">
+                {selectedOrder?.status}
+              </Badge>
+            </div>
+          </DialogHeader>
+
+          <ScrollArea className="max-h-[70vh] p-8 pt-4">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+              {/* Customer Information */}
+              <div className="space-y-6">
+                <div className="space-y-4">
+                  <h3 className="text-[10px] font-bold uppercase tracking-widest text-primary flex items-center gap-2">
+                    <UserIcon className="h-3 w-3" />
+                    Customer Dossier
+                  </h3>
+                  <div className="glass-card p-5 border-white/5 space-y-4">
+                    <div className="flex items-center gap-3">
+                      <Mail className="h-4 w-4 text-muted-foreground" />
+                      <span className="text-sm font-medium">{selectedOrder?.customerEmail}</span>
+                    </div>
+                    <div className="flex items-center gap-3">
+                      <Phone className="h-4 w-4 text-muted-foreground" />
+                      <span className="text-sm font-medium">{selectedOrder?.customerPhone}</span>
+                    </div>
+                    <div className="flex items-start gap-3">
+                      <MapPin className="h-4 w-4 text-muted-foreground mt-1" />
+                      <span className="text-sm font-medium leading-relaxed">{selectedOrder?.deliveryAddress}</span>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="space-y-4">
+                  <h3 className="text-[10px] font-bold uppercase tracking-widest text-primary flex items-center gap-2">
+                    <MessageSquare className="h-3 w-3" />
+                    Special Instructions
+                  </h3>
+                  <div className="glass-card p-5 border-white/5">
+                    <p className="text-sm italic text-muted-foreground leading-relaxed">
+                      {selectedOrder?.notes || "No additional instructions provided by customer."}
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              {/* Order Content */}
+              <div className="space-y-6">
+                <div className="space-y-4">
+                  <h3 className="text-[10px] font-bold uppercase tracking-widest text-primary flex items-center gap-2">
+                    <Package className="h-3 w-3" />
+                    Dish Breakdown
+                  </h3>
+                  <div className="glass-card p-5 border-white/5 divide-y divide-white/5">
+                    {selectedOrder?.items?.map((item: any, idx: number) => (
+                      <div key={idx} className="py-4 first:pt-0 last:pb-0 flex justify-between items-center">
+                        <div className="flex flex-col">
+                          <span className="font-bold text-base">{item.dish}</span>
+                          <span className="text-xs text-muted-foreground">Qty: {item.quantity} × €{item.unitPrice.toFixed(2)}</span>
+                        </div>
+                        <span className="font-bold text-primary">€{(item.quantity * item.unitPrice).toFixed(2)}</span>
+                      </div>
+                    ))}
+                    <div className="pt-4 flex justify-between items-center text-lg font-bold">
+                      <span className="text-muted-foreground">Total Revenue</span>
+                      <span className="text-white">€{selectedOrder?.totalAmount.toFixed(2)}</span>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="space-y-4">
+                  <h3 className="text-[10px] font-bold uppercase tracking-widest text-primary flex items-center gap-2">
+                    <Clock className="h-3 w-3" />
+                    Operational Timing
+                  </h3>
+                  <div className="grid grid-cols-2 gap-4">
+                    <div className="glass-card p-4 border-white/5 text-center">
+                      <span className="text-[8px] uppercase tracking-widest text-muted-foreground block mb-1">Target</span>
+                      <span className="text-sm font-bold">{selectedOrder && format(new Date(selectedOrder.estimatedCompletionTime), 'HH:mm')}</span>
+                    </div>
+                    <div className="glass-card p-4 border-white/5 text-center">
+                      <span className="text-[8px] uppercase tracking-widest text-muted-foreground block mb-1">Current Status</span>
+                      <span className="text-sm font-bold text-accent">{selectedOrder?.status}</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <Separator className="my-8 bg-white/5" />
+            <div className="flex justify-end pb-8">
+              <Button onClick={() => setSelectedOrder(null)} className="luxury-button bg-white text-background font-bold px-8">
+                CLOSE MANIFEST
+              </Button>
+            </div>
+          </ScrollArea>
+        </DialogContent>
+      </Dialog>
 
       <footer className="py-6 md:py-10 border-t border-white/5 text-center px-6">
          <p className="text-[7px] md:text-[10px] text-muted-foreground/40 uppercase tracking-[0.2em] md:tracking-[0.3em]">
