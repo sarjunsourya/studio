@@ -46,47 +46,52 @@ const orderConfirmationFlow = ai.defineFlow(
     // Note: RESEND_API_KEY must be configured in environment variables.
     const resend = new Resend(process.env.RESEND_API_KEY);
     
-    const itemsList = input.orderItems
+    const itemsListHtml = input.orderItems
       .map(item => `- ${item.dish} (Qty: ${item.quantity})`)
-      .join('\n');
+      .join('<br />');
 
-    const emailText = `
-Namaste ${input.name},
+    const htmlBody = `
+      <div style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; color: #333; line-height: 1.6; max-width: 600px; margin: 0 auto;">
+        <p>Namaste ${input.name},</p>
+        
+        <p>---</p>
+        
+        <h3 style="margin-bottom: 10px;">Order Details</h3>
+        <p style="margin: 0;"><strong>Order Number:</strong> ${input.orderNumber}</p>
+        <p style="margin: 0;"><strong>Order Date:</strong> ${input.orderDate}</p>
+        <p style="margin: 0;"><strong>Order Type:</strong> ${input.orderType}</p>
+        <p style="margin: 0;"><strong>Order Time:</strong> ${input.time}</p>
 
----
+        <p style="margin-top: 15px;"><strong>Order Items:</strong><br />
+        ${itemsListHtml}</p>
 
-### Order Details
-**Order Number:** ${input.orderNumber}
-**Order Date:** ${input.orderDate}
-**Order Type:** ${input.orderType}
-**Order Time:** ${input.time}
+        <p><strong>Total Amount:</strong> ${input.totalAmount}</p>
 
-**Order Items:**
-${itemsList}
+        <p>---</p>
 
-**Total Amount:** ${input.totalAmount}
+        <h3 style="margin-bottom: 10px;">Pickup / Delivery Information</h3>
+        <p>${input.instructions}</p>
 
----
+        <p>---</p>
 
-### Pickup / Delivery Information
-${input.instructions}
+        <h3 style="margin-bottom: 10px;">Contact Information</h3>
+        <p style="margin: 0;"><strong>Phone:</strong> +31 6 2130 8998</p>
+        <p style="margin: 0;"><strong>Emails:</strong> info@the-divine-kitchen.com and roopag14@gmail.com</p>
 
----
+        <p>---</p>
 
-### Contact Information
-**Phone:** +31 6 2130 8998
-**Emails:** info@the-divine-kitchen.com and roopag14@gmail.com
+        <p style="margin-bottom: 0;">Best regards,</p>
+        <p style="margin-top: 5px;">
+          <strong>Roopa Gokul</strong><br />
+          C.E.O & Founder<br />
+          The Divine Kitchen
+        </p>
 
----
-
-Best regards,
-
-Roopa Gokul
-C.E.O & Founder
-The Divine Kitchen
-
----
-CRAFTED BY MADE BY. SARJUNSOURYA.COM • BRAND DESIGN • WEBSITE DEVELOPMENT ✨
+        <p>---</p>
+        <p style="font-size: 10px; color: #999; text-align: center; margin-top: 30px;">
+          CRAFTED BY MADE BY. SARJUNSOURYA.COM • BRAND DESIGN • WEBSITE DEVELOPMENT ✨
+        </p>
+      </div>
     `;
 
     try {
@@ -94,7 +99,7 @@ CRAFTED BY MADE BY. SARJUNSOURYA.COM • BRAND DESIGN • WEBSITE DEVELOPMENT �
         from: 'The Divine Kitchen <orders@the-divine-kitchen.com>',
         to: [input.email, 'roopag14@gmail.com'],
         subject: `Order Confirmation - #${input.orderNumber}`,
-        text: emailText,
+        html: htmlBody,
       });
       return { success: true };
     } catch (error: any) {
