@@ -1,4 +1,3 @@
-
 "use client";
 
 import Link from 'next/link';
@@ -16,7 +15,7 @@ import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import { Separator } from "@/components/ui/separator";
 import { useToast } from '@/hooks/use-toast';
-import { generateOrderNumber, calculateEstimatedCompletionTime } from '@/lib/utils';
+import { generateOrderNumber } from '@/lib/utils';
 import { useFirestore, addDocumentNonBlocking } from '@/firebase';
 import { collection } from 'firebase/firestore';
 import { cn } from '@/lib/utils';
@@ -90,7 +89,6 @@ export function OrderForm() {
   
   async function processOrder(data: OrderFormValues) {
     const orderNumber = generateOrderNumber();
-    const estimatedCompletion = calculateEstimatedCompletionTime();
     
     startTransition(async () => {
         try {
@@ -102,7 +100,6 @@ export function OrderForm() {
                 customerPhone: data.phone,
                 deliveryAddress: `${data.streetAddress}, ${data.apartment ? data.apartment + ', ' : ''}${data.city}, ${data.postcode}`,
                 orderDate: new Date().toISOString(),
-                estimatedCompletionTime: estimatedCompletion.toISOString(),
                 totalAmount: total,
                 status: 'Pending',
                 notes: data.orderNotes || "",
@@ -139,14 +136,13 @@ export function OrderForm() {
                 mode: "no-cors", 
             });
             
-            // 3. Redirect to thank you page with enriched details
+            // 3. Redirect to thank you page
             const queryParams = new URLSearchParams({
                 name: data.firstName,
                 dish: dish || "",
                 quantity: quantity.toString(),
                 total: total.toFixed(2),
-                orderNumber: orderNumber,
-                estimatedTime: estimatedCompletion.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })
+                orderNumber: orderNumber
             });
             router.push(`/order/thank-you?${queryParams.toString()}`);
             

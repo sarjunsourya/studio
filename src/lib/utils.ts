@@ -16,11 +16,3 @@ export function generateOrderNumber(): string {
   }
   return result;
 }
-
-/**
- * Calculates an estimated completion time (e.g., 45 minutes from now).
- */
-export function calculateEstimatedCompletionTime(minutes: number = 45): Date {
-  const now = new Date();
-  return new Date(now.getTime() + minutes * 60000);
-}

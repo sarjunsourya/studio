@@ -3,7 +3,7 @@
 import { Suspense } from "react";
 import { useSearchParams } from "next/navigation";
 import Link from "next/link";
-import { CheckCircle2, Home, Utensils, Hash, Clock } from "lucide-react";
+import { CheckCircle2, Home, Utensils, Hash } from "lucide-react";
 import { Logo } from "@/components/logo";
 import { Button } from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator";
@@ -15,7 +15,6 @@ function ThankYouContent() {
   const quantity = searchParams.get("quantity") || "0";
   const total = searchParams.get("total") || "0.00";
   const orderNumber = searchParams.get("orderNumber") || "N/A";
-  const estimatedTime = searchParams.get("estimatedTime") || "Calculating...";
 
   return (
     <div className="min-h-screen bg-secondary/30 py-6 sm:py-12 md:py-24 flex items-center justify-center px-4">
@@ -37,16 +36,11 @@ function ThankYouContent() {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
-             <div className="glass-card-dark p-4 sm:p-5 md:p-6 border-primary/10 flex flex-col items-center justify-center">
-                <Hash className="h-4 w-4 md:h-5 md:w-5 text-primary mb-1 md:mb-2" />
-                <span className="text-[8px] sm:text-[9px] md:text-[10px] uppercase tracking-widest text-muted-foreground mb-1">Order #</span>
-                <span className="text-lg sm:text-xl md:text-2xl font-bold text-white tracking-[0.2em]">{orderNumber}</span>
-             </div>
-             <div className="glass-card-dark p-4 sm:p-5 md:p-6 border-primary/10 flex flex-col items-center justify-center">
-                <Clock className="h-4 w-4 md:h-5 md:w-5 text-primary mb-1 md:mb-2" />
-                <span className="text-[8px] sm:text-[9px] md:text-[10px] uppercase tracking-widest text-muted-foreground mb-1">Estimated Ready</span>
-                <span className="text-lg sm:text-xl md:text-2xl font-bold text-white">{estimatedTime}</span>
+          <div className="flex justify-center">
+             <div className="glass-card-dark p-6 sm:p-8 md:p-10 border-primary/10 flex flex-col items-center justify-center min-w-[200px] sm:min-w-[280px]">
+                <Hash className="h-6 w-6 md:h-8 md:w-8 text-primary mb-2 md:mb-4" />
+                <span className="text-[10px] sm:text-xs md:text-sm uppercase tracking-widest text-muted-foreground mb-2">Order Identification #</span>
+                <span className="text-2xl sm:text-3xl md:text-5xl font-bold text-white tracking-[0.3em]">{orderNumber}</span>
              </div>
           </div>
 

@@ -1,4 +1,3 @@
-
 "use client";
 
 import { useEffect, useState } from "react";
@@ -20,7 +19,6 @@ import {
 import { 
   LogOut, 
   LayoutDashboard, 
-  Clock, 
   Hash, 
   Euro,
   Loader2,
@@ -31,7 +29,7 @@ import {
   Phone,
   MessageSquare,
   Package,
-  ExternalLink
+  Clock
 } from "lucide-react";
 import { Logo } from "@/components/logo";
 import { Badge } from "@/components/ui/badge";
@@ -182,7 +180,7 @@ export default function AdminDashboardPage() {
                 <TableRow className="border-white/5 hover:bg-transparent">
                   <TableHead className="w-[100px] sm:w-[120px] text-primary uppercase tracking-widest text-[8px] md:text-[10px] font-bold">Order #</TableHead>
                   <TableHead className="text-primary uppercase tracking-widest text-[8px] md:text-[10px] font-bold">Customer</TableHead>
-                  <TableHead className="text-primary uppercase tracking-widest text-[8px] md:text-[10px] font-bold">Completion</TableHead>
+                  <TableHead className="text-primary uppercase tracking-widest text-[8px] md:text-[10px] font-bold">Placed Date</TableHead>
                   <TableHead className="text-primary uppercase tracking-widest text-[8px] md:text-[10px] font-bold">Total</TableHead>
                   <TableHead className="text-primary uppercase tracking-widest text-[8px] md:text-[10px] font-bold text-right">Actions</TableHead>
                 </TableRow>
@@ -206,9 +204,9 @@ export default function AdminDashboardPage() {
                     </TableCell>
                     <TableCell>
                       <div className="flex items-center gap-2 text-white/60">
-                        <Clock className="h-3 w-3 sm:h-3.5 sm:w-3.5 text-primary" />
+                        <Calendar className="h-3 w-3 sm:h-3.5 sm:w-3.5 text-primary" />
                         <span className="text-[10px] sm:text-xs md:text-sm font-medium">
-                          {format(new Date(order.estimatedCompletionTime), 'HH:mm')}
+                          {format(new Date(order.orderDate), 'MMM d, HH:mm')}
                         </span>
                       </div>
                     </TableCell>
@@ -319,23 +317,6 @@ export default function AdminDashboardPage() {
                     <div className="pt-4 flex justify-between items-center text-lg font-bold">
                       <span className="text-muted-foreground">Total Revenue</span>
                       <span className="text-white">€{selectedOrder?.totalAmount.toFixed(2)}</span>
-                    </div>
-                  </div>
-                </div>
-
-                <div className="space-y-4">
-                  <h3 className="text-[10px] font-bold uppercase tracking-widest text-primary flex items-center gap-2">
-                    <Clock className="h-3 w-3" />
-                    Operational Timing
-                  </h3>
-                  <div className="grid grid-cols-2 gap-4">
-                    <div className="glass-card p-4 border-white/5 text-center">
-                      <span className="text-[8px] uppercase tracking-widest text-muted-foreground block mb-1">Target</span>
-                      <span className="text-sm font-bold">{selectedOrder && format(new Date(selectedOrder.estimatedCompletionTime), 'HH:mm')}</span>
-                    </div>
-                    <div className="glass-card p-4 border-white/5 text-center">
-                      <span className="text-[8px] uppercase tracking-widest text-muted-foreground block mb-1">Current Status</span>
-                      <span className="text-sm font-bold text-accent">{selectedOrder?.status}</span>
                     </div>
                   </div>
                 </div>
