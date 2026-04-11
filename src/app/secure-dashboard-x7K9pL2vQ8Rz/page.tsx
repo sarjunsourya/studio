@@ -44,6 +44,10 @@ import {
 } from "@/components/ui/dialog";
 import { Separator } from "@/components/ui/separator";
 
+/**
+ * @fileOverview Secure Admin Dashboard.
+ * Protected by custom form-based authentication and a non-predictable route.
+ */
 export default function AdminDashboardPage() {
   const [isAuthenticated, setIsAuthenticated] = useState<boolean | null>(null);
   const [selectedOrder, setSelectedOrder] = useState<any | null>(null);
@@ -64,6 +68,7 @@ export default function AdminDashboardPage() {
       
       setIsAuthenticated(true);
 
+      // Background Firebase sync for security rules compatibility
       if (auth && !user && !isUserLoading) {
         try {
           await signInAnonymously(auth);

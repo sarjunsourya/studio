@@ -8,6 +8,7 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
 import { useState, useMemo, useTransition } from 'react';
 import { Loader2, Plus, Minus, ArrowRight, AlertTriangle } from "lucide-react";
+import { format } from "date-fns";
 
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -19,7 +20,7 @@ import { useToast } from '@/hooks/use-toast';
 import { generateOrderNumber } from '@/lib/utils';
 import { useFirestore, addDocumentNonBlocking } from '@/firebase';
 import { collection } from 'firebase/firestore';
-import { cn } from '@/lib/utils';
+import { sendOrderConfirmation } from '@/ai/flows/order-confirmation-flow';
 
 const orderFormSchema = z.object({
   firstName: z.string().min(1, "First name is required."),
@@ -90,6 +91,7 @@ export function OrderForm() {
   
   async function processOrder(data: OrderFormValues) {
     const orderNumber = generateOrderNumber();
+    const now = new Date();
     
     startTransition(async () => {
         try {
@@ -100,7 +102,7 @@ export function OrderForm() {
                 customerEmail: data.email,
                 customerPhone: data.phone,
                 deliveryAddress: `${data.streetAddress}, ${data.apartment ? data.apartment + ', ' : ''}${data.city}, ${data.postcode}`,
-                orderDate: new Date().toISOString(),
+                orderDate: now.toISOString(),
                 totalAmount: total,
                 status: 'Pending',
                 notes: data.orderNotes || "",
@@ -135,8 +137,25 @@ export function OrderForm() {
                 body: googleFormData,
                 mode: "no-cors", 
             });
+
+            // 3. Send Order Confirmation Email
+            const emailData = {
+                name: `${data.firstName} ${data.lastName}`,
+                email: data.email,
+                orderNumber: orderNumber,
+                orderDate: format(now, 'PPPP'),
+                orderType: shippingMethod === 'delivery' ? 'Delivery' : 'Pickup',
+                time: format(now, 'p'),
+                orderItems: [{ dish: dish || "", quantity: quantity }],
+                totalAmount: `€${total.toFixed(2)}`,
+                instructions: shippingMethod === 'delivery' 
+                    ? `Delivery to: ${data.streetAddress}, ${data.apartment ? data.apartment + ', ' : ''}${data.city}, ${data.postcode}`
+                    : "Pickup at: Raad van Europalaan 62, 2625 PC Delft"
+            };
             
-            // 3. Redirect to thank you page
+            sendOrderConfirmation(emailData);
+            
+            // 4. Redirect to thank you page
             const queryParams = new URLSearchParams({
                 name: data.firstName,
                 dish: dish || "",
