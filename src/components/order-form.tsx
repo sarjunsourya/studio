@@ -1,3 +1,4 @@
+
 "use client";
 
 import Link from 'next/link';
@@ -129,7 +130,6 @@ export function OrderForm() {
             googleFormData.append("entry.1796185331", `€${subtotal.toFixed(2)}`);
             googleFormData.append("entry.489857107", `€${total.toFixed(2)}`);
 
-            // No-cors fetch for background submission
             fetch(googleFormUrl, {
                 method: "POST",
                 body: googleFormData,

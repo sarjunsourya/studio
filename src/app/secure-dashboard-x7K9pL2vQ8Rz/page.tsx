@@ -1,3 +1,4 @@
+
 "use client";
 
 import { useEffect, useState } from "react";
@@ -51,7 +52,6 @@ export default function AdminDashboardPage() {
   const auth = useAuth();
   const { user, isUserLoading } = useUser();
 
-  // 1. Auth Guard & Firebase Session Sync
   useEffect(() => {
     async function verify() {
       if (isAuthenticated === true && user) return;
@@ -75,7 +75,6 @@ export default function AdminDashboardPage() {
     verify();
   }, [router, auth, user, isUserLoading, isAuthenticated]);
 
-  // 2. Fetch Orders
   const ordersQuery = useMemoFirebase(() => {
     if (!firestore || !isAuthenticated || !user) return null;
     return query(collection(firestore, "orders"), orderBy("orderDate", "desc"));
@@ -99,7 +98,6 @@ export default function AdminDashboardPage() {
 
   return (
     <div className="min-h-screen bg-[#051917] text-white flex flex-col">
-      {/* Header */}
       <header className="border-b border-white/5 bg-[#0a2e2a]/40 backdrop-blur-xl sticky top-0 z-50">
         <div className="container mx-auto px-4 md:px-6 h-16 sm:h-20 md:h-24 flex items-center justify-between">
           <div className="flex items-center gap-3 md:gap-6">
@@ -125,10 +123,8 @@ export default function AdminDashboardPage() {
         </div>
       </header>
 
-      {/* Main Content */}
       <main className="flex-grow container mx-auto px-4 md:px-6 py-6 md:py-12">
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4 md:gap-8 mb-6 md:mb-12">
-            {/* Quick Stats */}
             <div className="glass-card p-4 md:p-6 border-white/5 space-y-1 md:space-y-4">
                 <div className="flex items-center gap-2 text-primary">
                     <Hash className="h-3.5 w-3.5" />
@@ -239,7 +235,6 @@ export default function AdminDashboardPage() {
         </div>
       </main>
 
-      {/* Order Details Dialog */}
       <Dialog open={!!selectedOrder} onOpenChange={() => setSelectedOrder(null)}>
         <DialogContent className="max-w-3xl glass-card-dark border-white/10 p-0 overflow-hidden">
           <DialogHeader className="p-8 pb-4">
@@ -261,7 +256,6 @@ export default function AdminDashboardPage() {
 
           <ScrollArea className="max-h-[70vh] p-8 pt-4">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-              {/* Customer Information */}
               <div className="space-y-6">
                 <div className="space-y-4">
                   <h3 className="text-[10px] font-bold uppercase tracking-widest text-primary flex items-center gap-2">
@@ -297,7 +291,6 @@ export default function AdminDashboardPage() {
                 </div>
               </div>
 
-              {/* Order Content */}
               <div className="space-y-6">
                 <div className="space-y-4">
                   <h3 className="text-[10px] font-bold uppercase tracking-widest text-primary flex items-center gap-2">
