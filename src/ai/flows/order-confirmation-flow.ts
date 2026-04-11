@@ -1,15 +1,16 @@
+
 'use server';
 
 /**
- * @fileOverview Order Confirmation Email Flow.
+ * @fileOverview Order Confirmation Email Flow using SendGrid.
  * 
  * This flow sends a professional and warm confirmation email to customers
- * after a successful order placement at The Divine Kitchen.
+ * using the SendGrid API.
  */
 
 import { ai } from '@/ai/genkit';
 import { z } from 'genkit';
-import { Resend } from 'resend';
+import sgMail from '@sendgrid/mail';
 
 const OrderConfirmationInputSchema = z.object({
   name: z.string().describe('The name of the customer.'),
@@ -42,40 +43,47 @@ const orderConfirmationFlow = ai.defineFlow(
     outputSchema: z.object({ success: z.boolean(), error: z.string().optional() }),
   },
   async (input) => {
-    // Note: RESEND_API_KEY must be configured in environment variables.
-    const resend = new Resend(process.env.RESEND_API_KEY);
+    // Note: SENDGRID_API_KEY must be configured in environment variables.
+    if (!process.env.SENDGRID_API_KEY) {
+      console.error('SENDGRID_API_KEY is not defined');
+      return { success: false, error: 'Email service not configured' };
+    }
+
+    sgMail.setApiKey(process.env.SENDGRID_API_KEY);
     
     const itemsListHtml = input.orderItems
-      .map(item => `- ${item.dish} (Qty: ${item.quantity})`)
-      .join('<br />');
+      .map(item => `<p style="margin: 0;">- ${item.dish} (Qty: ${item.quantity})</p>`)
+      .join('');
 
     const htmlBody = `
-      <div style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; color: #333; line-height: 1.6; max-width: 600px; margin: 0 auto; border: 1px solid #eee; padding: 40px; border-radius: 8px;">
-        <p style="font-size: 18px;">Namaste ${input.name},</p>
+      <div style="font-family: Arial, sans-serif; color: #333; line-height: 1.6; max-width: 600px; margin: 0 auto; border: 1px solid #eee; padding: 20px; border-radius: 4px;">
+        <p style="font-size: 16px;">Namaste ${input.name},</p>
         
         <p>---</p>
         
-        <h3 style="margin-bottom: 10px; color: #0a2e2a;">Order Details</h3>
-        <p style="margin: 0;"><strong>Order Number:</strong> ${input.orderNumber}</p>
-        <p style="margin: 0;"><strong>Order Date:</strong> ${input.orderDate}</p>
-        <p style="margin: 0;"><strong>Order Type:</strong> ${input.orderType}</p>
-        <p style="margin: 0;"><strong>Order Time:</strong> ${input.time}</p>
+        <h3 style="color: #0a2e2a; margin-top: 20px;">Order Details</h3>
+        <p style="margin: 5px 0;"><strong>Order Number:</strong> ${input.orderNumber}</p>
+        <p style="margin: 5px 0;"><strong>Order Date:</strong> ${input.orderDate}</p>
+        <p style="margin: 5px 0;"><strong>Order Type:</strong> ${input.orderType}</p>
+        <p style="margin: 5px 0;"><strong>Order Time:</strong> ${input.time}</p>
 
-        <p style="margin-top: 15px;"><strong>Order Items:</strong><br />
-        ${itemsListHtml}</p>
+        <div style="margin-top: 15px;">
+          <strong>Order Items:</strong>
+          ${itemsListHtml}
+        </div>
 
-        <p><strong>Total Amount:</strong> ${input.totalAmount}</p>
-
-        <p>---</p>
-
-        <h3 style="margin-bottom: 10px; color: #0a2e2a;">Pickup / Delivery Information</h3>
-        <p>${input.instructions}</p>
+        <p style="margin: 15px 0;"><strong>Total Amount:</strong> ${input.totalAmount}</p>
 
         <p>---</p>
 
-        <h3 style="margin-bottom: 10px; color: #0a2e2a;">Contact Information</h3>
-        <p style="margin: 0;"><strong>Phone:</strong> +31 6 2130 8998</p>
-        <p style="margin: 0;"><strong>Emails:</strong> info@the-divine-kitchen.com and roopag14@gmail.com</p>
+        <h3 style="color: #0a2e2a; margin-top: 20px;">Pickup / Delivery Information</h3>
+        <p style="margin: 5px 0;">${input.instructions}</p>
+
+        <p>---</p>
+
+        <h3 style="color: #0a2e2a; margin-top: 20px;">Contact Information</h3>
+        <p style="margin: 5px 0;"><strong>Phone:</strong> +31 6 2130 8998</p>
+        <p style="margin: 5px 0;"><strong>Emails:</strong> info@the-divine-kitchen.com and roopag14@gmail.com</p>
 
         <p>---</p>
 
@@ -93,17 +101,22 @@ const orderConfirmationFlow = ai.defineFlow(
       </div>
     `;
 
+    const msg = {
+      to: input.email,
+      from: 'orders@the-divine-kitchen.com', // Ensure this identity is verified in SendGrid
+      bcc: 'roopag14@gmail.com',
+      subject: `Order Confirmation - #${input.orderNumber}`,
+      html: htmlBody,
+    };
+
     try {
-      await resend.emails.send({
-        from: 'The Divine Kitchen <orders@the-divine-kitchen.com>',
-        to: [input.email],
-        cc: ['roopag14@gmail.com'],
-        subject: `Order Confirmation - #${input.orderNumber}`,
-        html: htmlBody,
-      });
+      await sgMail.send(msg);
       return { success: true };
     } catch (error: any) {
-      console.error('Failed to send order confirmation email:', error);
+      console.error('Failed to send order confirmation email via SendGrid:', error);
+      if (error.response) {
+        console.error(error.response.body);
+      }
       return { success: false, error: error?.message || 'Unknown error' };
     }
   }
