@@ -51,12 +51,12 @@ const orderConfirmationFlow = ai.defineFlow(
       .join('<br />');
 
     const htmlBody = `
-      <div style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; color: #333; line-height: 1.6; max-width: 600px; margin: 0 auto;">
-        <p>Namaste ${input.name},</p>
+      <div style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; color: #333; line-height: 1.6; max-width: 600px; margin: 0 auto; border: 1px solid #eee; padding: 40px; border-radius: 8px;">
+        <p style="font-size: 18px;">Namaste ${input.name},</p>
         
         <p>---</p>
         
-        <h3 style="margin-bottom: 10px;">Order Details</h3>
+        <h3 style="margin-bottom: 10px; color: #0a2e2a;">Order Details</h3>
         <p style="margin: 0;"><strong>Order Number:</strong> ${input.orderNumber}</p>
         <p style="margin: 0;"><strong>Order Date:</strong> ${input.orderDate}</p>
         <p style="margin: 0;"><strong>Order Type:</strong> ${input.orderType}</p>
@@ -69,12 +69,12 @@ const orderConfirmationFlow = ai.defineFlow(
 
         <p>---</p>
 
-        <h3 style="margin-bottom: 10px;">Pickup / Delivery Information</h3>
+        <h3 style="margin-bottom: 10px; color: #0a2e2a;">Pickup / Delivery Information</h3>
         <p>${input.instructions}</p>
 
         <p>---</p>
 
-        <h3 style="margin-bottom: 10px;">Contact Information</h3>
+        <h3 style="margin-bottom: 10px; color: #0a2e2a;">Contact Information</h3>
         <p style="margin: 0;"><strong>Phone:</strong> +31 6 2130 8998</p>
         <p style="margin: 0;"><strong>Emails:</strong> info@the-divine-kitchen.com and roopag14@gmail.com</p>
 
@@ -88,7 +88,7 @@ const orderConfirmationFlow = ai.defineFlow(
         </p>
 
         <p>---</p>
-        <p style="font-size: 10px; color: #999; text-align: center; margin-top: 30px;">
+        <p style="font-size: 10px; color: #999; text-align: center; margin-top: 30px; letter-spacing: 1px;">
           CRAFTED BY MADE BY. SARJUNSOURYA.COM • BRAND DESIGN • WEBSITE DEVELOPMENT ✨
         </p>
       </div>
@@ -97,7 +97,8 @@ const orderConfirmationFlow = ai.defineFlow(
     try {
       await resend.emails.send({
         from: 'The Divine Kitchen <orders@the-divine-kitchen.com>',
-        to: [input.email, 'roopag14@gmail.com'],
+        to: [input.email],
+        cc: ['roopag14@gmail.com'],
         subject: `Order Confirmation - #${input.orderNumber}`,
         html: htmlBody,
       });
