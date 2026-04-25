@@ -1,3 +1,4 @@
+
 import type { Metadata } from 'next';
 import { Poppins, Inter } from 'next/font/google';
 import './globals.css';
@@ -8,6 +9,8 @@ import { Toaster } from '@/components/ui/toaster';
 import { FirebaseClientProvider } from '@/firebase';
 import Image from 'next/image';
 import Link from 'next/link';
+import { IS_VACATION_MODE } from '@/lib/config';
+import { VacationOverlay } from '@/components/vacation-overlay';
 
 export const metadata: Metadata = {
   title: 'The Divine Kitchen | Authentic Homemade Meals',
@@ -40,26 +43,32 @@ export default function RootLayout({
         )}
       >
         <FirebaseClientProvider>
-          <Header />
-          <main className="flex-grow pt-24">{children}</main>
-          <Footer />
-          
-          {/* Persistent Branding Blob - Refined size */}
-          <Link 
-            href="#developer-branding" 
-            className="fixed bottom-6 right-6 z-[200] transition-transform hover:scale-110 active:scale-95 group hidden sm:block"
-          >
-            <div className="relative flex items-center justify-center w-10 h-10 rounded-full border border-white/20 bg-[#0a2e2a]/90 backdrop-blur-lg shadow-2xl overflow-hidden">
-              <div className="absolute inset-0 bg-primary/10 opacity-0 group-hover:opacity-100 transition-opacity" />
-              <Image 
-                src="https://alekhya-anantapantula.vercel.app/_next/image?url=https%3A%2F%2Fi.imgur.com%2FdErpdLj.png&w=48&q=75" 
-                alt="Branding Icon" 
-                width={24} 
-                height={24} 
-                className="w-6 h-6 drop-shadow-md relative"
-              />
-            </div>
-          </Link>
+          {IS_VACATION_MODE ? (
+            <VacationOverlay children={children} />
+          ) : (
+            <>
+              <Header />
+              <main className="flex-grow pt-24">{children}</main>
+              <Footer />
+              
+              {/* Persistent Branding Blob */}
+              <Link 
+                href="#developer-branding" 
+                className="fixed bottom-6 right-6 z-[200] transition-transform hover:scale-110 active:scale-95 group hidden sm:block"
+              >
+                <div className="relative flex items-center justify-center w-10 h-10 rounded-full border border-white/20 bg-[#0a2e2a]/90 backdrop-blur-lg shadow-2xl overflow-hidden">
+                  <div className="absolute inset-0 bg-primary/10 opacity-0 group-hover:opacity-100 transition-opacity" />
+                  <Image 
+                    src="https://alekhya-anantapantula.vercel.app/_next/image?url=https%3A%2F%2Fi.imgur.com%2FdErpdLj.png&w=48&q=75" 
+                    alt="Branding Icon" 
+                    width={24} 
+                    height={24} 
+                    className="w-6 h-6 drop-shadow-md relative"
+                  />
+                </div>
+              </Link>
+            </>
+          )}
 
           <Toaster />
         </FirebaseClientProvider>
